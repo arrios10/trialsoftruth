@@ -20,7 +20,18 @@ class Game: NSObject, NSCoding {
 
     var gameTotalPoints: Int = 0
     
-    var matches: [Match] = []
+    var matches: [Match] = [Match(),Match(),Match(),Match(),Match(),Match(),Match(),Match(),Match(),Match()]
+    
+    var matchIndex: Int = 0
+    
+    func compMove() -> String {
+        
+        return ""
+    }
+  
+    func calcScore() -> Int {
+        return 0
+    }
     
     func encode(with aCoder: NSCoder) {
     }
