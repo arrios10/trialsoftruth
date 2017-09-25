@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84ABB71F1F79C6FE001BADA3 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ABB71E1F79C6FE001BADA3 /* UserDefaultsManager.swift */; };
 		E50165951F7061D500453A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165941F7061D500453A55 /* AppDelegate.swift */; };
 		E501659A1F7061D600453A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E50165981F7061D600453A55 /* Main.storyboard */; };
 		E501659C1F7061D600453A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E501659B1F7061D600453A55 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84ABB71E1F79C6FE001BADA3 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		E50165911F7061D500453A55 /* Trials of Truth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trials of Truth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50165941F7061D500453A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E50165991F7061D600453A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 		E50165881F7061D500453A55 = {
 			isa = PBXGroup;
 			children = (
+				84ABB71E1F79C6FE001BADA3 /* UserDefaultsManager.swift */,
 				E50165931F7061D500453A55 /* Trials of Truth */,
 				E50165921F7061D500453A55 /* Products */,
 			);
@@ -147,6 +150,7 @@
 			files = (
 				E50165951F7061D500453A55 /* AppDelegate.swift in Sources */,
 				E50165A91F73261800453A55 /* GameViewController.swift in Sources */,
+				84ABB71F1F79C6FE001BADA3 /* UserDefaultsManager.swift in Sources */,
 				E50165A71F73260C00453A55 /* MainViewController.swift in Sources */,
 				E50165AF1F73346600453A55 /* Match.swift in Sources */,
 				E50165AD1F73311100453A55 /* Game.swift in Sources */,
