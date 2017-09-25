@@ -10,32 +10,42 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    let foeMoves = ["attack", "attack","yield"]
-    var foeMoveIndex = 0
-    
     @IBOutlet weak var messageLabel: UILabel!
     
     @IBOutlet weak var foeActionLabel: UILabel!
     
     @IBOutlet weak var pointsAwardedLabel: UILabel!
     
-    
+    var currentGame: Game! = Game()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    func playMatch(playerMove: String) {
+        //access the correct game and match
+        var currentMatch = currentGame.matches[currentGame.matchIndex]
+        
+        //execute the match - get the computer's move, compare to the player's move
+        currentMatch.playerMove = playerMove
+        
+        
+        //reward points
+        
+        //record the results - add to previous total score, record players move & calculate percent
+    }
 
     @IBAction func attackButtonSelected(_ sender: Any) {
-        
-        foeActionLabel.text = foeMoves[0]
-        foeMoveIndex = foeMoveIndex + 1
+        playMatch(playerMove: "Attack")
+
     
     }
     
     @IBAction func yieldButtonSelected(_ sender: Any) {
-        print("run")
+        playMatch(playerMove: "Yield")
+        
         
     }
     
