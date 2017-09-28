@@ -22,29 +22,38 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        pointsAwardedLabel.text = ""
+        foeActionLabel.text = ""
     }
     
-    func playMatch(playerMove: String) {
+    func playMatch(playerMove: Move) {
         //access the correct game and match
-        var currentMatch = currentGame.matches[currentGame.matchIndex]
+        let currentMatch = currentGame.matches[currentGame.matchIndex]
         
         //execute the match - get the computer's move, compare to the player's move
         currentMatch.playerMove = playerMove
-        
+        currentMatch.computerMove = currentGame.compMove()
+        currentMatch.matchPoints = currentMatch.calcScore()
         
         //reward points
+        pointsAwardedLabel.text = String(currentMatch.matchPoints)
+        foeActionLabel.text = currentMatch.computerMove == .Attack ? "Your foe has attacked" : "Your foe has yielded"
         
         //record the results - add to previous total score, record players move & calculate percent
+        currentGame.gameTotalPoints += currentMatch.matchPoints
+        
+        messageLabel.text = String(currentGame.gameTotalPoints)
     }
 
     @IBAction func attackButtonSelected(_ sender: Any) {
-        playMatch(playerMove: "Attack")
+        playMatch(playerMove: Move.Attack)
+
 
     
     }
     
     @IBAction func yieldButtonSelected(_ sender: Any) {
-        playMatch(playerMove: "Yield")
+        playMatch(playerMove: Move.Yield)
         
         
     }

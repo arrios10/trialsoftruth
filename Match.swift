@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum Move {
+    case Attack, Yield
+}
+
 class Match: NSObject, NSCoding {
     /* need initializer, computer move, player move*, point awarded*/
     
@@ -17,10 +21,39 @@ class Match: NSObject, NSCoding {
     
     var matchPoints: Int = 0
     
-    var computerMove: String = ""
+    var computerMove: Move?
     
-    var playerMove: String = ""
+    var playerMove: Move?
     
+    func calcScore() -> Int {
+        
+        // AA 1
+        // AY 3
+        // YA 0
+        // YY 2
+        
+        switch playerMove! {
+        case Move.Attack:
+            switch computerMove! {
+            case Move.Attack:
+                return 1
+                
+            case Move.Yield:
+                return 3
+            }
+            
+        case Move.Yield:
+            switch computerMove! {
+            case Move.Attack:
+                return 0
+                
+            case Move.Yield:
+                return 2
+            }
+            
+        }
+        
+    }
     
     func encode(with aCoder: NSCoder) {
     }

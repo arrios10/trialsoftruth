@@ -46,7 +46,6 @@
 		E50165881F7061D500453A55 = {
 			isa = PBXGroup;
 			children = (
-				84ABB71E1F79C6FE001BADA3 /* UserDefaultsManager.swift */,
 				E50165931F7061D500453A55 /* Trials of Truth */,
 				E50165921F7061D500453A55 /* Products */,
 			);
@@ -63,6 +62,7 @@
 		E50165931F7061D500453A55 /* Trials of Truth */ = {
 			isa = PBXGroup;
 			children = (
+				84ABB71E1F79C6FE001BADA3 /* UserDefaultsManager.swift */,
 				E50165AC1F73311100453A55 /* Game.swift */,
 				E50165AE1F73346600453A55 /* Match.swift */,
 				E50165A61F73260C00453A55 /* MainViewController.swift */,
@@ -315,6 +315,7 @@
 				E50165A51F7061D600453A55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

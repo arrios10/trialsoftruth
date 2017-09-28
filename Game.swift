@@ -24,13 +24,16 @@ class Game: NSObject, NSCoding {
     
     var matchIndex: Int = 0
     
-    func compMove() -> String {
+    func compMove() -> Move {
         
-        return ""
-    }
-  
-    func calcScore() -> Int {
-        return 0
+        //generate a random number between
+        let randomNumber = arc4random() % 2
+        
+        if randomNumber == 0 {
+            return Move.Attack
+        }
+        return Move.Yield
+
     }
     
     func encode(with aCoder: NSCoder) {
