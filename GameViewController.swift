@@ -11,6 +11,7 @@ import UIKit
 class GameViewController: UIViewController {
     
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var gameScoreLabel: UILabel!
     
     @IBOutlet weak var foeActionLabel: UILabel!
     
@@ -42,7 +43,7 @@ class GameViewController: UIViewController {
         //record the results - add to previous total score, record players move & calculate percent
         currentGame.gameTotalPoints += currentMatch.matchPoints
         
-        messageLabel.text = String(currentGame.gameTotalPoints)
+        gameScoreLabel.text = String(currentGame.gameTotalPoints)
     }
 
     @IBAction func attackButtonSelected(_ sender: Any) {
