@@ -108,10 +108,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="attackButton" destination="6mE-xX-v7j" id="OnO-Cj-Oau"/>
                         <outlet property="foeActionLabel" destination="GCS-Tg-91Q" id="aQr-Jb-3NI"/>
                         <outlet property="gameScoreLabel" destination="YbQ-G4-jbM" id="V8A-Lc-S9D"/>
                         <outlet property="messageLabel" destination="peM-ES-htv" id="uho-Wh-OH7"/>
                         <outlet property="pointsAwardedLabel" destination="gb7-ux-fz5" id="h2r-u4-m0W"/>
+                        <outlet property="yieldButton" destination="ZXX-ke-eFN" id="bVA-3w-pO5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uv6-sV-IuM" userLabel="First Responder" sceneMemberID="firstResponder"/>

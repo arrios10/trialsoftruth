@@ -17,6 +17,10 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var pointsAwardedLabel: UILabel!
     
+    @IBOutlet weak var attackButton: UIButton!
+    @IBOutlet weak var yieldButton: UIButton!
+    
+    
     var currentGame: Game! = Game()
     
     override func viewDidLoad() {
@@ -28,8 +32,11 @@ class GameViewController: UIViewController {
     }
     
     func playMatch(playerMove: Move) {
-        //access the correct game and match
-        let currentMatch = currentGame.matches[currentGame.matchIndex]
+        //create the match
+        let currentMatch = Match()
+        
+        //add the match to the matches array in the game object
+        currentGame.matches.append(currentMatch)
         
         //execute the match - get the computer's move, compare to the player's move
         currentMatch.playerMove = playerMove
@@ -44,6 +51,14 @@ class GameViewController: UIViewController {
         currentGame.gameTotalPoints += currentMatch.matchPoints
         
         gameScoreLabel.text = String(currentGame.gameTotalPoints)
+        
+        //end the game
+        if currentGame.matches.count == 10 {
+            messageLabel.text = "Game Over"
+            attackButton.isEnabled = false
+            yieldButton.isEnabled  = false
+            
+        }
     }
 
     @IBAction func attackButtonSelected(_ sender: Any) {
