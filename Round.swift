@@ -1,5 +1,5 @@
 //
-//  Match.swift
+//  Round.swift
 //  Trials of Truth
 //
 //  Created by Drew Rios on 9/20/17.
@@ -12,14 +12,14 @@ enum Move {
     case Attack, Yield
 }
 
-class Match: NSObject, NSCoding {
+class Round: NSObject, NSCoding {
     /* need initializer, computer move, player move*, point awarded*/
     
     override init() {
     
     }
     
-    var matchPoints: Int = 0
+    var roundPoints: Int = 0
     
     var computerMove: Move?
     

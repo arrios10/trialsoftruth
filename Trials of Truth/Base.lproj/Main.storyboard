@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start Your Quest"/>
                                 <connections>
-                                    <segue destination="i4U-P2-90G" kind="show" id="zeg-9D-hUZ"/>
+                                    <segue destination="Wae-T6-xxE" kind="show" id="KSs-R9-btQ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your High Score Is X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyg-pA-y8N">
@@ -47,6 +47,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1431" y="793"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="ujR-Z7-Ud5">
+            <objects>
+                <viewController id="Wae-T6-xxE" customClass="MapViewController" customModule="Trials_of_Truth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JS0-RJ-Dld"/>
+                        <viewControllerLayoutGuide type="bottom" id="w2n-Kv-0Vy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zBq-xb-1Lx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Add-7N-a8F">
+                                <rect key="frame" x="154" y="439" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Knight 1"/>
+                                <connections>
+                                    <segue destination="i4U-P2-90G" kind="show" id="3K9-AA-WT6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8yh-u0-OaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2108" y="792.95352323838085"/>
         </scene>
         <!--GameVC-->
         <scene sceneID="xbK-Vp-0Wd">
@@ -118,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uv6-sV-IuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2198" y="793"/>
+            <point key="canvasLocation" x="2777" y="793"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wSS-dJ-IxJ">

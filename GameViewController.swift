@@ -21,7 +21,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var yieldButton: UIButton!
     
     
-    var currentGame: Game! = Game()
+    var currentMatch: Match! = Match()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,29 +31,29 @@ class GameViewController: UIViewController {
         foeActionLabel.text = ""
     }
     
-    func playMatch(playerMove: Move) {
-        //create the match
-        let currentMatch = Match()
+    func playRound(playerMove: Move) {
+        //create the round
+        let currentRound = Round()
         
-        //add the match to the matches array in the game object
-        currentGame.matches.append(currentMatch)
+        //add the round to the round array in the Match object
+        currentMatch.rounds.append(currentRound)
         
-        //execute the match - get the computer's move, compare to the player's move
-        currentMatch.playerMove = playerMove
-        currentMatch.computerMove = currentGame.compMove()
-        currentMatch.matchPoints = currentMatch.calcScore()
+        //execute the round - get the computer's move, compare to the player's move
+        currentRound.playerMove = playerMove
+        currentRound.computerMove = currentMatch.compMove()
+        currentRound.roundPoints = currentRound.calcScore()
         
         //reward points
-        pointsAwardedLabel.text = String(currentMatch.matchPoints)
-        foeActionLabel.text = currentMatch.computerMove == .Attack ? "Your foe has attacked" : "Your foe has yielded"
+        pointsAwardedLabel.text = String(currentRound.roundPoints)
+        foeActionLabel.text = currentRound.computerMove == .Attack ? "Your foe has attacked" : "Your foe has yielded"
         
         //record the results - add to previous total score, record players move & calculate percent
-        currentGame.gameTotalPoints += currentMatch.matchPoints
+        currentMatch.matchTotalPoints += currentRound.roundPoints
         
-        gameScoreLabel.text = String(currentGame.gameTotalPoints)
+        gameScoreLabel.text = String(currentMatch.matchTotalPoints)
         
         //end the game
-        if currentGame.matches.count == 10 {
+        if currentMatch.rounds.count == 10 {
             messageLabel.text = "Game Over"
             attackButton.isEnabled = false
             yieldButton.isEnabled  = false
@@ -62,14 +62,14 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func attackButtonSelected(_ sender: Any) {
-        playMatch(playerMove: Move.Attack)
+        playRound(playerMove: Move.Attack)
 
 
     
     }
     
     @IBAction func yieldButtonSelected(_ sender: Any) {
-        playMatch(playerMove: Move.Yield)
+        playRound(playerMove: Move.Yield)
         
         
     }

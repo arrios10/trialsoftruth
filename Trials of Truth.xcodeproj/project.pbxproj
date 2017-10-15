@@ -15,7 +15,9 @@
 		E50165A71F73260C00453A55 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165A61F73260C00453A55 /* MainViewController.swift */; };
 		E50165A91F73261800453A55 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165A81F73261800453A55 /* GameViewController.swift */; };
 		E50165AD1F73311100453A55 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165AC1F73311100453A55 /* Game.swift */; };
-		E50165AF1F73346600453A55 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165AE1F73346600453A55 /* Match.swift */; };
+		E50165AF1F73346600453A55 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165AE1F73346600453A55 /* Round.swift */; };
+		E56A7E881F9183F400A9717D /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A7E871F9183F400A9717D /* Match.swift */; };
+		E56A7E8A1F9188FF00A9717D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A7E891F9188FF00A9717D /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +31,9 @@
 		E50165A61F73260C00453A55 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../MainViewController.swift; sourceTree = "<group>"; };
 		E50165A81F73261800453A55 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = ../GameViewController.swift; sourceTree = "<group>"; };
 		E50165AC1F73311100453A55 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = ../Game.swift; sourceTree = "<group>"; };
-		E50165AE1F73346600453A55 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Match.swift; path = ../Match.swift; sourceTree = "<group>"; };
+		E50165AE1F73346600453A55 /* Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Round.swift; path = ../Round.swift; sourceTree = "<group>"; };
+		E56A7E871F9183F400A9717D /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		E56A7E891F9188FF00A9717D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +68,13 @@
 			children = (
 				84ABB71E1F79C6FE001BADA3 /* UserDefaultsManager.swift */,
 				E50165AC1F73311100453A55 /* Game.swift */,
-				E50165AE1F73346600453A55 /* Match.swift */,
+				E50165AE1F73346600453A55 /* Round.swift */,
+				E56A7E871F9183F400A9717D /* Match.swift */,
 				E50165A61F73260C00453A55 /* MainViewController.swift */,
 				E50165A81F73261800453A55 /* GameViewController.swift */,
 				E50165941F7061D500453A55 /* AppDelegate.swift */,
 				E50165981F7061D600453A55 /* Main.storyboard */,
+				E56A7E891F9188FF00A9717D /* MapViewController.swift */,
 				E501659B1F7061D600453A55 /* Assets.xcassets */,
 				E501659D1F7061D600453A55 /* LaunchScreen.storyboard */,
 				E50165A01F7061D600453A55 /* Info.plist */,
@@ -152,8 +158,10 @@
 				E50165A91F73261800453A55 /* GameViewController.swift in Sources */,
 				84ABB71F1F79C6FE001BADA3 /* UserDefaultsManager.swift in Sources */,
 				E50165A71F73260C00453A55 /* MainViewController.swift in Sources */,
-				E50165AF1F73346600453A55 /* Match.swift in Sources */,
+				E50165AF1F73346600453A55 /* Round.swift in Sources */,
 				E50165AD1F73311100453A55 /* Game.swift in Sources */,
+				E56A7E881F9183F400A9717D /* Match.swift in Sources */,
+				E56A7E8A1F9188FF00A9717D /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
