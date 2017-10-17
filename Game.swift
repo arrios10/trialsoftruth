@@ -22,7 +22,11 @@ class Game: NSObject, NSCoding {
         
     var matchIndex = 0
     
+    var gameTotalPoints = 0
     
+    func nextMatch() {
+        
+    }
     
     func encode(with aCoder: NSCoder) {
     }

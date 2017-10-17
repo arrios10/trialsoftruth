@@ -11,7 +11,7 @@ import UIKit
 class GameViewController: UIViewController {
     
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var gameScoreLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     @IBOutlet weak var foeActionLabel: UILabel!
     
@@ -20,8 +20,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var attackButton: UIButton!
     @IBOutlet weak var yieldButton: UIButton!
     
-    
-    var currentMatch: Match! = Match()
+    var currentMatch: Match!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +31,8 @@ class GameViewController: UIViewController {
     }
     
     func playRound(playerMove: Move) {
+
+        
         //create the round
         let currentRound = Round()
         
@@ -50,7 +51,7 @@ class GameViewController: UIViewController {
         //record the results - add to previous total score, record players move & calculate percent
         currentMatch.matchTotalPoints += currentRound.roundPoints
         
-        gameScoreLabel.text = String(currentMatch.matchTotalPoints)
+        scoreLabel.text = String(currentMatch.matchTotalPoints)
         
         //end the game
         if currentMatch.rounds.count == 10 {

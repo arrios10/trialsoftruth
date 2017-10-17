@@ -68,9 +68,24 @@
                                     <segue destination="i4U-P2-90G" kind="show" id="3K9-AA-WT6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mn8-U3-baV">
+                                <rect key="frame" x="154" y="340" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Knight 3"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNe-gd-VGw">
+                                <rect key="frame" x="154" y="389" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Knight 2"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="knightOneButton" destination="Add-7N-a8F" id="yGo-ja-7AP"/>
+                        <outlet property="knightThreeButton" destination="Mn8-U3-baV" id="8Rf-nS-WP0"/>
+                        <outlet property="knightTwoButton" destination="wNe-gd-VGw" id="CUx-k6-4N9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yh-u0-OaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -138,9 +153,9 @@
                     <connections>
                         <outlet property="attackButton" destination="6mE-xX-v7j" id="OnO-Cj-Oau"/>
                         <outlet property="foeActionLabel" destination="GCS-Tg-91Q" id="aQr-Jb-3NI"/>
-                        <outlet property="gameScoreLabel" destination="YbQ-G4-jbM" id="V8A-Lc-S9D"/>
                         <outlet property="messageLabel" destination="peM-ES-htv" id="uho-Wh-OH7"/>
                         <outlet property="pointsAwardedLabel" destination="gb7-ux-fz5" id="h2r-u4-m0W"/>
+                        <outlet property="scoreLabel" destination="YbQ-G4-jbM" id="V8A-Lc-S9D"/>
                         <outlet property="yieldButton" destination="ZXX-ke-eFN" id="bVA-3w-pO5"/>
                     </connections>
                 </viewController>

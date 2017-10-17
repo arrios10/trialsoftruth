@@ -9,27 +9,35 @@
 import UIKit
 
 class MapViewController: UIViewController {
-
+    
+    @IBOutlet weak var knightOneButton: UIButton!
+    
+    @IBOutlet weak var knightTwoButton: UIButton!
+    
+    @IBOutlet weak var knightThreeButton: UIButton!
+    
+    var currentGame: Game! = Game()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    //method to update current game state whenever the map view appears
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //enable/disable knight buttons
+    
+    //track progress through game in order from first knight to last knight
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let nextController = segue.destination as? GameViewController
+        
+        let currentMatch = Match()
+        nextController?.currentMatch = currentMatch
+        currentGame.matches.append(currentMatch)
     }
-    */
-
 }
