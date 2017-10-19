@@ -10,22 +10,47 @@ import UIKit
 
 class MapViewController: UIViewController {
     
-    @IBOutlet weak var knightOneButton: UIButton!
-    
-    @IBOutlet weak var knightTwoButton: UIButton!
-    
-    @IBOutlet weak var knightThreeButton: UIButton!
+    @IBOutlet weak var wraithOneButton: UIButton!
+    @IBOutlet weak var wraithTwoButton: UIButton!
+    @IBOutlet weak var wraithThreeButton: UIButton!
+    @IBOutlet weak var wraithFourButton: UIButton!
+    @IBOutlet weak var wraithFiveButton: UIButton!
+    @IBOutlet weak var totalGameScore: UILabel!
     
     var currentGame: Game! = Game()
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        wraithTwoButton.isEnabled = false
+        wraithThreeButton.isEnabled = false
+        wraithFourButton.isEnabled = false
+        wraithFiveButton.isEnabled = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateGame()
+        
+        
         
     }
 
+    
+    
     //method to update current game state whenever the map view appears
+    
+    func updateGame() {
+    
+        totalGameScore.text = "\(currentGame.gameTotalPoints)"
+       
+        if currentGame.matches.count >= 1 && currentGame.matches[0].matchIsOver == true {
+            wraithTwoButton.isEnabled = true
+        }
+    }
     
     //enable/disable knight buttons
     
@@ -39,5 +64,6 @@ class MapViewController: UIViewController {
         let currentMatch = Match()
         nextController?.currentMatch = currentMatch
         currentGame.matches.append(currentMatch)
+        
     }
 }

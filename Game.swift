@@ -22,6 +22,16 @@ class Game: NSObject, NSCoding {
         
     var matchIndex = 0
     
+    var currentMatch: Match? {
+        get {
+            guard matches.count > matchIndex else {
+                return nil
+            }
+            
+            return matches[matchIndex]
+        }
+    }
+    
     var gameTotalPoints = 0
     
     func nextMatch() {

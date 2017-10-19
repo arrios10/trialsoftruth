@@ -58,6 +58,8 @@ class GameViewController: UIViewController {
             messageLabel.text = "Game Over"
             attackButton.isEnabled = false
             yieldButton.isEnabled  = false
+            currentMatch.matchIsOver = true
+            
             
         }
     }

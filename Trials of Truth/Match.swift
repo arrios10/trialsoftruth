@@ -20,6 +20,8 @@ class Match: NSObject, NSCoding {
     
     var roundIndex: Int = 0
     
+    var matchIsOver = false 
+    
     func compMove() -> Move {
         
         //get the number of rounds played
