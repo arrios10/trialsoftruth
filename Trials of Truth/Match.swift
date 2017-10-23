@@ -41,18 +41,24 @@ class Match: NSObject, NSCoding {
         
         let attackRate = attacks / totalRounds
         
-        // if below 20% or above 80%, ATTACK! otherwise, attack 20% of the time
+        // if below 20% or above 80%, ATTACK!, if attack rate is exactly 50% attack 25% of the time, otherwise, attack 20% of the time
         
-        if attackRate <= 0.2 || attackRate  >= 0.8 {
-            return Move.Attack
-        }   else {
-            //generate a random number between 0 and 4
-            let randomNumber = arc4random() % 5
-            
+        if attackRate == 0.5 {
+            let randomNumber = arc4random() % 4
             if randomNumber == 0 {
+                print("mode 1 - 25%")
                 return Move.Attack
             }
-            return Move.Yield
+        } else if attackRate <= 0.2 || attackRate  >= 0.8 {
+                print("mode 2 - 100%")
+                return Move.Attack
+            }   else {
+                //generate a random number between 0 and 4
+                let randomNumber = arc4random() % 5
+                if randomNumber == 0 {
+                    print("mode 3 - 20%")
+                    return Move.Attack
+                }
             
             
             // switch instead of if for attackRate test
@@ -65,6 +71,9 @@ class Match: NSObject, NSCoding {
           
             
         }
+        print("mode 4 - 0%")
+        return Move.Yield
+
     }
     
     

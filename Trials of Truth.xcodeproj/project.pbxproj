@@ -66,11 +66,11 @@
 		E50165931F7061D500453A55 /* Trials of Truth */ = {
 			isa = PBXGroup;
 			children = (
+				84ABB71E1F79C6FE001BADA3 /* UserDefaultsManager.swift */,
 				E50165AC1F73311100453A55 /* Game.swift */,
 				E56A7E871F9183F400A9717D /* Match.swift */,
 				E50165AE1F73346600453A55 /* Round.swift */,
 				E50165A61F73260C00453A55 /* MainViewController.swift */,
-				84ABB71E1F79C6FE001BADA3 /* UserDefaultsManager.swift */,
 				E56A7E891F9188FF00A9717D /* MapViewController.swift */,
 				E50165A81F73261800453A55 /* GameViewController.swift */,
 				E50165941F7061D500453A55 /* AppDelegate.swift */,
