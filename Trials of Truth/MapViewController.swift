@@ -17,8 +17,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var wraithFiveButton: UIButton!
     @IBOutlet weak var totalGameScore: UILabel!
     
-    var currentGame: Game! = Game()
-    
+ 
     
     
     override func viewDidLoad() {
@@ -94,4 +93,7 @@ class MapViewController: UIViewController {
         currentGame.matches.append(currentMatch)
         
     }
+    
+   
+    
 }
