@@ -8,11 +8,14 @@
 
 import Foundation
 
-class Game: NSObject, NSCoding {
+class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
     /* need initializer, total points, results of each round,
      which round youre currently in, 
      some way of saying the state to disk then recalling it, 
      method to return for attack percent */
+//    enum CodingKeys: String, CodingKey {
+//        case gameTotalPoints
+//    }
     
     override init() {
         
@@ -39,10 +42,23 @@ class Game: NSObject, NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
+        aCoder.encode(gameTotalPoints, forKey: "gameTotalPoints")
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
+        gameTotalPoints = aDecoder.decodeInteger(forKey: "gameTotalPoints")
     }
     
+//    func encode(to encoder: Encoder) throws {
+//        var container = encoder.container(keyedBy: CodingKeys.self)
+//        try container.encode(gameTotalPoints, forKey: .gameTotalPoints)
+//    }
+//
+//    required init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//
+//        gameTotalPoints = try values.decode(Int.self, forKey: .gameTotalPoints)
+//
+//    }
     
 }

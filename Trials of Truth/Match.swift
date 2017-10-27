@@ -79,10 +79,13 @@ class Match: NSObject, NSCoding {
     
 
     func encode(with aCoder: NSCoder) {
+        aCoder.encode(matchIsOver, forKey: "matchIsOver")
     }
     
     required init?(coder aDecoder: NSCoder) {
+       // matchIsOver = aDecoder.decodeObject(matchIsOver)
     }
+    
     
 
 }

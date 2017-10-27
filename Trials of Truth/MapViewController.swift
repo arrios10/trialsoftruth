@@ -77,6 +77,9 @@ class MapViewController: UIViewController {
             currentGame.gameTotalPoints += currentGame.matches[4].matchTotalPoints
             totalGameScore.text = "\(currentGame.gameTotalPoints)"
         }
+        
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: currentGame)
+        UserDefaults.standard.set(encodedData, forKey: "currentGame")
     }
     
     //enable/disable knight buttons

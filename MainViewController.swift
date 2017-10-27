@@ -24,6 +24,14 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if let data = UserDefaults.standard.data(forKey: "currentGame"),
+            let game = NSKeyedUnarchiver.unarchiveObject(with: data) as? Game {
+            currentGame = game
+            print("gameTotalPoints: \(currentGame.gameTotalPoints)")
+        } else {
+            print("No game data")
+        }
+        
         let isGameOver = currentGame?.matches.count == 5 && currentGame?.matches[4].matchIsOver == true
         
         if currentGame == nil || isGameOver == true {
