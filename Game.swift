@@ -43,10 +43,15 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(gameTotalPoints, forKey: "gameTotalPoints")
+        aCoder.encode(matches, forKey: "matches")
     }
 
     required init?(coder aDecoder: NSCoder) {
         gameTotalPoints = aDecoder.decodeInteger(forKey: "gameTotalPoints")
+        if let savedMatches = aDecoder.decodeObject(forKey: "matches") as? [Match] {
+            matches = savedMatches
+        }
+        
     }
     
 //    func encode(to encoder: Encoder) throws {

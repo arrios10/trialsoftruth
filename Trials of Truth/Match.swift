@@ -9,10 +9,13 @@
 import Foundation
 
 class Match: NSObject, NSCoding {
+
     
     override init() {
     
     }
+    
+    var currentWraith: Wraith!  = Wraith()
     
     var matchTotalPoints: Int = 0
     
@@ -20,12 +23,11 @@ class Match: NSObject, NSCoding {
     
     var roundIndex: Int = 0
     
-    var matchIsOver = false 
+    var matchIsOver = false
     
-    func compMove() -> Move {
-        
-        //get the number of rounds played
-        
+
+    
+    func calcAttackRate() -> Float {
         let totalRounds = Float(rounds.count)
         
         //get the number of times the player attacked
@@ -41,49 +43,25 @@ class Match: NSObject, NSCoding {
         
         let attackRate = attacks / totalRounds
         
-        // if below 20% or above 80%, ATTACK!, if attack rate is exactly 50% attack 25% of the time, otherwise, attack 20% of the time
-        
-        if attackRate == 0.5 {
-            let randomNumber = arc4random() % 4
-            if randomNumber == 0 {
-                print("mode 1 - 25%")
-                return Move.Attack
-            }
-        } else if attackRate <= 0.2 || attackRate  >= 0.8 {
-                print("mode 2 - 100%")
-                return Move.Attack
-            }   else {
-                //generate a random number between 0 and 4
-                let randomNumber = arc4random() % 5
-                if randomNumber == 0 {
-                    print("mode 3 - 20%")
-                    return Move.Attack
-                }
-            
-            
-            // switch instead of if for attackRate test
-            //        switch attackRate {
-            //        case 0...0.2: break
-            //        case 0.8...1: break
-            //        default:
-            //            break
-            //        }
-          
-            
-        }
-        print("mode 4 - 0%")
-        return Move.Yield
-
+        return attackRate
     }
-    
     
 
     func encode(with aCoder: NSCoder) {
         aCoder.encode(matchIsOver, forKey: "matchIsOver")
+        aCoder.encode(matchTotalPoints, forKey: "matchTotalPoints")
+        aCoder.encode(rounds, forKey: "rounds")
+        aCoder.encode(roundIndex, forKey: "roundIndex")
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
-       // matchIsOver = aDecoder.decodeObject(matchIsOver)
+        matchIsOver = aDecoder.decodeBool(forKey: "matchIsOver")
+        matchTotalPoints = aDecoder.decodeInteger(forKey: "matchTotalPoints")
+        if let savedRounds = aDecoder.decodeObject(forKey: "rounds") as? [Round] {
+            rounds = savedRounds
+        }
+        roundIndex = aDecoder.decodeInteger(forKey: "roundIndex")
     }
     
     

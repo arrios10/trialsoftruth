@@ -41,7 +41,9 @@ class GameViewController: UIViewController {
         
         //execute the round - get the computer's move, compare to the player's move
         currentRound.playerMove = playerMove
-        currentRound.computerMove = currentMatch.compMove()
+        
+        //**FIX THIS**// currentRound.computerMove = currentMatch().SOMETHING
+        
         currentRound.roundPoints = currentRound.calcScore()
         
         //reward points
@@ -59,7 +61,7 @@ class GameViewController: UIViewController {
             attackButton.isEnabled = false
             yieldButton.isEnabled  = false
             currentMatch.matchIsOver = true
-            
+            currentGame.gameTotalPoints += currentMatch.matchTotalPoints
             
         }
     }
