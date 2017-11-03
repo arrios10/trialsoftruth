@@ -15,7 +15,7 @@ class Match: NSObject, NSCoding {
     
     }
     
-    var currentWraith: Wraith!  = Wraith()
+    var currentWraith: Wraith! = Wraith()
     
     var matchTotalPoints: Int = 0
     

@@ -42,7 +42,8 @@ class GameViewController: UIViewController {
         //execute the round - get the computer's move, compare to the player's move
         currentRound.playerMove = playerMove
         
-        //**FIX THIS**// currentRound.computerMove = currentMatch().SOMETHING
+        let attackRate = currentMatch.calcAttackRate()
+        currentRound.computerMove = currentMatch.currentWraith.compMove(attackRate: attackRate)
         
         currentRound.roundPoints = currentRound.calcScore()
         
