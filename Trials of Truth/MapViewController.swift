@@ -46,41 +46,31 @@ class MapViewController: UIViewController {
        
         if currentGame.matches.count >= 1 && currentGame.matches[0].matchIsOver == true {
             wraithTwoButton.isEnabled = true
-            //currentGame.gameTotalPoints += currentGame.matches[0].matchTotalPoints
             wraithOneButton.isEnabled = false
         }
         
         if currentGame.matches.count >= 2 && currentGame.matches[1].matchIsOver == true {
             wraithThreeButton.isEnabled = true
-            //currentGame.gameTotalPoints += currentGame.matches[1].matchTotalPoints
             wraithTwoButton.isEnabled = false
         }
         
         if currentGame.matches.count >= 3 && currentGame.matches[2].matchIsOver == true {
             wraithFourButton.isEnabled = true
-            //currentGame.gameTotalPoints += currentGame.matches[2].matchTotalPoints
             wraithThreeButton.isEnabled = false
         }
         
         if currentGame.matches.count >= 4 && currentGame.matches[3].matchIsOver == true {
             wraithFiveButton.isEnabled = true
-            //currentGame.gameTotalPoints += currentGame.matches[3].matchTotalPoints
             wraithFourButton.isEnabled = false
         }
         
         if currentGame.matches.count >= 5 && currentGame.matches[4].matchIsOver == true {
             wraithFiveButton.isEnabled = false
-          //  currentGame.gameTotalPoints += currentGame.matches[4].matchTotalPoints
         }
         
         let encodedData = NSKeyedArchiver.archivedData(withRootObject: currentGame)
         UserDefaults.standard.set(encodedData, forKey: "currentGame")
     }
-    
-    //enable/disable knight buttons
-    
-    //track progress through game in order from first knight to last knight
-    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

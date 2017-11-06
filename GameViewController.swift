@@ -21,6 +21,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var yieldButton: UIButton!
     
     var currentMatch: Match!
+    var attackRate: Float = 0.0
+    var compAction: RoundAction!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,19 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
         pointsAwardedLabel.text = ""
         foeActionLabel.text = ""
+        
+        setupRound()
+        
+        messageLabel.text = compAction.message
+    }
+    
+    func setupRound() {
+        //calculate attack rate
+        if currentMatch.rounds.count < 10 {
+            attackRate = currentMatch.calcAttackRate()
+            compAction = currentMatch.currentWraith.compMove(attackRate: attackRate)
+        }
+       
     }
     
     func playRound(playerMove: Move) {
@@ -39,12 +54,9 @@ class GameViewController: UIViewController {
         //add the round to the round array in the Match object
         currentMatch.rounds.append(currentRound)
         
-        //execute the round - get the computer's move, compare to the player's move
         currentRound.playerMove = playerMove
-        
-        let attackRate = currentMatch.calcAttackRate()
-        currentRound.computerMove = currentMatch.currentWraith.compMove(attackRate: attackRate)
-        
+        currentRound.computerMove = compAction.move
+        messageLabel.text = compAction.message
         currentRound.roundPoints = currentRound.calcScore()
         
         //reward points
@@ -55,6 +67,9 @@ class GameViewController: UIViewController {
         currentMatch.matchTotalPoints += currentRound.roundPoints
         
         scoreLabel.text = String(currentMatch.matchTotalPoints)
+        
+        //set up the next game
+        
         
         //end the game
         if currentMatch.rounds.count == 10 {
@@ -69,6 +84,7 @@ class GameViewController: UIViewController {
 
     @IBAction func attackButtonSelected(_ sender: Any) {
         playRound(playerMove: Move.Attack)
+        setupRound()
 
 
     
@@ -76,6 +92,7 @@ class GameViewController: UIViewController {
     
     @IBAction func yieldButtonSelected(_ sender: Any) {
         playRound(playerMove: Move.Yield)
+        setupRound()
         
         
     }
