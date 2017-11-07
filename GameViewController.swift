@@ -21,7 +21,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var yieldButton: UIButton!
     
     var currentMatch: Match!
-    var attackRate: Float = 0.0
     var compAction: RoundAction!
     
     override func viewDidLoad() {
@@ -32,16 +31,17 @@ class GameViewController: UIViewController {
         foeActionLabel.text = ""
         
         setupRound()
-        
-        messageLabel.text = compAction.message
     }
     
     func setupRound() {
         //calculate attack rate
         if currentMatch.rounds.count < 10 {
-            attackRate = currentMatch.calcAttackRate()
-            compAction = currentMatch.currentWraith.compMove(attackRate: attackRate)
+            let attackRate = currentMatch.calcAttackRate()
+            compAction = currentMatch.currentWraith.compMove(attackRate: attackRate, roundIndex: currentMatch.roundIndex)
+            print(currentMatch.roundIndex)
+            print(compAction.move)
         }
+        messageLabel.text = compAction.message
        
     }
     
@@ -56,7 +56,7 @@ class GameViewController: UIViewController {
         
         currentRound.playerMove = playerMove
         currentRound.computerMove = compAction.move
-        messageLabel.text = compAction.message
+        
         currentRound.roundPoints = currentRound.calcScore()
         
         //reward points
@@ -67,9 +67,6 @@ class GameViewController: UIViewController {
         currentMatch.matchTotalPoints += currentRound.roundPoints
         
         scoreLabel.text = String(currentMatch.matchTotalPoints)
-        
-        //set up the next game
-        
         
         //end the game
         if currentMatch.rounds.count == 10 {
