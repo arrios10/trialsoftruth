@@ -18,6 +18,7 @@
 		E50165AF1F73346600453A55 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165AE1F73346600453A55 /* Round.swift */; };
 		E56A7E881F9183F400A9717D /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A7E871F9183F400A9717D /* Match.swift */; };
 		E56A7E8A1F9188FF00A9717D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A7E891F9188FF00A9717D /* MapViewController.swift */; };
+		E58EC3651FB138D800F56F96 /* MeanHelloWraith.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58EC3641FB138D800F56F96 /* MeanHelloWraith.swift */; };
 		E5B595D31FA7EC150086E782 /* Wraith.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B595D21FA7EC150086E782 /* Wraith.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		E50165AE1F73346600453A55 /* Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Round.swift; path = ../Round.swift; sourceTree = "<group>"; };
 		E56A7E871F9183F400A9717D /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		E56A7E891F9188FF00A9717D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E58EC3641FB138D800F56F96 /* MeanHelloWraith.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeanHelloWraith.swift; sourceTree = "<group>"; };
 		E5B595D21FA7EC150086E782 /* Wraith.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wraith.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 			children = (
 				84ABB71E1F79C6FE001BADA3 /* UserDefaultsManager.swift */,
 				E5B595D21FA7EC150086E782 /* Wraith.swift */,
+				E58EC3641FB138D800F56F96 /* MeanHelloWraith.swift */,
 				E50165AC1F73311100453A55 /* Game.swift */,
 				E56A7E871F9183F400A9717D /* Match.swift */,
 				E50165AE1F73346600453A55 /* Round.swift */,
@@ -167,6 +170,7 @@
 				E50165AF1F73346600453A55 /* Round.swift in Sources */,
 				E50165AD1F73311100453A55 /* Game.swift in Sources */,
 				E56A7E881F9183F400A9717D /* Match.swift in Sources */,
+				E58EC3651FB138D800F56F96 /* MeanHelloWraith.swift in Sources */,
 				E56A7E8A1F9188FF00A9717D /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -44,27 +44,27 @@ class MapViewController: UIViewController {
     
         totalGameScore.text = "\(currentGame.gameTotalPoints)"
        
-        if currentGame.matches.count >= 1 && currentGame.matches[0].matchIsOver == true {
+        if currentGame.matches[0].matchIsOver == true {
             wraithTwoButton.isEnabled = true
             wraithOneButton.isEnabled = false
         }
         
-        if currentGame.matches.count >= 2 && currentGame.matches[1].matchIsOver == true {
+        if currentGame.matches[1].matchIsOver == true {
             wraithThreeButton.isEnabled = true
             wraithTwoButton.isEnabled = false
         }
         
-        if currentGame.matches.count >= 3 && currentGame.matches[2].matchIsOver == true {
+        if currentGame.matches[2].matchIsOver == true {
             wraithFourButton.isEnabled = true
             wraithThreeButton.isEnabled = false
         }
         
-        if currentGame.matches.count >= 4 && currentGame.matches[3].matchIsOver == true {
+        if currentGame.matches[3].matchIsOver == true {
             wraithFiveButton.isEnabled = true
             wraithFourButton.isEnabled = false
         }
         
-        if currentGame.matches.count >= 5 && currentGame.matches[4].matchIsOver == true {
+        if currentGame.matches[4].matchIsOver == true {
             wraithFiveButton.isEnabled = false
         }
         
@@ -76,10 +76,7 @@ class MapViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextController = segue.destination as? GameViewController
         
-        let currentMatch = Match()
-        nextController?.currentMatch = currentMatch
-        currentGame.matches.append(currentMatch)
-        
+        nextController?.currentMatch = currentGame.currentMatch
     }
     
    

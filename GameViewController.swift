@@ -30,6 +30,8 @@ class GameViewController: UIViewController {
         pointsAwardedLabel.text = ""
         foeActionLabel.text = ""
         
+        pointsAwardedLabel.text = String(currentMatch.matchTotalPoints)
+        
         setupRound()
     }
     

@@ -21,7 +21,7 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
         
     }
 
-    var matches: [Match] = []
+    var matches: [Match] = [Match(),Match(),Match(),Match(),Match()]
         
     var matchIndex = 0
     
