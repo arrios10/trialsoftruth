@@ -32,7 +32,7 @@ class MainViewController: UIViewController {
             print("No game data")
         }
         
-        let isGameOver = currentGame?.matches.count == 5 && currentGame?.matches[4].matchIsOver == true
+        let isGameOver = currentGame?.matches[4].matchIsOver == true
         
         if currentGame == nil || isGameOver == true {
             continueQuestButton.isEnabled = false

@@ -27,12 +27,13 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        pointsAwardedLabel.text = ""
         foeActionLabel.text = ""
-        
-        pointsAwardedLabel.text = String(currentMatch.matchTotalPoints)
+    
+        scoreLabel.text = String(currentMatch.matchTotalPoints)
         
         setupRound()
+        
+        print("current match:\(currentGame.matchIndex)")
     }
     
     func setupRound() {
@@ -40,10 +41,10 @@ class GameViewController: UIViewController {
         if currentMatch.rounds.count < 10 {
             let attackRate = currentMatch.calcAttackRate()
             compAction = currentMatch.currentWraith.compMove(attackRate: attackRate, roundIndex: currentMatch.roundIndex)
-            print(currentMatch.roundIndex)
-            print(compAction.move)
         }
         messageLabel.text = compAction.message
+        print("current round:\(currentMatch.roundIndex)")
+
        
     }
     
@@ -55,6 +56,10 @@ class GameViewController: UIViewController {
         
         //add the round to the round array in the Match object
         currentMatch.rounds.append(currentRound)
+        
+        if currentMatch.roundIndex < 10 {
+            currentMatch.roundIndex += 1
+        }
         
         currentRound.playerMove = playerMove
         currentRound.computerMove = compAction.move
@@ -70,12 +75,15 @@ class GameViewController: UIViewController {
         
         scoreLabel.text = String(currentMatch.matchTotalPoints)
         
+        
+        
         //end the game
         if currentMatch.rounds.count == 10 {
             messageLabel.text = "Game Over"
             attackButton.isEnabled = false
             yieldButton.isEnabled  = false
             currentMatch.matchIsOver = true
+            currentGame.matchIndex += 1
             currentGame.gameTotalPoints += currentMatch.matchTotalPoints
             
         }

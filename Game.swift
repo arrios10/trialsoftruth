@@ -24,7 +24,7 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
     var matches: [Match] = [Match(),Match(),Match(),Match(),Match()]
         
     var matchIndex = 0
-    
+
     var currentMatch: Match? {
         get {
             guard matches.count > matchIndex else {
@@ -37,9 +37,6 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
     
     var gameTotalPoints = 0
     
-    func nextMatch() {
-        
-    }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(gameTotalPoints, forKey: "gameTotalPoints")

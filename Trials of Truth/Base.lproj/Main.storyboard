@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gY0-oT-mF7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gY0-oT-mF7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -195,7 +195,7 @@
                                     <action selector="yieldButtonSelected:" destination="i4U-P2-90G" eventType="touchUpInside" id="bIa-Ln-Gip"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your foe has attacked " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCS-Tg-91Q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCS-Tg-91Q">
                                 <rect key="frame" x="46" y="362" width="283" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="bgP-fw-5em"/>
@@ -214,7 +214,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are awarded 10 points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gb7-ux-fz5">
-                                <rect key="frame" x="25" y="436" width="324" height="35"/>
+                                <rect key="frame" x="25" y="225" width="324" height="69"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -233,12 +233,12 @@
                             <constraint firstItem="GCS-Tg-91Q" firstAttribute="trailing" secondItem="peM-ES-htv" secondAttribute="trailing" constant="56" id="Vm0-mQ-JZg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZXX-ke-eFN" secondAttribute="trailing" constant="37" id="Wf6-yn-Idv"/>
                             <constraint firstItem="YbQ-G4-jbM" firstAttribute="leading" secondItem="GCS-Tg-91Q" secondAttribute="leading" constant="55" id="csW-V9-nao"/>
-                            <constraint firstItem="gb7-ux-fz5" firstAttribute="top" secondItem="GCS-Tg-91Q" secondAttribute="bottom" constant="16" id="eUZ-hF-XLf"/>
+                            <constraint firstItem="gb7-ux-fz5" firstAttribute="top" secondItem="GCS-Tg-91Q" secondAttribute="bottom" constant="-195" id="eUZ-hF-XLf"/>
                             <constraint firstItem="YbQ-G4-jbM" firstAttribute="trailing" secondItem="GCS-Tg-91Q" secondAttribute="trailing" constant="-56" id="kag-oD-KXN"/>
                             <constraint firstItem="6mE-xX-v7j" firstAttribute="baseline" secondItem="ZXX-ke-eFN" secondAttribute="baseline" id="sv5-Xe-dvz"/>
                             <constraint firstItem="GCS-Tg-91Q" firstAttribute="leading" secondItem="peM-ES-htv" secondAttribute="leading" constant="-55" id="uem-Id-iPC"/>
                             <constraint firstItem="gb7-ux-fz5" firstAttribute="centerX" secondItem="YbQ-G4-jbM" secondAttribute="centerX" id="umq-3L-PVr"/>
-                            <constraint firstItem="YbQ-G4-jbM" firstAttribute="top" secondItem="gb7-ux-fz5" secondAttribute="bottom" constant="8" symbolic="YES" id="yFo-IS-gdp"/>
+                            <constraint firstItem="YbQ-G4-jbM" firstAttribute="top" secondItem="gb7-ux-fz5" secondAttribute="bottom" constant="185" id="yFo-IS-gdp"/>
                         </constraints>
                     </view>
                     <connections>
