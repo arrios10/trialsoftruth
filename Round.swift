@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Move {
+enum Move: Int {
     case Attack, Yield
 }
 
@@ -56,9 +56,11 @@ class Round: NSObject, NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
+        aCoder.encode(playerMove, forKey: "playerMove")
     }
     
     required init?(coder aDecoder: NSCoder) {
+        playerMove = Move(rawValue: aDecoder.decodeInteger(forKey: "playerMove"))
     }
     
 

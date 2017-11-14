@@ -57,9 +57,7 @@ class GameViewController: UIViewController {
         //add the round to the round array in the Match object
         currentMatch.rounds.append(currentRound)
         
-        if currentMatch.roundIndex < 10 {
-            currentMatch.roundIndex += 1
-        }
+        currentMatch.roundIndex += 1
         
         currentRound.playerMove = playerMove
         currentRound.computerMove = compAction.move
