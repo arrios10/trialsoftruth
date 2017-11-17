@@ -10,9 +10,7 @@ import Foundation
 
 class MeanHelloWraith: Wraith {
     
-//    override var meanList: [String] = []
-    
-    
+
     //attack first no matter what, then act normal
     
    

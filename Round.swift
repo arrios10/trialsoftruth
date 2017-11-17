@@ -56,11 +56,15 @@ class Round: NSObject, NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(playerMove, forKey: "playerMove")
+        aCoder.encode(playerMove!.rawValue, forKey: "playerMove")
+        aCoder.encode(computerMove!.rawValue, forKey: "computerMove")
+        aCoder.encode(roundPoints, forKey: "roundPoints")
     }
     
     required init?(coder aDecoder: NSCoder) {
         playerMove = Move(rawValue: aDecoder.decodeInteger(forKey: "playerMove"))
+        computerMove =  Move(rawValue: aDecoder.decodeInteger(forKey: "computerMove"))
+        roundPoints = aDecoder.decodeInteger(forKey: "roundPoints")
     }
     
 

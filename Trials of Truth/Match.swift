@@ -25,8 +25,16 @@ class Match: NSObject, NSCoding {
     
     var matchIsOver = false
     
-
-    
+    var currentRound: Round? {
+        get {
+            guard rounds.count > roundIndex else {
+                return nil
+            }
+            
+            return rounds[roundIndex]
+        }
+    }
+        
     func calcAttackRate() -> Float {
         let totalRounds = Float(rounds.count)
         

@@ -23,6 +23,10 @@ class GameViewController: UIViewController {
     var currentMatch: Match!
     var compAction: RoundAction!
     
+    // REFACTOR (for your consideration):
+    // - Single function in charge of updating the display (showing game state)
+    // - Single function responsible for handling the player's choice and adding a new round
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,7 +48,6 @@ class GameViewController: UIViewController {
         }
         messageLabel.text = compAction.message
         print("current round:\(currentMatch.roundIndex)")
-
        
     }
     
@@ -57,15 +60,16 @@ class GameViewController: UIViewController {
         //add the round to the round array in the Match object
         currentMatch.rounds.append(currentRound)
         
-        currentMatch.roundIndex += 1
+        currentMatch.roundIndex = currentMatch.rounds.count - 1
         
         currentRound.playerMove = playerMove
         currentRound.computerMove = compAction.move
         
         currentRound.roundPoints = currentRound.calcScore()
         
-        //reward points
         pointsAwardedLabel.text = String(currentRound.roundPoints)
+        
+        //reward points
         foeActionLabel.text = currentRound.computerMove == .Attack ? "Your foe has attacked" : "Your foe has yielded"
         
         //record the results - add to previous total score, record players move & calculate percent
@@ -85,21 +89,16 @@ class GameViewController: UIViewController {
             currentGame.gameTotalPoints += currentMatch.matchTotalPoints
             
         }
+        
+        setupRound()
     }
 
     @IBAction func attackButtonSelected(_ sender: Any) {
         playRound(playerMove: Move.Attack)
-        setupRound()
-
-
-    
     }
     
     @IBAction func yieldButtonSelected(_ sender: Any) {
         playRound(playerMove: Move.Yield)
-        setupRound()
-        
-        
     }
     
    }
