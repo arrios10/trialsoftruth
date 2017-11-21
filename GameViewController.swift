@@ -42,27 +42,33 @@ class GameViewController: UIViewController {
     
     func setupRound() {
         //calculate attack rate
-        if currentMatch.rounds.count < 10 {
-            let attackRate = currentMatch.calcAttackRate()
-            compAction = currentMatch.currentWraith.compMove(attackRate: attackRate, roundIndex: currentMatch.roundIndex)
-        }
+        
+        let attackRate = currentMatch.calcAttackRate()
+        compAction = currentMatch.currentWraith.compMove(attackRate: attackRate, roundIndex: currentMatch.roundIndex)
+        
         messageLabel.text = compAction.message
         print("current round:\(currentMatch.roundIndex)")
        
     }
     
-    func playRound(playerMove: Move) {
+    func playRound(userMove: Move) {
 
-        
-        //create the round
+        //trying to replace this...
+        /*
         let currentRound = Round()
         
         //add the round to the round array in the Match object
         currentMatch.rounds.append(currentRound)
         
         currentMatch.roundIndex = currentMatch.rounds.count - 1
+        */
         
-        currentRound.playerMove = playerMove
+        //with this
+        let currentRound = currentMatch.rounds[currentMatch.roundIndex]
+        
+        currentMatch.roundIndex += 1
+        
+        currentRound.userMove = userMove
         currentRound.computerMove = compAction.move
         
         currentRound.roundPoints = currentRound.calcScore()
@@ -78,9 +84,8 @@ class GameViewController: UIViewController {
         scoreLabel.text = String(currentMatch.matchTotalPoints)
         
         
-        
         //end the game
-        if currentMatch.rounds.count == 10 {
+        if currentMatch.roundIndex == 9 {
             messageLabel.text = "Game Over"
             attackButton.isEnabled = false
             yieldButton.isEnabled  = false
@@ -94,11 +99,11 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func attackButtonSelected(_ sender: Any) {
-        playRound(playerMove: Move.Attack)
+        playRound(userMove: Move.Attack)
     }
     
     @IBAction func yieldButtonSelected(_ sender: Any) {
-        playRound(playerMove: Move.Yield)
+        playRound(userMove: Move.Yield)
     }
     
    }

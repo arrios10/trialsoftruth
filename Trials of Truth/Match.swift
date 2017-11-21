@@ -19,7 +19,8 @@ class Match: NSObject, NSCoding {
     
     var matchTotalPoints: Int = 0
     
-    var rounds: [Round] = []
+    var rounds: [Round] = [Round(),Round(),Round(),Round(),Round(),
+                           Round(),Round(),Round(),Round(),Round()]
     
     var roundIndex: Int = 0
     
@@ -42,7 +43,7 @@ class Match: NSObject, NSCoding {
         var attacks: Float = 0.0
         
         for round in rounds {
-            if round.playerMove == .Attack {
+            if round.userMove == .Attack {
                 attacks += 1.0
             }
         }

@@ -23,7 +23,7 @@ class Round: NSObject, NSCoding {
     
     var computerMove: Move?
     
-    var playerMove: Move?
+    var userMove: Move?
     
     func calcScore() -> Int {
         
@@ -32,7 +32,7 @@ class Round: NSObject, NSCoding {
         // YA 0
         // YY 2
         
-        switch playerMove! {
+        switch userMove! {
         case Move.Attack:
             switch computerMove! {
             case Move.Attack:
@@ -56,14 +56,20 @@ class Round: NSObject, NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(playerMove!.rawValue, forKey: "playerMove")
-        aCoder.encode(computerMove!.rawValue, forKey: "computerMove")
+        aCoder.encode(userMove?.rawValue, forKey: "userMove")
+        aCoder.encode(computerMove?.rawValue, forKey: "computerMove")
         aCoder.encode(roundPoints, forKey: "roundPoints")
     }
     
     required init?(coder aDecoder: NSCoder) {
-        playerMove = Move(rawValue: aDecoder.decodeInteger(forKey: "playerMove"))
-        computerMove =  Move(rawValue: aDecoder.decodeInteger(forKey: "computerMove"))
+        if let value = aDecoder.decodeObject(forKey: "userMove") as? Int {
+            userMove = Move(rawValue: value)
+        }
+        
+        if let compValue = aDecoder.decodeObject(forKey: "computerMove") as? Int {
+            computerMove = Move(rawValue: compValue)
+        }
+        
         roundPoints = aDecoder.decodeInteger(forKey: "roundPoints")
     }
     
