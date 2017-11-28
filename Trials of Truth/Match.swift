@@ -57,6 +57,24 @@ class Match: NSObject, NSCoding {
         return attackRate
     }
     
+    func nextRound(userMove: Move) {
+        guard let currentRound = currentRound else {
+            return
+        }
+        
+        currentRound.userMove = userMove
+        currentRound.computerMove = currentWraith.compMove(attackRate: calcAttackRate(), roundIndex: roundIndex).move
+        
+        //record the results - add to previous total score, record players move & calculate percent
+        matchTotalPoints += currentRound.roundPoints
+        
+        roundIndex += 1
+        
+        //end the match
+        if roundIndex == ROUND_COUNT - 1 {
+            matchIsOver = true
+        }
+    }
 
     func encode(with aCoder: NSCoder) {
         aCoder.encode(matchIsOver, forKey: "matchIsOver")

@@ -12,92 +12,31 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
-    
     @IBOutlet weak var foeActionLabel: UILabel!
-    
     @IBOutlet weak var pointsAwardedLabel: UILabel!
-    
     @IBOutlet weak var attackButton: UIButton!
     @IBOutlet weak var yieldButton: UIButton!
     
     var currentMatch: Match!
-    var compAction: RoundAction!
-    
-    // REFACTOR (for your consideration):
-    // - Single function in charge of updating the display (showing game state)
-    // - Single function responsible for handling the player's choice and adding a new round
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-        foeActionLabel.text = ""
-    
-        scoreLabel.text = String(currentMatch.matchTotalPoints)
-        
-        setupRound()
-        
-        print("current match:\(currentGame.matchIndex)")
-    }
-    
-    func setupRound() {
-        //calculate attack rate
-        
-        let attackRate = currentMatch.calcAttackRate()
-        compAction = currentMatch.currentWraith.compMove(attackRate: attackRate, roundIndex: currentMatch.roundIndex)
-        
-        messageLabel.text = compAction.message
-        print("current round:\(currentMatch.roundIndex)")
-       
+        updateDisplay()
     }
     
     func playRound(userMove: Move) {
-
-        //trying to replace this...
-        /*
-        let currentRound = Round()
+        let previousRound = currentMatch.currentRound!
         
-        //add the round to the round array in the Match object
-        currentMatch.rounds.append(currentRound)
+        currentMatch.nextRound(userMove: userMove)
         
-        currentMatch.roundIndex = currentMatch.rounds.count - 1
-        */
+        // update points awarded for previous round which is scored when nextRound() is called
+        pointsAwardedLabel.text = String(previousRound.roundPoints)
         
-        //with this
-        let currentRound = currentMatch.rounds[currentMatch.roundIndex]
-        
-        currentMatch.roundIndex += 1
-        
-        currentRound.userMove = userMove
-        currentRound.computerMove = compAction.move
-        
-        currentRound.roundPoints = currentRound.calcScore()
-        
-        pointsAwardedLabel.text = String(currentRound.roundPoints)
-        
-        //reward points
-        foeActionLabel.text = currentRound.computerMove == .Attack ? "Your foe has attacked" : "Your foe has yielded"
-        
-        //record the results - add to previous total score, record players move & calculate percent
-        currentMatch.matchTotalPoints += currentRound.roundPoints
-        
-        scoreLabel.text = String(currentMatch.matchTotalPoints)
-        
-        
-        //end the game
-        if currentMatch.roundIndex == 9 {
-            messageLabel.text = "Game Over"
-            attackButton.isEnabled = false
-            yieldButton.isEnabled  = false
-            currentMatch.matchIsOver = true
-            currentGame.matchIndex += 1
-            currentGame.gameTotalPoints += currentMatch.matchTotalPoints
-            
-        }
-        
-        setupRound()
+        updateDisplay()
     }
-
+    
     @IBAction func attackButtonSelected(_ sender: Any) {
         playRound(userMove: Move.Attack)
     }
@@ -106,5 +45,22 @@ class GameViewController: UIViewController {
         playRound(userMove: Move.Yield)
     }
     
-   }
+    func updateDisplay() {
+        let attackRate = currentMatch.calcAttackRate()
+        let compAction = currentMatch.currentWraith.compMove(attackRate: attackRate, roundIndex: currentMatch.roundIndex)
+        
+        messageLabel.text = compAction.message
+        
+        let currentRound = currentMatch.currentRound!
+        foeActionLabel.text = currentRound.computerMove == .Attack ? "Your foe has attacked" : "Your foe has yielded"
+        scoreLabel.text = String(currentMatch.matchTotalPoints)
+        
+        if currentMatch.roundIndex == ROUND_COUNT - 1 {
+            messageLabel.text = "Game Over"
+            attackButton.isEnabled = false
+            yieldButton.isEnabled  = false
+        }
+    }
+    
+}
 
