@@ -50,10 +50,7 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
 
     required init?(coder aDecoder: NSCoder) {
         matchIndex = aDecoder.decodeInteger(forKey: "matchIndex")
-        if let savedMatches = aDecoder.decodeObject(forKey: "matches") as? [Match] {
-            matches = savedMatches
-        }
-        
+        matches = aDecoder.decodeObject(forKey: "matches") as! [Match]
     }
     
     
