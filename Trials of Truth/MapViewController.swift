@@ -45,21 +45,25 @@ class MapViewController: UIViewController {
         totalGameScore.text = "\(currentGame.gameTotalPoints)"
        
         if currentGame.matches[0].matchIsOver == true {
+            currentGame.matchIndex = 1
             wraithTwoButton.isEnabled = true
             wraithOneButton.isEnabled = false
         }
         
         if currentGame.matches[1].matchIsOver == true {
+            currentGame.matchIndex = 2
             wraithThreeButton.isEnabled = true
             wraithTwoButton.isEnabled = false
         }
         
         if currentGame.matches[2].matchIsOver == true {
+            currentGame.matchIndex = 3
             wraithFourButton.isEnabled = true
             wraithThreeButton.isEnabled = false
         }
         
         if currentGame.matches[3].matchIsOver == true {
+            currentGame.matchIndex = 4
             wraithFiveButton.isEnabled = true
             wraithFourButton.isEnabled = false
         }
