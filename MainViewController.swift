@@ -33,13 +33,10 @@ class MainViewController: UIViewController {
         } else {
             continueQuestButton.isEnabled = true
         }
-        
     }
    
     @IBAction func startQuestButton(_ sender: Any) {
         currentGame = Game()
     }
     
-    
-
 }
