@@ -31,8 +31,15 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
         }
     }
     
-    var gameTotalPoints = 0
-    
+    var gameTotalPoints: Int {
+        get {
+            var total = 0
+            for match in matches {
+                total += match.matchTotalPoints
+            }
+            return total
+        }
+    }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(gameTotalPoints, forKey: "gameTotalPoints")
