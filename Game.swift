@@ -8,17 +8,19 @@
 
 import Foundation
 
+let MATCH_COUNT = 5
+
 class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
     
     override init() {
+        matches = []
+        for i in 1...MATCH_COUNT {
+            matches.append(Match(matchNumber: i))
+        }
     }
-
-    var matches: [Match] = [Match.init(matchNumber: 1),
-                            Match.init(matchNumber: 2),
-                            Match.init(matchNumber: 3),
-                            Match.init(matchNumber: 4),
-                            Match.init(matchNumber: 5)]
-        
+    
+    var matches: [Match]
+    
     var matchIndex = 0
 
     var currentMatch: Match? {
