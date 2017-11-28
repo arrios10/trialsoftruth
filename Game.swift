@@ -53,5 +53,17 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
         matches = aDecoder.decodeObject(forKey: "matches") as! [Match]
     }
     
+    class func saveGame() {
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: currentGame)
+        UserDefaults.standard.set(encodedData, forKey: "currentGame")
+        
+        UserDefaults.standard.synchronize()
+    }
     
+    class func loadGame() {
+        if let data = UserDefaults.standard.data(forKey: "currentGame"),
+            let game = NSKeyedUnarchiver.unarchiveObject(with: data) as? Game {
+            currentGame = game
+        }
+    }
 }
