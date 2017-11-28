@@ -93,9 +93,7 @@ class Match: NSObject, NSCoding {
         matchIsOver = aDecoder.decodeBool(forKey: "matchIsOver")
         matchTotalPoints = aDecoder.decodeInteger(forKey: "matchTotalPoints")
         matchNumber = aDecoder.decodeInteger(forKey: "matchNumber")
-        if let savedRounds = aDecoder.decodeObject(forKey: "rounds") as? [Round] {
-            rounds = savedRounds
-        }
+        rounds = aDecoder.decodeObject(forKey: "rounds") as! [Round]
         roundIndex = aDecoder.decodeInteger(forKey: "roundIndex")
     }
     
