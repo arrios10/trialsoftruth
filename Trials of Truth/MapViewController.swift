@@ -68,8 +68,7 @@ class MapViewController: UIViewController {
             wraithFiveButton.isEnabled = false
         }
         
-        let encodedData = NSKeyedArchiver.archivedData(withRootObject: currentGame)
-        UserDefaults.standard.set(encodedData, forKey: "currentGame")
+        Game.saveGame()
     }
     
     
