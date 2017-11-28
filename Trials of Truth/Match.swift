@@ -8,11 +8,18 @@
 
 import Foundation
 
+let ROUND_COUNT = 10
+
 class Match: NSObject, NSCoding {
-
-
+    
     init(matchNumber: Int) {
         self.matchNumber = matchNumber
+        rounds = []
+        for _ in 0..<ROUND_COUNT {
+            rounds.append(Round())
+        }
+        
+        setupWraith()
     }
     
     var currentWraith: Wraith!
@@ -21,8 +28,7 @@ class Match: NSObject, NSCoding {
     
     var matchTotalPoints: Int = 0
     
-    var rounds: [Round] = [Round(),Round(),Round(),Round(),Round(),
-                           Round(),Round(),Round(),Round(),Round()]
+    var rounds: [Round]
     
     var roundIndex: Int = 0
     
@@ -51,7 +57,6 @@ class Match: NSObject, NSCoding {
         }
         
         //calculate the average attack %
-        
         let attackRate = attacks / totalRounds
         
         return attackRate
@@ -82,7 +87,6 @@ class Match: NSObject, NSCoding {
         aCoder.encode(rounds, forKey: "rounds")
         aCoder.encode(roundIndex, forKey: "roundIndex")
         aCoder.encode(matchNumber, forKey: "matchNumber")
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -97,7 +101,8 @@ class Match: NSObject, NSCoding {
     
     func setupWraith() {
         switch self.matchNumber {
-            
+            // TODO:
+            default: currentWraith = Wraith()
         }
     }
 
