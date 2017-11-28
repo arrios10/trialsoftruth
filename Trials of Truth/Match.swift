@@ -10,12 +10,14 @@ import Foundation
 
 class Match: NSObject, NSCoding {
 
-    
-    override init() {
-    
+
+    init(matchNumber: Int) {
+        self.matchNumber = matchNumber
     }
     
-    var currentWraith: Wraith! = Wraith()
+    var currentWraith: Wraith!
+    
+    var matchNumber: Int
     
     var matchTotalPoints: Int = 0
     
@@ -61,18 +63,24 @@ class Match: NSObject, NSCoding {
         aCoder.encode(matchTotalPoints, forKey: "matchTotalPoints")
         aCoder.encode(rounds, forKey: "rounds")
         aCoder.encode(roundIndex, forKey: "roundIndex")
+        aCoder.encode(matchNumber, forKey: "matchNumber")
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         matchIsOver = aDecoder.decodeBool(forKey: "matchIsOver")
         matchTotalPoints = aDecoder.decodeInteger(forKey: "matchTotalPoints")
+        matchNumber = aDecoder.decodeInteger(forKey: "matchNumber")
         if let savedRounds = aDecoder.decodeObject(forKey: "rounds") as? [Round] {
             rounds = savedRounds
         }
         roundIndex = aDecoder.decodeInteger(forKey: "roundIndex")
     }
     
-    
+    func setupWraith() {
+        switch self.matchNumber {
+            
+        }
+    }
 
 }

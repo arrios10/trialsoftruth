@@ -21,7 +21,11 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
         
     }
 
-    var matches: [Match] = [Match(),Match(),Match(),Match(),Match()]
+    var matches: [Match] = [Match.init(matchNumber: 1),
+                            Match.init(matchNumber: 2),
+                            Match.init(matchNumber: 3),
+                            Match.init(matchNumber: 4),
+                            Match.init(matchNumber: 5)]
         
     var matchIndex = 0
 
@@ -52,6 +56,8 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
         }
         
     }
+    
+    
     
 //    func encode(to encoder: Encoder) throws {
 //        var container = encoder.container(keyedBy: CodingKeys.self)
