@@ -17,9 +17,6 @@ class MapViewController: UIViewController {
     @IBOutlet weak var wraithFiveButton: UIButton!
     @IBOutlet weak var totalGameScore: UILabel!
     
- 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,13 +30,9 @@ class MapViewController: UIViewController {
         super.viewWillAppear(animated)
         
         updateGame()
-        
     }
-
-    
     
     //method to update current game state whenever the map view appears
-    
     func updateGame() {
     
         totalGameScore.text = "\(currentGame.gameTotalPoints)"
@@ -75,13 +68,10 @@ class MapViewController: UIViewController {
         Game.saveGame()
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextController = segue.destination as? GameViewController
         
         nextController?.currentMatch = currentGame.currentMatch
     }
-    
-   
     
 }
