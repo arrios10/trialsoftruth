@@ -8,11 +8,18 @@
 
 import Foundation
 
+let ROUND_COUNT = 10
+
 class Match: NSObject, NSCoding {
-
-
+    
     init(matchNumber: Int) {
         self.matchNumber = matchNumber
+        rounds = []
+        for _ in 0..<ROUND_COUNT {
+            rounds.append(Round())
+        }
+        
+        setupWraith()
     }
     
     var currentWraith: Wraith!
@@ -21,8 +28,7 @@ class Match: NSObject, NSCoding {
     
     var matchTotalPoints: Int = 0
     
-    var rounds: [Round] = [Round(),Round(),Round(),Round(),Round(),
-                           Round(),Round(),Round(),Round(),Round()]
+    var rounds: [Round]
     
     var roundIndex: Int = 0
     
@@ -51,12 +57,29 @@ class Match: NSObject, NSCoding {
         }
         
         //calculate the average attack %
-        
         let attackRate = attacks / totalRounds
         
         return attackRate
     }
     
+    func nextRound(userMove: Move) {
+        guard let currentRound = currentRound else {
+            return
+        }
+        
+        currentRound.userMove = userMove
+        currentRound.computerMove = currentWraith.compMove(attackRate: calcAttackRate(), roundIndex: roundIndex).move
+        
+        //record the results - add to previous total score, record players move & calculate percent
+        matchTotalPoints += currentRound.roundPoints
+        
+        roundIndex += 1
+        
+        //end the match
+        if roundIndex == ROUND_COUNT - 1 {
+            matchIsOver = true
+        }
+    }
 
     func encode(with aCoder: NSCoder) {
         aCoder.encode(matchIsOver, forKey: "matchIsOver")
@@ -64,22 +87,20 @@ class Match: NSObject, NSCoding {
         aCoder.encode(rounds, forKey: "rounds")
         aCoder.encode(roundIndex, forKey: "roundIndex")
         aCoder.encode(matchNumber, forKey: "matchNumber")
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         matchIsOver = aDecoder.decodeBool(forKey: "matchIsOver")
         matchTotalPoints = aDecoder.decodeInteger(forKey: "matchTotalPoints")
         matchNumber = aDecoder.decodeInteger(forKey: "matchNumber")
-        if let savedRounds = aDecoder.decodeObject(forKey: "rounds") as? [Round] {
-            rounds = savedRounds
-        }
+        rounds = aDecoder.decodeObject(forKey: "rounds") as! [Round]
         roundIndex = aDecoder.decodeInteger(forKey: "roundIndex")
     }
     
     func setupWraith() {
         switch self.matchNumber {
-            
+            // TODO:
+            default: currentWraith = Wraith()
         }
     }
 

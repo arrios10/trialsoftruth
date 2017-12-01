@@ -24,13 +24,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let data = UserDefaults.standard.data(forKey: "currentGame"),
-            let game = NSKeyedUnarchiver.unarchiveObject(with: data) as? Game {
-            currentGame = game
-            print("gameTotalPoints: \(currentGame.gameTotalPoints)")
-        } else {
-            print("No game data")
-        }
+        Game.load()
         
         let isGameOver = currentGame?.matches[4].matchIsOver == true
         
@@ -39,13 +33,10 @@ class MainViewController: UIViewController {
         } else {
             continueQuestButton.isEnabled = true
         }
-        
     }
    
     @IBAction func startQuestButton(_ sender: Any) {
         currentGame = Game()
     }
     
-    
-
 }

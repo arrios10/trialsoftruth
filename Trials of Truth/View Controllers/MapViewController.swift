@@ -17,9 +17,6 @@ class MapViewController: UIViewController {
     @IBOutlet weak var wraithFiveButton: UIButton!
     @IBOutlet weak var totalGameScore: UILabel!
     
- 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,33 +30,33 @@ class MapViewController: UIViewController {
         super.viewWillAppear(animated)
         
         updateGame()
-        
     }
-
-    
     
     //method to update current game state whenever the map view appears
-    
     func updateGame() {
     
         totalGameScore.text = "\(currentGame.gameTotalPoints)"
        
         if currentGame.matches[0].matchIsOver == true {
+            currentGame.matchIndex = 1
             wraithTwoButton.isEnabled = true
             wraithOneButton.isEnabled = false
         }
         
         if currentGame.matches[1].matchIsOver == true {
+            currentGame.matchIndex = 2
             wraithThreeButton.isEnabled = true
             wraithTwoButton.isEnabled = false
         }
         
         if currentGame.matches[2].matchIsOver == true {
+            currentGame.matchIndex = 3
             wraithFourButton.isEnabled = true
             wraithThreeButton.isEnabled = false
         }
         
         if currentGame.matches[3].matchIsOver == true {
+            currentGame.matchIndex = 4
             wraithFiveButton.isEnabled = true
             wraithFourButton.isEnabled = false
         }
@@ -68,17 +65,13 @@ class MapViewController: UIViewController {
             wraithFiveButton.isEnabled = false
         }
         
-        let encodedData = NSKeyedArchiver.archivedData(withRootObject: currentGame)
-        UserDefaults.standard.set(encodedData, forKey: "currentGame")
+        Game.saveGame()
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextController = segue.destination as? GameViewController
         
         nextController?.currentMatch = currentGame.currentMatch
     }
-    
-   
     
 }
