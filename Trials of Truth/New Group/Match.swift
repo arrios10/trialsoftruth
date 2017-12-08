@@ -19,6 +19,7 @@ class Match: NSObject, NSCoding {
             rounds.append(Round())
         }
         
+        super.init()
         setupWraith()
     }
     
@@ -99,8 +100,19 @@ class Match: NSObject, NSCoding {
     
     func setupWraith() {
         switch self.matchNumber {
-            // TODO:
-            default: currentWraith = Wraith()
+           
+        case 1:
+            currentWraith = Wraith()
+        case 2:
+            currentWraith = MeanHelloWraith()
+        case 3:
+            currentWraith = Wraith3()
+        case 4:
+            currentWraith = Wraith4()
+        case 5:
+            currentWraith = Wraith5()
+            
+        default: currentWraith = Wraith()
         }
     }
 

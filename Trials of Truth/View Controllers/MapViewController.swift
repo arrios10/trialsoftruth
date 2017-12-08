@@ -32,7 +32,7 @@ class MapViewController: UIViewController {
         updateGame()
     }
     
-    //method to update current game state whenever the map view appears
+    //method to update current game state whenever the map view
     func updateGame() {
     
         totalGameScore.text = "\(currentGame.gameTotalPoints)"

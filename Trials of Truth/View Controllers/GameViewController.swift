@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var pointsAwardedLabel: UILabel!
     @IBOutlet weak var attackButton: UIButton!
     @IBOutlet weak var yieldButton: UIButton!
+    var storyPresented = false
     
     var currentMatch: Match!
     
@@ -24,6 +25,16 @@ class GameViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         updateDisplay()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if storyPresented == false && currentMatch.roundIndex == 0 {
+            performSegue(withIdentifier: "ShowStory", sender: self)
+            storyPresented = true
+        }
+
     }
     
     func playRound(userMove: Move) {
