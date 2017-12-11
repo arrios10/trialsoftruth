@@ -56,6 +56,23 @@ class GameViewController: UIViewController {
         playRound(userMove: Move.Yield)
     }
     
+    func endGame() {
+        //check the score against the needed pointed to advance to the next match
+        
+        //show story
+        
+        //disable button
+        
+    }
+    
+    func exitGame() {
+        //restart game
+        
+        
+        //send user back to mainVC
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     func updateDisplay() {
         let attackRate = currentMatch.calcAttackRate()
         let compAction = currentMatch.currentWraith.compMove(attackRate: attackRate, roundIndex: currentMatch.roundIndex)
@@ -67,10 +84,16 @@ class GameViewController: UIViewController {
         scoreLabel.text = String(currentMatch.matchTotalPoints)
         
         if currentMatch.roundIndex == ROUND_COUNT - 1 {
-            messageLabel.text = "Game Over"
+            messageLabel.text = "Match Over"
             attackButton.isEnabled = false
             yieldButton.isEnabled  = false
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextController = segue.destination as? StoryViewController
+        
+        nextController?.story = currentGame.currentMatch?.storyList[currentGame.matchIndex]
     }
     
 }

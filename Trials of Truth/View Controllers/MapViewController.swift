@@ -62,6 +62,7 @@ class MapViewController: UIViewController {
         }
         
         if currentGame.matches[4].matchIsOver == true {
+            currentGame.matchIndex = 5
             wraithFiveButton.isEnabled = false
         }
         

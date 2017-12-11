@@ -307,6 +307,10 @@
                             <outletCollection property="gestureRecognizers" destination="YUQ-wX-vmU" appends="YES" id="ZCS-TH-SEZ"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="instructionsLabel" destination="yoL-PV-Xz7" id="R5Q-4R-ejK"/>
+                        <outlet property="storyLabel" destination="8bZ-1b-n5h" id="dgv-hS-fCQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaA-yV-s0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="YUQ-wX-vmU">

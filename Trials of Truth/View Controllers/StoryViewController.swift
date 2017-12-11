@@ -10,11 +10,19 @@ import UIKit
 
 class StoryViewController: UIViewController {
 
+    @IBOutlet weak var storyLabel: UILabel!
+    
+    @IBOutlet weak var instructionsLabel: UILabel!
+    
+    var story: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        storyLabel.text = story
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
