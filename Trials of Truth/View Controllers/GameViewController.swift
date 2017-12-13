@@ -31,9 +31,11 @@ class GameViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if storyPresented == false && currentMatch.roundIndex == 0 {
-            performSegue(withIdentifier: "ShowStory", sender: self)
+            showStoryVC()
             storyPresented = true
         }
+        
+        
 
     }
     
@@ -56,21 +58,54 @@ class GameViewController: UIViewController {
         playRound(userMove: Move.Yield)
     }
     
-    func endGame() {
+    func checkScore() {
         //check the score against the needed pointed to advance to the next match
-        
-        //show story
-        
-        //disable button
+        switch currentGame.matchIndex {
+            
+        case 0:
+            if currentGame.gameTotalPoints < 10 {
+                currentGame.gameOver = true
+                showStoryVC()
+            }
+        case 1:
+            if currentGame.gameTotalPoints < 20 {
+                currentGame.gameOver = true
+                showStoryVC()
+            }
+        case 2:
+            if currentGame.gameTotalPoints < 30 {
+                currentGame.gameOver = true
+                showStoryVC()
+            }
+        case 3:
+            if currentGame.gameTotalPoints < 40 {
+                currentGame.gameOver = true
+                showStoryVC()
+            }
+        case 4:
+            if currentGame.gameTotalPoints < 50 {
+                currentGame.gameOver = true
+                showStoryVC()
+            }
+        default:
+                currentGame.gameOver = false
+        }
+    
         
     }
     
     func exitGame() {
-        //restart game
         
+        //restart game
+        currentGame = nil
         
         //send user back to mainVC
         navigationController?.popToRootViewController(animated: true)
+
+    }
+    
+    func showStoryVC() {
+        performSegue(withIdentifier: "ShowStory", sender: self)
     }
     
     func updateDisplay() {
@@ -87,14 +122,34 @@ class GameViewController: UIViewController {
             messageLabel.text = "Match Over"
             attackButton.isEnabled = false
             yieldButton.isEnabled  = false
+            checkScore()
+            
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextController = segue.destination as? StoryViewController
         
-        nextController?.story = currentGame.currentMatch?.storyList[currentGame.matchIndex]
-    }
+        nextController?.delegate = self
+        
+        if currentGame.gameOver == true {
+            nextController?.story = currentGame.gameOverMessage
+        } else {
+            nextController?.story = currentGame.currentMatch?.storyList[currentGame.matchIndex]
+        }
+        }
     
+    
+    
+}
+
+extension GameViewController: StoryViewControllerDelegate {
+    
+    func dismissedStoryVC() {
+        if currentGame.gameOver == true {
+            exitGame()
+        }
+    }
+        
 }
 

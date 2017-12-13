@@ -22,6 +22,10 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
     var matches: [Match]
     
     var matchIndex = 0
+    
+    var gameOver = false
+    
+    let gameOverMessage = "game over"
 
     var currentMatch: Match? {
         get {

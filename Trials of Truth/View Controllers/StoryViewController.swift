@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol StoryViewControllerDelegate {
+    func dismissedStoryVC()
+}
+
 class StoryViewController: UIViewController {
+    
+    var delegate: StoryViewControllerDelegate?
 
     @IBOutlet weak var storyLabel: UILabel!
     
@@ -30,9 +36,12 @@ class StoryViewController: UIViewController {
     }
     
     @IBAction func tappedStoryView(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            self.delegate?.dismissedStoryVC()
+        }
         
     }
+    
     
     /*
     // MARK: - Navigation
