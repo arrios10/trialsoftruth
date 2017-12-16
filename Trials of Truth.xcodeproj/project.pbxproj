@@ -63,14 +63,14 @@
 			isa = PBXGroup;
 			children = (
 				E587837F1FE353180025B907 /* User.swift */,
+				E50165AC1F73311100453A55 /* Game.swift */,
+				E56A7E871F9183F400A9717D /* Match.swift */,
+				E50165AE1F73346600453A55 /* Round.swift */,
 				E5B595D21FA7EC150086E782 /* Wraith.swift */,
 				E58EC3641FB138D800F56F96 /* MeanHelloWraith.swift */,
 				E5A9E7AD1FBE5EB100FC79C2 /* Wraith3.swift */,
 				E5A9E7AF1FBE5F7B00FC79C2 /* Wraith4.swift */,
 				E5A9E7B11FBE5F8D00FC79C2 /* Wraith5.swift */,
-				E50165AC1F73311100453A55 /* Game.swift */,
-				E56A7E871F9183F400A9717D /* Match.swift */,
-				E50165AE1F73346600453A55 /* Round.swift */,
 			);
 			name = "Data Model";
 			path = "New Group";

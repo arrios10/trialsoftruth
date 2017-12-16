@@ -60,38 +60,38 @@ class GameViewController: UIViewController {
     
     func checkScore() {
         //check the score against the needed pointed to advance to the next match
-        switch currentGame.matchIndex {
+        switch currentUser.currentGame.matchIndex {
             
         case 0:
-            if currentGame.gameTotalPoints < 10 {
-                currentGame.gameState = GameState.Lose
+            if currentUser.currentGame.gameTotalPoints < 10 {
+                currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 1:
-            if currentGame.gameTotalPoints < 20 {
-                currentGame.gameState = GameState.Lose
+            if currentUser.currentGame.gameTotalPoints < 20 {
+                currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 2:
-            if currentGame.gameTotalPoints < 30 {
-                currentGame.gameState = GameState.Lose
+            if currentUser.currentGame.gameTotalPoints < 30 {
+                currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 3:
-            if currentGame.gameTotalPoints < 40 {
-                currentGame.gameState = GameState.Lose
+            if currentUser.currentGame.gameTotalPoints < 40 {
+                currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 4:
-            if currentGame.gameTotalPoints < 50 {
-                currentGame.gameState = GameState.Lose
+            if currentUser.currentGame.gameTotalPoints < 50 {
+                currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             } else {
-                currentGame.gameState = GameState.Win
+                currentUser.currentGame.gameState = GameState.Win
                 showStoryVC()
             }
         default:
-                currentGame.gameState = GameState.Started
+                currentUser.currentGame.gameState = GameState.Started
         }
     
         
@@ -100,7 +100,7 @@ class GameViewController: UIViewController {
     func exitGame() {
         
         //restart game
-        currentGame = nil
+        currentUser.currentGame = nil
         
         //send user back to mainVC
         navigationController?.popToRootViewController(animated: true)
@@ -135,13 +135,13 @@ class GameViewController: UIViewController {
         
         nextController?.delegate = self
         
-        if currentGame.gameState == GameState.Lose {
-            nextController?.story = currentGame.gameOverMessage
-        } else if currentGame.gameState == GameState.Win {
-            nextController?.story = currentGame.gameWinnerMessage
+        if currentUser.currentGame.gameState == GameState.Lose {
+            nextController?.story = currentUser.currentGame.gameOverMessage
+        } else if currentUser.currentGame.gameState == GameState.Win {
+            nextController?.story = currentUser.currentGame.gameWinnerMessage
             
         } else {
-            nextController?.story = currentGame.currentMatch?.storyList[currentGame.matchIndex]
+            nextController?.story = currentUser.currentGame.currentMatch?.storyList[currentUser.currentGame.matchIndex]
         }
     }
     
@@ -152,7 +152,7 @@ class GameViewController: UIViewController {
 extension GameViewController: StoryViewControllerDelegate {
     
     func dismissedStoryVC() {
-        if currentGame.gameState == GameState.Lose || currentGame.gameState == GameState.Win {
+        if currentUser.currentGame.gameState == GameState.Lose || currentUser.currentGame.gameState == GameState.Win {
             exitGame()
         }
     }

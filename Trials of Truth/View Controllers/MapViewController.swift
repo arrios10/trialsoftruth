@@ -35,44 +35,44 @@ class MapViewController: UIViewController {
     //method to update current game state whenever the map view
     func updateGame() {
     
-        totalGameScore.text = "\(currentGame.gameTotalPoints)"
+        totalGameScore.text = "\(currentUser.currentGame.gameTotalPoints)"
        
-        if currentGame.matches[0].matchIsOver == true {
-            currentGame.matchIndex = 1
+        if currentUser.currentGame.matches[0].matchIsOver == true {
+            currentUser.currentGame.matchIndex = 1
             wraithTwoButton.isEnabled = true
             wraithOneButton.isEnabled = false
         }
         
-        if currentGame.matches[1].matchIsOver == true {
-            currentGame.matchIndex = 2
+        if currentUser.currentGame.matches[1].matchIsOver == true {
+            currentUser.currentGame.matchIndex = 2
             wraithThreeButton.isEnabled = true
             wraithTwoButton.isEnabled = false
         }
         
-        if currentGame.matches[2].matchIsOver == true {
-            currentGame.matchIndex = 3
+        if currentUser.currentGame.matches[2].matchIsOver == true {
+            currentUser.currentGame.matchIndex = 3
             wraithFourButton.isEnabled = true
             wraithThreeButton.isEnabled = false
         }
         
-        if currentGame.matches[3].matchIsOver == true {
-            currentGame.matchIndex = 4
+        if currentUser.currentGame.matches[3].matchIsOver == true {
+            currentUser.currentGame.matchIndex = 4
             wraithFiveButton.isEnabled = true
             wraithFourButton.isEnabled = false
         }
         
-        if currentGame.matches[4].matchIsOver == true {
-            currentGame.matchIndex = 5
+        if currentUser.currentGame.matches[4].matchIsOver == true {
+            currentUser.currentGame.matchIndex = 5
             wraithFiveButton.isEnabled = false
         }
         
-        Game.saveGame()
+        User.saveUser()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextController = segue.destination as? GameViewController
         
-        nextController?.currentMatch = currentGame.currentMatch
+        nextController?.currentMatch = currentUser.currentGame.currentMatch
     }
     
 }

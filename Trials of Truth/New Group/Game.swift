@@ -27,7 +27,13 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
     
     var matchIndex = 0
     
-    var gameState: GameState = GameState.Started
+    var gameState: GameState = GameState.Started {
+        didSet {
+            if gameState == .Win && gameTotalPoints > currentUser.highScore {
+                currentUser.highScore = gameTotalPoints
+            }
+        }
+    }
     
     let gameOverMessage = "game over"
 

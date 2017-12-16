@@ -24,7 +24,10 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+       
         User.loadUser()
+        
+
         
         let isGameOver = currentUser.currentGame?.matches[4].matchIsOver == true
         
@@ -33,6 +36,10 @@ class MainViewController: UIViewController {
         } else {
             continueQuestButton.isEnabled = true
         }
+        
+        scoreLabel.text = String(currentUser.highScore)
+
+        
     }
    
     @IBAction func startQuestButton(_ sender: Any) {

@@ -8,9 +8,9 @@
 
 import Foundation
 
-class User: NSObject {
+class User: NSObject, NSCoding {
     
-    var highScore: Int = 0
+    var highScore: Int = 3
     
     var currentGame: Game!
     
@@ -24,6 +24,10 @@ class User: NSObject {
         currentGame = aDecoder.decodeObject(forKey: "currentGame") as? Game
     }
     
+    override init() {
+        super.init()
+    }
+    
     
     class func saveUser() {
         let encodedData = NSKeyedArchiver.archivedData(withRootObject: currentUser)
@@ -33,9 +37,10 @@ class User: NSObject {
     }
     
     class func loadUser() {
-        if let data = UserDefaults.standard.data(forKey: "currentUser"),
-            let user = NSKeyedUnarchiver.unarchiveObject(with: data) as? User {
+        if let data = UserDefaults.standard.data(forKey: "currentUser"), let user = NSKeyedUnarchiver.unarchiveObject(with: data) as? User {
             currentUser = user
+        } else {
+            currentUser = User()
         }
     }
     
