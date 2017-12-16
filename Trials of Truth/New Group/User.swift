@@ -10,7 +10,7 @@ import Foundation
 
 class User: NSObject, NSCoding {
     
-    var highScore: Int = 3
+    var highScore: Int = 0
     
     var currentGame: Game!
     

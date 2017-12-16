@@ -88,6 +88,7 @@ class GameViewController: UIViewController {
                 showStoryVC()
             } else {
                 currentUser.currentGame.gameState = GameState.Win
+                User.saveUser()
                 showStoryVC()
             }
         default:
