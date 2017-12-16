@@ -8,7 +8,7 @@
 
 import UIKit
 
-var currentGame: Game!
+var currentUser: User!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

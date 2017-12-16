@@ -64,31 +64,34 @@ class GameViewController: UIViewController {
             
         case 0:
             if currentGame.gameTotalPoints < 10 {
-                currentGame.gameOver = true
+                currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 1:
             if currentGame.gameTotalPoints < 20 {
-                currentGame.gameOver = true
+                currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 2:
             if currentGame.gameTotalPoints < 30 {
-                currentGame.gameOver = true
+                currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 3:
             if currentGame.gameTotalPoints < 40 {
-                currentGame.gameOver = true
+                currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 4:
             if currentGame.gameTotalPoints < 50 {
-                currentGame.gameOver = true
+                currentGame.gameState = GameState.Lose
+                showStoryVC()
+            } else {
+                currentGame.gameState = GameState.Win
                 showStoryVC()
             }
         default:
-                currentGame.gameOver = false
+                currentGame.gameState = GameState.Started
         }
     
         
@@ -132,12 +135,15 @@ class GameViewController: UIViewController {
         
         nextController?.delegate = self
         
-        if currentGame.gameOver == true {
+        if currentGame.gameState == GameState.Lose {
             nextController?.story = currentGame.gameOverMessage
+        } else if currentGame.gameState == GameState.Win {
+            nextController?.story = currentGame.gameWinnerMessage
+            
         } else {
             nextController?.story = currentGame.currentMatch?.storyList[currentGame.matchIndex]
         }
-        }
+    }
     
     
     
@@ -146,7 +152,7 @@ class GameViewController: UIViewController {
 extension GameViewController: StoryViewControllerDelegate {
     
     func dismissedStoryVC() {
-        if currentGame.gameOver == true {
+        if currentGame.gameState == GameState.Lose || currentGame.gameState == GameState.Win {
             exitGame()
         }
     }

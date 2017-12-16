@@ -24,11 +24,11 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        Game.load()
+        User.loadUser()
         
-        let isGameOver = currentGame?.matches[4].matchIsOver == true
+        let isGameOver = currentUser.currentGame?.matches[4].matchIsOver == true
         
-        if currentGame == nil || isGameOver == true {
+        if currentUser.currentGame == nil || isGameOver == true {
             continueQuestButton.isEnabled = false
         } else {
             continueQuestButton.isEnabled = true
@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
     }
    
     @IBAction func startQuestButton(_ sender: Any) {
-        currentGame = Game()
+        currentUser.currentGame = Game()
     }
     
 }

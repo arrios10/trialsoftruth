@@ -10,6 +10,10 @@ import Foundation
 
 let MATCH_COUNT = 5
 
+enum GameState: Int {
+    case Win, Lose, Started
+}
+
 class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
     
     override init() {
@@ -23,10 +27,12 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
     
     var matchIndex = 0
     
-    var gameOver = false
+    var gameState: GameState = GameState.Started
     
     let gameOverMessage = "game over"
 
+    let gameWinnerMessage = "you win!"
+    
     var currentMatch: Match? {
         get {
             guard matches.count > matchIndex else {
@@ -56,18 +62,5 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
         matchIndex = aDecoder.decodeInteger(forKey: "matchIndex")
         matches = aDecoder.decodeObject(forKey: "matches") as! [Match]
     }
-    
-    class func saveGame() {
-        let encodedData = NSKeyedArchiver.archivedData(withRootObject: currentGame)
-        UserDefaults.standard.set(encodedData, forKey: "currentGame")
-        
-        UserDefaults.standard.synchronize()
-    }
-    
-    class func loadGame() {
-        if let data = UserDefaults.standard.data(forKey: "currentGame"),
-            let game = NSKeyedUnarchiver.unarchiveObject(with: data) as? Game {
-            currentGame = game
-        }
-    }
+
 }
