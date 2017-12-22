@@ -47,6 +47,8 @@ class GameViewController: UIViewController {
         // update points awarded for previous round which is scored when nextRound() is called
         pointsAwardedLabel.text = String(previousRound.roundPoints)
         
+        foeActionLabel.text = previousRound.computerMove == .Attack ? "Your foe has attacked" : "Your foe has yielded"
+
         updateDisplay()
     }
     
@@ -118,11 +120,10 @@ class GameViewController: UIViewController {
         
         messageLabel.text = compAction.message
         
-        let currentRound = currentMatch.currentRound!
-        foeActionLabel.text = currentRound.computerMove == .Attack ? "Your foe has attacked" : "Your foe has yielded"
+        
         scoreLabel.text = String(currentMatch.matchTotalPoints)
         
-        if currentMatch.roundIndex == ROUND_COUNT - 1 {
+        if currentMatch.matchIsOver == true {
             messageLabel.text = "Match Over"
             attackButton.isEnabled = false
             yieldButton.isEnabled  = false

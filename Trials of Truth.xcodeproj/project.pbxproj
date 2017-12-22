@@ -88,10 +88,11 @@
 		847552021FCE282000EB8B1A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E5AA08221FDA166C00D70E01 /* StoryViewController.swift */,
 				E50165A61F73260C00453A55 /* MainViewController.swift */,
 				E56A7E891F9188FF00A9717D /* MapViewController.swift */,
+				E52BA9531FE8324D00D1A7C8 /* MapStoryViewController.swift */,
 				E50165A81F73261800453A55 /* GameViewController.swift */,
+				E5AA08221FDA166C00D70E01 /* StoryViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -208,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E50165951F7061D500453A55 /* AppDelegate.swift in Sources */,
+				E52BA9541FE8324D00D1A7C8 /* MapStoryViewController.swift in Sources */,
 				E50165A91F73261800453A55 /* GameViewController.swift in Sources */,
 				E5B595D31FA7EC150086E782 /* Wraith.swift in Sources */,
 				E50165A71F73260C00453A55 /* MainViewController.swift in Sources */,

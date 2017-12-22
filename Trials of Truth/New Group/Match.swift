@@ -105,6 +105,9 @@ class Match: NSObject, NSCoding {
         matchNumber = aDecoder.decodeInteger(forKey: "matchNumber")
         rounds = aDecoder.decodeObject(forKey: "rounds") as! [Round]
         roundIndex = aDecoder.decodeInteger(forKey: "roundIndex")
+        
+        super.init()
+        setupWraith()
     }
     
     func setupWraith() {

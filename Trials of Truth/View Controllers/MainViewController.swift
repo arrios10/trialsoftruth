@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
             continueQuestButton.isEnabled = true
         }
         
-        scoreLabel.text = String(currentUser.highScore)
+        scoreLabel.text = "Your High Score Is: \(currentUser.highScore)"
 
         
     }
