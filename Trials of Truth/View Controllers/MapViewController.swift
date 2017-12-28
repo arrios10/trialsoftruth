@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MapViewController: UIViewController {
+class MapViewController: UITableViewController {
     
     @IBOutlet weak var wraithOneButton: UIButton!
     @IBOutlet weak var wraithTwoButton: UIButton!

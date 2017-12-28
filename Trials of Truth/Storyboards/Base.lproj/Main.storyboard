@@ -162,7 +162,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yh-u0-OaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2108" y="792.95352323838085"/>
+            <point key="canvasLocation" x="2218" y="793"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="cTD-Cg-YDL">
+            <objects>
+                <tableViewController id="05h-dy-tRK" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dqv-NY-twu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="110" id="iuo-d3-0HL">
+                                <rect key="frame" x="0.0" y="28" width="375" height="110"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iuo-d3-0HL" id="hEa-VE-W6q">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ydt-iP-Sev">
+                                            <rect key="frame" x="16" y="0.0" width="130" height="110"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="130" id="nBq-1s-vX8"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ztx-nh-JiE">
+                                            <rect key="frame" x="156" y="0.0" width="203" height="110"/>
+                                            <string key="text">Label test test test test test test test test sdf sdfg sdfg sdsfg sdfg sdfg dsfg dfg dfg sdfg dfgh dfg dfghdfgh dfgh  dfgh dfghdfgh </string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Ztx-nh-JiE" secondAttribute="trailing" constant="16" id="5SK-HA-5m6"/>
+                                        <constraint firstItem="ydt-iP-Sev" firstAttribute="centerY" secondItem="hEa-VE-W6q" secondAttribute="centerY" id="7xQ-pr-hqe"/>
+                                        <constraint firstItem="Ztx-nh-JiE" firstAttribute="leading" secondItem="ydt-iP-Sev" secondAttribute="trailing" constant="10" id="DlP-Je-5c6"/>
+                                        <constraint firstItem="ydt-iP-Sev" firstAttribute="top" secondItem="hEa-VE-W6q" secondAttribute="top" id="F3O-R4-xoy"/>
+                                        <constraint firstItem="ydt-iP-Sev" firstAttribute="leading" secondItem="hEa-VE-W6q" secondAttribute="leading" constant="16" id="K9R-0u-LAc"/>
+                                        <constraint firstItem="Ztx-nh-JiE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hEa-VE-W6q" secondAttribute="top" id="Q3k-gT-OTw"/>
+                                        <constraint firstItem="Ztx-nh-JiE" firstAttribute="centerY" secondItem="hEa-VE-W6q" secondAttribute="centerY" id="dhk-zc-egH"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="05h-dy-tRK" id="YcU-BF-tZq"/>
+                            <outlet property="delegate" destination="05h-dy-tRK" id="adX-9g-Pcw"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lcx-lt-Qcu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2205.5999999999999" y="1460.4197901049477"/>
         </scene>
         <!--GameVC-->
         <scene sceneID="xbK-Vp-0Wd">
@@ -352,7 +406,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Xzm-rx-AhG"/>
-        <segue reference="rrd-Ky-9wu"/>
+        <segue reference="KSs-R9-btQ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
