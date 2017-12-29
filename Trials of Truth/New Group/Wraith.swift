@@ -15,6 +15,8 @@ struct RoundAction {
 
 class Wraith {
     
+    var wraithName = "wraith 1"
+    
     var meanList: [String] = ["message a",
                                  "message b",
                                  "message c",

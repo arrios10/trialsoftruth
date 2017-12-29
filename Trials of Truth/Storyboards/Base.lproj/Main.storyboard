@@ -164,24 +164,43 @@
             </objects>
             <point key="canvasLocation" x="2218" y="793"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Map Table View Controller-->
         <scene sceneID="cTD-Cg-YDL">
             <objects>
-                <tableViewController id="05h-dy-tRK" sceneMemberID="viewController">
+                <tableViewController id="05h-dy-tRK" customClass="MapTableViewController" customModule="Trials_of_Truth" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dqv-NY-twu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="94N-H9-tEs">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7w-KB-BJV">
+                                    <rect key="frame" x="8" y="0.0" width="359" height="45"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="f7w-KB-BJV" secondAttribute="bottom" id="TRF-rB-mCT"/>
+                                <constraint firstItem="f7w-KB-BJV" firstAttribute="top" secondItem="94N-H9-tEs" secondAttribute="top" id="ZBv-AG-qte"/>
+                                <constraint firstAttribute="trailing" secondItem="f7w-KB-BJV" secondAttribute="trailing" constant="8" id="mhb-k9-vdX"/>
+                                <constraint firstItem="f7w-KB-BJV" firstAttribute="leading" secondItem="94N-H9-tEs" secondAttribute="leading" constant="8" id="wlm-zi-ZMg"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="110" id="iuo-d3-0HL">
-                                <rect key="frame" x="0.0" y="28" width="375" height="110"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="110" id="iuo-d3-0HL" customClass="MapTableViewCell" customModule="Trials_of_Truth" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="73" width="375" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iuo-d3-0HL" id="hEa-VE-W6q">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ydt-iP-Sev">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ydt-iP-Sev">
                                             <rect key="frame" x="16" y="0.0" width="130" height="110"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="130" id="nBq-1s-vX8"/>
@@ -206,6 +225,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="totalGameScore" destination="f7w-KB-BJV" id="cWO-su-ri3"/>
+                                    <outlet property="wraithImage" destination="ydt-iP-Sev" id="sa2-wJ-Mwj"/>
+                                    <outlet property="wraithName" destination="Ztx-nh-JiE" id="cUI-Ok-knR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -405,8 +429,8 @@
         <image name="wraith1a 2" width="5000" height="6000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xzm-rx-AhG"/>
-        <segue reference="KSs-R9-btQ"/>
+        <segue reference="s3n-Cz-Bag"/>
+        <segue reference="rrd-Ky-9wu"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

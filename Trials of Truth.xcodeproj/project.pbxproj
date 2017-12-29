@@ -15,6 +15,8 @@
 		E50165A91F73261800453A55 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165A81F73261800453A55 /* GameViewController.swift */; };
 		E50165AD1F73311100453A55 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165AC1F73311100453A55 /* Game.swift */; };
 		E50165AF1F73346600453A55 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165AE1F73346600453A55 /* Round.swift */; };
+		E55EFF7C1FF5AADB00AF8B8E /* MapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55EFF7B1FF5AADB00AF8B8E /* MapTableViewController.swift */; };
+		E55EFF7E1FF5B0B800AF8B8E /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55EFF7D1FF5B0B800AF8B8E /* MapTableViewCell.swift */; };
 		E56A7E881F9183F400A9717D /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A7E871F9183F400A9717D /* Match.swift */; };
 		E56A7E8A1F9188FF00A9717D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A7E891F9188FF00A9717D /* MapViewController.swift */; };
 		E58783801FE353180025B907 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587837F1FE353180025B907 /* User.swift */; };
@@ -37,6 +39,8 @@
 		E50165A81F73261800453A55 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E50165AC1F73311100453A55 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		E50165AE1F73346600453A55 /* Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
+		E55EFF7B1FF5AADB00AF8B8E /* MapTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapTableViewController.swift; path = "Trials of Truth/View Controllers/MapTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		E55EFF7D1FF5B0B800AF8B8E /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		E56A7E871F9183F400A9717D /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		E56A7E891F9188FF00A9717D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E587837F1FE353180025B907 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -88,11 +92,12 @@
 		847552021FCE282000EB8B1A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E55EFF7B1FF5AADB00AF8B8E /* MapTableViewController.swift */,
+				E55EFF7D1FF5B0B800AF8B8E /* MapTableViewCell.swift */,
 				E50165A61F73260C00453A55 /* MainViewController.swift */,
-				E56A7E891F9188FF00A9717D /* MapViewController.swift */,
-				E52BA9531FE8324D00D1A7C8 /* MapStoryViewController.swift */,
 				E50165A81F73261800453A55 /* GameViewController.swift */,
 				E5AA08221FDA166C00D70E01 /* StoryViewController.swift */,
+				E56A7E891F9188FF00A9717D /* MapViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -209,14 +214,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E50165951F7061D500453A55 /* AppDelegate.swift in Sources */,
-				E52BA9541FE8324D00D1A7C8 /* MapStoryViewController.swift in Sources */,
 				E50165A91F73261800453A55 /* GameViewController.swift in Sources */,
+				E55EFF7E1FF5B0B800AF8B8E /* MapTableViewCell.swift in Sources */,
 				E5B595D31FA7EC150086E782 /* Wraith.swift in Sources */,
 				E50165A71F73260C00453A55 /* MainViewController.swift in Sources */,
 				E5A9E7AE1FBE5EB100FC79C2 /* Wraith3.swift in Sources */,
 				E50165AF1F73346600453A55 /* Round.swift in Sources */,
 				E58783801FE353180025B907 /* User.swift in Sources */,
 				E50165AD1F73311100453A55 /* Game.swift in Sources */,
+				E55EFF7C1FF5AADB00AF8B8E /* MapTableViewController.swift in Sources */,
 				E5AA08231FDA166C00D70E01 /* StoryViewController.swift in Sources */,
 				E56A7E881F9183F400A9717D /* Match.swift in Sources */,
 				E58EC3651FB138D800F56F96 /* MeanHelloWraith.swift in Sources */,
