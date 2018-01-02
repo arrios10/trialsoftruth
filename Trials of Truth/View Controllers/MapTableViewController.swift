@@ -63,6 +63,10 @@ class MapTableViewController: UITableViewController {
         User.saveUser()
     }
     
+    func showGameVC() {
+        performSegue(withIdentifier: "ShowGameVC", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextController = segue.destination as? GameViewController
         
@@ -84,15 +88,33 @@ class MapTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MapTableViewCell
-
         
+        let row =  4 - indexPath.row
         // Configure the cell...
-        cell.wraithName.text = currentUser.currentGame.matches[indexPath.row].currentWraith.wraithName
+        cell.wraithName.text = currentUser.currentGame.matches[row].currentWraith.wraithName
         
+        
+        if currentUser.currentGame.matchIndex == row {
+            cell.wraithName.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        } else {
+            cell.wraithName.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        }
         return cell
+    
     }
-
-
+        
+        
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let row =  4 - indexPath.row
+        
+        if currentUser.currentGame.matchIndex == row {
+            showGameVC()
+        }
+        
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

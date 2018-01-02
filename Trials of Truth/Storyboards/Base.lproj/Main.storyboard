@@ -27,7 +27,7 @@
                                 <state key="normal" title="Start New Quest"/>
                                 <connections>
                                     <action selector="startQuestButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ngR-gz-FFa"/>
-                                    <segue destination="Wae-T6-xxE" kind="show" id="KSs-R9-btQ"/>
+                                    <segue destination="05h-dy-tRK" kind="show" id="dyr-41-2vf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your High Score Is X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyg-pA-y8N">
@@ -40,7 +40,7 @@
                                 <rect key="frame" x="116.5" y="392" width="142" height="30"/>
                                 <state key="normal" title="Continue Your Quest"/>
                                 <connections>
-                                    <segue destination="Wae-T6-xxE" kind="show" id="rrd-Ky-9wu"/>
+                                    <segue destination="05h-dy-tRK" kind="show" id="Ysk-yW-Tos"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -77,35 +77,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Add-7N-a8F">
-                                <rect key="frame" x="154.5" y="439" width="66" height="30"/>
+                                <rect key="frame" x="154.5" y="395" width="66" height="30"/>
                                 <state key="normal" title="wraith 1"/>
                                 <connections>
                                     <segue destination="i4U-P2-90G" kind="show" id="3K9-AA-WT6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNe-gd-VGw">
-                                <rect key="frame" x="154.5" y="389" width="66" height="30"/>
+                                <rect key="frame" x="154.5" y="345" width="66" height="30"/>
                                 <state key="normal" title="wraith 2"/>
                                 <connections>
                                     <segue destination="i4U-P2-90G" kind="show" id="hyl-W6-CEX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mn8-U3-baV">
-                                <rect key="frame" x="154.5" y="340" width="66" height="30"/>
+                                <rect key="frame" x="154.5" y="296" width="66" height="30"/>
                                 <state key="normal" title="wraith 3"/>
                                 <connections>
                                     <segue destination="i4U-P2-90G" kind="show" id="Xzm-rx-AhG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1k-97-mVd">
-                                <rect key="frame" x="154.5" y="291" width="66" height="30"/>
+                                <rect key="frame" x="154.5" y="247" width="66" height="30"/>
                                 <state key="normal" title="wraith 4"/>
                                 <connections>
                                     <segue destination="i4U-P2-90G" kind="show" id="s3n-Cz-Bag"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSO-0g-bgN">
-                                <rect key="frame" x="154.5" y="253" width="66" height="30"/>
+                                <rect key="frame" x="154.5" y="209" width="66" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="g9Q-0j-BJT"/>
                                 </constraints>
@@ -115,7 +115,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fa5-Qe-jUo">
-                                <rect key="frame" x="101" y="157" width="173" height="58"/>
+                                <rect key="frame" x="101" y="113" width="173" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="KIw-wZ-SeQ"/>
                                 </constraints>
@@ -171,8 +171,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dqv-NY-twu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="94N-H9-tEs">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -237,10 +236,13 @@
                             <outlet property="delegate" destination="05h-dy-tRK" id="adX-9g-Pcw"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="i4U-P2-90G" kind="show" identifier="ShowGameVC" id="bHp-Jt-3ar"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcx-lt-Qcu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2205.5999999999999" y="1460.4197901049477"/>
+            <point key="canvasLocation" x="2217" y="1562"/>
         </scene>
         <!--GameVC-->
         <scene sceneID="xbK-Vp-0Wd">
@@ -429,8 +431,8 @@
         <image name="wraith1a 2" width="5000" height="6000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s3n-Cz-Bag"/>
-        <segue reference="rrd-Ky-9wu"/>
+        <segue reference="bHp-Jt-3ar"/>
+        <segue reference="Ysk-yW-Tos"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
