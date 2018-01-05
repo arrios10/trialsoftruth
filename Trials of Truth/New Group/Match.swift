@@ -114,17 +114,17 @@ class Match: NSObject, NSCoding {
         switch self.matchNumber {
            
         case 1:
-            currentWraith = Wraith()
+            currentWraith = Wraith(wraithName: "wraith1", wraithImage: #imageLiteral(resourceName: "wraith1a 2"))
         case 2:
-            currentWraith = MeanHelloWraith()
+            currentWraith = Wraith2(wraithName: "wraith2", wraithImage: #imageLiteral(resourceName: "canvas2"))
         case 3:
-            currentWraith = Wraith3()
+            currentWraith = Wraith3(wraithName: "wraith3", wraithImage: #imageLiteral(resourceName: "wraith1a 2"))
         case 4:
-            currentWraith = Wraith4()
+            currentWraith = Wraith4(wraithName: "wraith4", wraithImage: #imageLiteral(resourceName: "canvas2"))
         case 5:
-            currentWraith = Wraith5()
+            currentWraith = Wraith5(wraithName: "wraith5", wraithImage: #imageLiteral(resourceName: "canvas2"))
             
-        default: currentWraith = Wraith()
+        default: currentWraith = Wraith(wraithName: "wraith1", wraithImage: #imageLiteral(resourceName: "wraith1a 2"))
         }
     }
 

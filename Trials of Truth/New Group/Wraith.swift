@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct RoundAction {
     var message: String!
@@ -15,9 +16,11 @@ struct RoundAction {
 
 class Wraith {
     
-    var wraithName = "wraith 1"
+    var wraithName: String
     
-    var meanList: [String] = ["message a",
+    var wraithImage: UIImage
+    
+    var primaryMessages: [String] = ["message a",
                                  "message b",
                                  "message c",
                                  "message d",
@@ -28,7 +31,7 @@ class Wraith {
                                  "message i",
                                  "message j"]
     
-    var niceList: [String] = ["message 1",
+    var secondaryMessages: [String] = ["message 1",
                               "message 2",
                               "message 3",
                               "message 4",
@@ -39,6 +42,11 @@ class Wraith {
                               "message 9",
                               "message 10"]
     
+    init(wraithName: String, wraithImage: UIImage) {
+        self.wraithName = wraithName
+        self.wraithImage = wraithImage
+    }
+    
     
     func compMove(attackRate: Float, roundIndex: Int) -> RoundAction {
         // if below 20% or above 80%, ATTACK!, if attack rate is exactly 50% attack 25% of the time, otherwise, attack 20% of the time
@@ -48,7 +56,7 @@ class Wraith {
         if attackRate <= 0.1 || attackRate  >= 0.9 || attackRate == 0.5 {
       
             //show the mean message
-            action.message = meanList[roundIndex]
+            action.message = primaryMessages[roundIndex]
    
             let randomNumber = arc4random() % 10
             if randomNumber <= 9 { //90% | mean mode
@@ -58,7 +66,7 @@ class Wraith {
         } else {
 
             // send a nice message
-            action.message = niceList[roundIndex]
+            action.message = secondaryMessages[roundIndex]
    
             let randomNumber = arc4random() % 4
             if randomNumber == 0 { //25% | nice mode

@@ -152,7 +152,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="HyL-Ik-lOB"/>
                     <connections>
-                        <outlet property="totalGameScore" destination="fa5-Qe-jUo" id="Vq8-hO-jx8"/>
                         <outlet property="wraithFiveButton" destination="oSO-0g-bgN" id="4mS-dv-dYb"/>
                         <outlet property="wraithFourButton" destination="z1k-97-mVd" id="8Ic-0C-XDq"/>
                         <outlet property="wraithOneButton" destination="Add-7N-a8F" id="yGo-ja-7AP"/>
@@ -162,13 +161,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yh-u0-OaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2218" y="793"/>
+            <point key="canvasLocation" x="3156" y="-7"/>
         </scene>
         <!--Map Table View Controller-->
         <scene sceneID="cTD-Cg-YDL">
             <objects>
                 <tableViewController id="05h-dy-tRK" customClass="MapTableViewController" customModule="Trials_of_Truth" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dqv-NY-twu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dqv-NY-twu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -237,12 +236,14 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="gameScore" destination="f7w-KB-BJV" id="b0S-15-jWu"/>
                         <segue destination="i4U-P2-90G" kind="show" identifier="ShowGameVC" id="bHp-Jt-3ar"/>
+                        <segue destination="JFi-bf-ZRv" kind="presentation" identifier="ShowIntroStory" id="W71-N4-pVe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcx-lt-Qcu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2217" y="1562"/>
+            <point key="canvasLocation" x="2318" y="793"/>
         </scene>
         <!--GameVC-->
         <scene sceneID="xbK-Vp-0Wd">
@@ -405,7 +406,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3908" y="793"/>
+            <point key="canvasLocation" x="2718" y="1610"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wSS-dJ-IxJ">
@@ -415,7 +416,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Zqq-j7-O1L">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -431,6 +431,7 @@
         <image name="wraith1a 2" width="5000" height="6000"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="W71-N4-pVe"/>
         <segue reference="bHp-Jt-3ar"/>
         <segue reference="Ysk-yW-Tos"/>
     </inferredMetricsTieBreakers>
