@@ -16,9 +16,17 @@ struct RoundAction {
 
 class Wraith {
     
-    var wraithName: String
+    var wraithName: String {
+        get {
+            return "Wraith Name"
+        }
+    }
     
-    var wraithImage: UIImage
+    var wraithImage: UIImage {
+        get {
+            return #imageLiteral(resourceName: "canvas2")
+        }
+    }
     
     var primaryMessages: [String] = ["message a",
                                  "message b",
@@ -42,11 +50,7 @@ class Wraith {
                               "message 9",
                               "message 10"]
     
-    init(wraithName: String, wraithImage: UIImage) {
-        self.wraithName = wraithName
-        self.wraithImage = wraithImage
-    }
-    
+      
     
     func compMove(attackRate: Float, roundIndex: Int) -> RoundAction {
         // if below 20% or above 80%, ATTACK!, if attack rate is exactly 50% attack 25% of the time, otherwise, attack 20% of the time

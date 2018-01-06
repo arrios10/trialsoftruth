@@ -41,6 +41,8 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
     
     let gameIntro = "you are a knight on a quest"
     
+    var introPresented = false
+    
     var currentMatch: Match? {
         get {
             guard matches.count > matchIndex else {
@@ -64,11 +66,13 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(matches, forKey: "matches")
         aCoder.encode(matchIndex, forKey: "matchIndex")
+        aCoder.encode(introPresented, forKey: "introPresented")
     }
 
     required init?(coder aDecoder: NSCoder) {
         matchIndex = aDecoder.decodeInteger(forKey: "matchIndex")
         matches = aDecoder.decodeObject(forKey: "matches") as! [Match]
+        introPresented = aDecoder.decodeBool(forKey: "introPresented")
     }
 
 }

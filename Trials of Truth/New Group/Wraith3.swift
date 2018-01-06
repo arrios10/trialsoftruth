@@ -6,10 +6,20 @@
 //  Copyright © 2017 Relativistic. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Wraith3: Wraith {
     
-
+    override var wraithName: String {
+        get {
+            return "Wraith 3"
+        }
+    }
+    
+    override var wraithImage: UIImage {
+        get {
+            return #imageLiteral(resourceName: "canvas2")
+        }
+    }
     
 }

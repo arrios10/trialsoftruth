@@ -12,8 +12,6 @@ class MapTableViewController: UITableViewController {
     
     @IBOutlet weak var gameScore: UILabel!
     
-    var introPresented = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,9 +20,9 @@ class MapTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if introPresented  == false {
+        if currentUser.currentGame.introPresented  == false {
             showIntroStory()
-            introPresented = true
+            currentUser.currentGame.introPresented = true
         }
         
         updateGame()
@@ -73,9 +71,24 @@ class MapTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextController = segue.destination as? GameViewController
         
-        nextController?.currentMatch = currentUser.currentGame.currentMatch
+        if let nextController = segue.destination as? GameViewController {
+            nextController.currentMatch = currentUser.currentGame.currentMatch
+        }
+        
+        if let nextController = segue.destination as? StoryViewController {
+        
+            nextController.delegate = self
+        
+            if currentUser.currentGame.gameState == GameState.Lose {
+                nextController.story = currentUser.currentGame.gameOverMessage
+            } else if currentUser.currentGame.gameState == GameState.Win {
+                nextController.story = currentUser.currentGame.gameWinnerMessage
+            } else {
+                nextController.story = currentUser.currentGame.currentMatch?.storyList[currentUser.currentGame.matchIndex]
+            }
+        }
+        
     }
     
     // MARK: - Table view data source
@@ -133,4 +146,13 @@ class MapTableViewController: UITableViewController {
         return rowHeight
     }
     
+
 }
+
+extension MapTableViewController: StoryViewControllerDelegate {
+    
+    func dismissedStoryVC(){
+    }
+    
+}
+
