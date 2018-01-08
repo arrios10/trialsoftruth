@@ -18,7 +18,7 @@ class Wraith5: Wraith {
     
     override var wraithImage: UIImage {
         get {
-            return #imageLiteral(resourceName: "canvas2")
+            return #imageLiteral(resourceName: "wraith1a 2")
         }
     }
     

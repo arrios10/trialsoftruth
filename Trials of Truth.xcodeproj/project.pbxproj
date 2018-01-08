@@ -18,7 +18,6 @@
 		E55EFF7C1FF5AADB00AF8B8E /* MapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55EFF7B1FF5AADB00AF8B8E /* MapTableViewController.swift */; };
 		E55EFF7E1FF5B0B800AF8B8E /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55EFF7D1FF5B0B800AF8B8E /* MapTableViewCell.swift */; };
 		E56A7E881F9183F400A9717D /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A7E871F9183F400A9717D /* Match.swift */; };
-		E56A7E8A1F9188FF00A9717D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A7E891F9188FF00A9717D /* MapViewController.swift */; };
 		E58783801FE353180025B907 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587837F1FE353180025B907 /* User.swift */; };
 		E5A9E7AE1FBE5EB100FC79C2 /* Wraith3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A9E7AD1FBE5EB100FC79C2 /* Wraith3.swift */; };
 		E5A9E7B01FBE5F7B00FC79C2 /* Wraith4.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A9E7AF1FBE5F7B00FC79C2 /* Wraith4.swift */; };
@@ -42,7 +41,6 @@
 		E55EFF7B1FF5AADB00AF8B8E /* MapTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapTableViewController.swift; path = "Trials of Truth/View Controllers/MapTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E55EFF7D1FF5B0B800AF8B8E /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		E56A7E871F9183F400A9717D /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
-		E56A7E891F9188FF00A9717D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E587837F1FE353180025B907 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E5A9E7AD1FBE5EB100FC79C2 /* Wraith3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wraith3.swift; sourceTree = "<group>"; };
 		E5A9E7AF1FBE5F7B00FC79C2 /* Wraith4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wraith4.swift; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 				E50165A61F73260C00453A55 /* MainViewController.swift */,
 				E50165A81F73261800453A55 /* GameViewController.swift */,
 				E5AA08221FDA166C00D70E01 /* StoryViewController.swift */,
-				E56A7E891F9188FF00A9717D /* MapViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -226,7 +223,6 @@
 				E55EFF7C1FF5AADB00AF8B8E /* MapTableViewController.swift in Sources */,
 				E5AA08231FDA166C00D70E01 /* StoryViewController.swift in Sources */,
 				E56A7E881F9183F400A9717D /* Match.swift in Sources */,
-				E56A7E8A1F9188FF00A9717D /* MapViewController.swift in Sources */,
 				E5A9E7B21FBE5F8D00FC79C2 /* Wraith5.swift in Sources */,
 				E5A9E7B01FBE5F7B00FC79C2 /* Wraith4.swift in Sources */,
 			);

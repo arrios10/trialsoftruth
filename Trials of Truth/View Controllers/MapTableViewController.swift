@@ -12,6 +12,7 @@ class MapTableViewController: UITableViewController {
     
     @IBOutlet weak var gameScore: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,17 +78,9 @@ class MapTableViewController: UITableViewController {
         }
         
         if let nextController = segue.destination as? StoryViewController {
-        
             nextController.delegate = self
-        
-            if currentUser.currentGame.gameState == GameState.Lose {
-                nextController.story = currentUser.currentGame.gameOverMessage
-            } else if currentUser.currentGame.gameState == GameState.Win {
-                nextController.story = currentUser.currentGame.gameWinnerMessage
-            } else {
-                nextController.story = currentUser.currentGame.currentMatch?.storyList[currentUser.currentGame.matchIndex]
-            }
-        }
+            nextController.story = currentUser.currentGame.gameIntroMessage
+       }
         
     }
     
@@ -103,7 +96,6 @@ class MapTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 5
     }
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MapTableViewCell
@@ -121,7 +113,6 @@ class MapTableViewController: UITableViewController {
         return cell
     
     }
-    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
