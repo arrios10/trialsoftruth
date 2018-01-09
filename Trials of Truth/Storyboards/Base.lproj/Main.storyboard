@@ -235,6 +235,7 @@
                         <outlet property="messageLabel" destination="peM-ES-htv" id="uho-Wh-OH7"/>
                         <outlet property="pointsAwardedLabel" destination="gb7-ux-fz5" id="h2r-u4-m0W"/>
                         <outlet property="scoreLabel" destination="YbQ-G4-jbM" id="V8A-Lc-S9D"/>
+                        <outlet property="wraithImage" destination="3QD-4q-juO" id="EQf-DT-Quq"/>
                         <outlet property="yieldButton" destination="ZXX-ke-eFN" id="bVA-3w-pO5"/>
                         <segue destination="JFi-bf-ZRv" kind="presentation" identifier="ShowStory" id="ePR-HK-Ja5"/>
                     </connections>
@@ -332,7 +333,7 @@
         <image name="wraith1a 2" width="5000" height="6000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="W71-N4-pVe"/>
+        <segue reference="ePR-HK-Ja5"/>
         <segue reference="Ysk-yW-Tos"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

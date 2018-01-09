@@ -16,6 +16,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var pointsAwardedLabel: UILabel!
     @IBOutlet weak var attackButton: UIButton!
     @IBOutlet weak var yieldButton: UIButton!
+    @IBOutlet weak var wraithImage: UIImageView!
+    
+    
     var storyPresented = false
     
     var currentMatch: Match!
@@ -27,6 +30,12 @@ class GameViewController: UIViewController {
         updateDisplay()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        wraithImage.alpha = 0
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -34,8 +43,7 @@ class GameViewController: UIViewController {
             showStoryVC()
             storyPresented = true
         }
-        
-        
+    
 
     }
     
@@ -154,6 +162,13 @@ class GameViewController: UIViewController {
 extension GameViewController: StoryViewControllerDelegate {
     
     func dismissedStoryVC() {
+        
+        let animator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut) { [weak self] in
+            self?.wraithImage.alpha = 1
+        }
+        
+        animator.startAnimation()
+        
         if currentUser.currentGame.gameState == GameState.Lose || currentUser.currentGame.gameState == GameState.Win {
             exitGame()
         }
