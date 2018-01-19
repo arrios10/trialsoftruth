@@ -21,6 +21,18 @@ class MapTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        let backgroundImage =  #imageLiteral(resourceName: "tree")
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+        imageView.contentMode = .scaleAspectFit
+        
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        
+        blurEffectView.frame = imageView.bounds
+        
+        imageView.addSubview(blurEffectView)
+        
         if currentUser.currentGame.introPresented  == false {
             showIntroStory()
             currentUser.currentGame.introPresented = true

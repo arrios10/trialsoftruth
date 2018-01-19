@@ -24,11 +24,11 @@ class Wraith {
     
     var wraithImage: UIImage {
         get {
-            return #imageLiteral(resourceName: "wraith0")
+            return #imageLiteral(resourceName: "canvas3")
         }
     }
     
-    var primaryMessages: [String] = ["message a",
+    var primaryMessages: [String] = ["I sense your thoughts. You seek the magic stone. Unwise, but inevitable.",
                                  "message b",
                                  "message c",
                                  "message d",
