@@ -21,6 +21,8 @@ class MapTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        
         let backgroundImage =  #imageLiteral(resourceName: "tree")
         let imageView = UIImageView(image: backgroundImage)
         self.tableView.backgroundView = imageView
@@ -45,7 +47,7 @@ class MapTableViewController: UITableViewController {
     //method to update current game state whenever the map view
     func updateGame() {
         
-        gameScore.text = "\(currentUser.currentGame.gameTotalPoints)"
+        gameScore.text = "Score: \(currentUser.currentGame.gameTotalPoints)"
         
         if currentUser.currentGame.matches[0].matchIsOver == true {
             currentUser.currentGame.matchIndex = 1

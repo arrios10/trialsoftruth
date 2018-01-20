@@ -17,9 +17,7 @@ class StoryViewController: UIViewController {
     var delegate: StoryViewControllerDelegate?
 
     @IBOutlet weak var storyLabel: UILabel!
-    
-    @IBOutlet weak var instructionsLabel: UILabel!
-    
+        
     var story: String?
     
     override func viewDidLoad() {
