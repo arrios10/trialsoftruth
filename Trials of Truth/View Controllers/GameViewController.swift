@@ -10,10 +10,10 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var wraithMessage: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var foeActionLabel: UILabel!
-    @IBOutlet weak var pointsAwardedLabel: UILabel!
+    @IBOutlet weak var roundPointsLabel: UILabel!
     @IBOutlet weak var attackButton: UIButton!
     @IBOutlet weak var yieldButton: UIButton!
     @IBOutlet weak var wraithImage: UIImageView!
@@ -34,6 +34,7 @@ class GameViewController: UIViewController {
         super.viewWillAppear(animated)
         
         wraithImage.alpha = 0
+        roundPointsLabel.alpha = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,7 +54,21 @@ class GameViewController: UIViewController {
         currentMatch.nextRound(userMove: userMove)
         
         // update points awarded for previous round which is scored when nextRound() is called
-        pointsAwardedLabel.text = String(previousRound.roundPoints)
+        roundPointsLabel.text = "+\(previousRound.roundPoints)"
+        
+        let pointsAnimator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut) { [weak self] in
+            self?.roundPointsLabel.alpha = 1
+            
+        }
+        
+        self.roundPointsLabel.alpha = 1
+        
+        pointsAnimator.addAnimations({ [weak self] in
+            self?.roundPointsLabel.alpha = 0
+        }, delayFactor: 0)
+        
+        pointsAnimator.startAnimation()
+        
         
         foeActionLabel.text = previousRound.computerMove == .Attack ? "Your foe has attacked" : "Your foe has yielded"
 
@@ -126,13 +141,13 @@ class GameViewController: UIViewController {
         let attackRate = currentMatch.calcAttackRate()
         let compAction = currentMatch.currentWraith.compMove(attackRate: attackRate, roundIndex: currentMatch.roundIndex)
         
-        messageLabel.text = compAction.message
+        wraithMessage.text = compAction.message
         
         
-        scoreLabel.text = String(currentMatch.matchTotalPoints)
+        scoreLabel.text = "Total Score: \(currentMatch.matchTotalPoints)"
         
         if currentMatch.matchIsOver == true {
-            messageLabel.text = "Match Over"
+            wraithMessage.text = "Match Over"
             attackButton.isEnabled = false
             yieldButton.isEnabled  = false
             checkScore()
@@ -154,7 +169,6 @@ class GameViewController: UIViewController {
             nextController?.story = currentUser.currentGame.currentMatch?.storyList[currentUser.currentGame.matchIndex]
         }
     }
-    
     
     
 }
