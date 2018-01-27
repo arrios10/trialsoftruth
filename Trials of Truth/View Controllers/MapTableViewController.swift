@@ -10,6 +10,8 @@ import UIKit
 
 class MapTableViewController: UITableViewController {
     
+    //hello test
+    
     @IBOutlet weak var gameScore: UILabel!
     
     
