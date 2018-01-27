@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var attackButton: UIButton!
     @IBOutlet weak var yieldButton: UIButton!
     @IBOutlet weak var wraithImage: UIImageView!
+    @IBOutlet weak var pointsLabelConstraint: NSLayoutConstraint!
     
     
     var storyPresented = false
@@ -44,8 +45,8 @@ class GameViewController: UIViewController {
             showStoryVC()
             storyPresented = true
         }
-    
-
+        
+        
     }
     
     func playRound(userMove: Move) {
@@ -56,22 +57,10 @@ class GameViewController: UIViewController {
         // update points awarded for previous round which is scored when nextRound() is called
         roundPointsLabel.text = "+\(previousRound.roundPoints)"
         
-        let pointsAnimator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut) { [weak self] in
-            self?.roundPointsLabel.alpha = 1
-            
-        }
+        animatePoints()
         
-        self.roundPointsLabel.alpha = 1
+        foeActionLabel.text = previousRound.computerMove == .Attack ? "The wraith has attacked" : "The wraith has yielded"
         
-        pointsAnimator.addAnimations({ [weak self] in
-            self?.roundPointsLabel.alpha = 0
-        }, delayFactor: 0)
-        
-        pointsAnimator.startAnimation()
-        
-        
-        foeActionLabel.text = previousRound.computerMove == .Attack ? "Your foe has attacked" : "Your foe has yielded"
-
         updateDisplay()
     }
     
@@ -117,9 +106,9 @@ class GameViewController: UIViewController {
                 showStoryVC()
             }
         default:
-                currentUser.currentGame.gameState = GameState.Started
+            currentUser.currentGame.gameState = GameState.Started
         }
-    
+        
         
     }
     
@@ -130,7 +119,7 @@ class GameViewController: UIViewController {
         
         //send user back to mainVC
         navigationController?.popToRootViewController(animated: true)
-
+        
     }
     
     func showStoryVC() {
@@ -155,6 +144,30 @@ class GameViewController: UIViewController {
         }
     }
     
+    func animatePoints() {
+        pointsLabelConstraint.constant = 0
+        let pointsAnimatorIn = UIViewPropertyAnimator(duration: 1, curve: .easeInOut) { [weak self] in
+            self?.roundPointsLabel.alpha = 1
+            self?.view.layoutIfNeeded()
+        }
+        
+        pointsAnimatorIn.addCompletion { [weak self] (_) in
+            self?.pointsLabelConstraint.constant = -8
+            
+            let pointsAnimatorOut = UIViewPropertyAnimator(duration: 1, curve: .easeInOut, animations: {
+                self?.roundPointsLabel.alpha = 0
+                self?.view.layoutIfNeeded()
+            })
+            pointsAnimatorOut.addCompletion({ (_) in
+                self?.pointsLabelConstraint.constant = 0
+            })
+            pointsAnimatorOut.startAnimation(afterDelay: 1)
+        }
+        
+        pointsAnimatorIn.startAnimation()
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextController = segue.destination as? StoryViewController
         
@@ -172,6 +185,7 @@ class GameViewController: UIViewController {
     
     
 }
+
 
 extension GameViewController: StoryViewControllerDelegate {
     
