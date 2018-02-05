@@ -61,7 +61,7 @@ class Match: NSObject, NSCoding {
         var attacks: Float = 0.0
         
         for round in rounds {
-            if round.userMove == .Attack {
+            if round.userMove == .Sword {
                 attacks += 1.0
             }
         }
@@ -78,7 +78,7 @@ class Match: NSObject, NSCoding {
         }
         
         currentRound.userMove = userMove
-        currentRound.computerMove = currentWraith.compMove(attackRate: calcAttackRate(), roundIndex: roundIndex).move
+        currentRound.wraithMove = currentWraith.compMove(attackRate: calcAttackRate(), roundIndex: roundIndex).move
         
         //record the results - add to previous total score, record players move & calculate percent
         matchTotalPoints += currentRound.roundPoints

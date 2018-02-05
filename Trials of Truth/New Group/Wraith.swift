@@ -53,34 +53,17 @@ class Wraith {
       
     
     func compMove(attackRate: Float, roundIndex: Int) -> RoundAction {
-        // if below 20% or above 80%, ATTACK!, if attack rate is exactly 50% attack 25% of the time, otherwise, attack 20% of the time
         
         var action = RoundAction()
-        
-        if attackRate <= 0.1 || attackRate  >= 0.9 || attackRate == 0.5 {
-      
-            //show the mean message
-            action.message = primaryMessages[roundIndex]
-   
-            let randomNumber = arc4random() % 10
-            if randomNumber <= 9 { //90% | mean mode
-                action.move = .Attack
-                return action
-            }
-        } else {
+        action.message = primaryMessages[roundIndex]
 
-            // send a nice message
-            action.message = secondaryMessages[roundIndex]
-   
-            let randomNumber = arc4random() % 4
-            if randomNumber == 0 { //25% | nice mode
-                action.move = .Attack
-                return action
-            }
-        }
+        let randomNumber = arc4random_uniform(2)
+        if randomNumber == 0 {
+               action.move = .Sword
+               return action
+           }
 
-
-        action.move = .Yield
+        action.move = .Shield
         return action
         
     }

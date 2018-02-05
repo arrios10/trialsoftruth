@@ -14,11 +14,12 @@ class GameViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var foeActionLabel: UILabel!
     @IBOutlet weak var roundPointsLabel: UILabel!
-    @IBOutlet weak var attackButton: UIButton!
-    @IBOutlet weak var yieldButton: UIButton!
+    @IBOutlet weak var swordButton: UIButton!
+    @IBOutlet weak var shieldButton: UIButton!
     @IBOutlet weak var wraithImage: UIImageView!
     @IBOutlet weak var pointsLabelConstraint: NSLayoutConstraint!
     
+    private var pointsAnimator: UIViewPropertyAnimator?
     
     var storyPresented = false
     
@@ -57,19 +58,19 @@ class GameViewController: UIViewController {
         // update points awarded for previous round which is scored when nextRound() is called
         roundPointsLabel.text = "+\(previousRound.roundPoints)"
         
-        animatePoints()
+        animatePointsIn()
         
-        foeActionLabel.text = previousRound.computerMove == .Attack ? "The wraith has attacked" : "The wraith has yielded"
+        foeActionLabel.text = previousRound.wraithMove == .Sword ? "The wraith has attacked" : "The wraith has yielded"
         
         updateDisplay()
     }
     
-    @IBAction func attackButtonSelected(_ sender: Any) {
-        playRound(userMove: Move.Attack)
+    @IBAction func swordButtonSelected(_ sender: Any) {
+        playRound(userMove: Move.Sword)
     }
     
-    @IBAction func yieldButtonSelected(_ sender: Any) {
-        playRound(userMove: Move.Yield)
+    @IBAction func shieldButtonSelected(_ sender: Any) {
+        playRound(userMove: Move.Shield)
     }
     
     func checkScore() {
@@ -77,27 +78,27 @@ class GameViewController: UIViewController {
         switch currentUser.currentGame.matchIndex {
             
         case 0:
-            if currentUser.currentGame.gameTotalPoints < 10 {
+            if currentUser.currentGame.gameTotalPoints < 5 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 1:
-            if currentUser.currentGame.gameTotalPoints < 20 {
+            if currentUser.currentGame.gameTotalPoints < 8{
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 2:
-            if currentUser.currentGame.gameTotalPoints < 30 {
+            if currentUser.currentGame.gameTotalPoints < 13 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 3:
-            if currentUser.currentGame.gameTotalPoints < 40 {
+            if currentUser.currentGame.gameTotalPoints < 21 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 4:
-            if currentUser.currentGame.gameTotalPoints < 50 {
+            if currentUser.currentGame.gameTotalPoints < 34 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             } else {
@@ -137,35 +138,41 @@ class GameViewController: UIViewController {
         
         if currentMatch.matchIsOver == true {
             wraithMessage.text = "Match Over"
-            attackButton.isEnabled = false
-            yieldButton.isEnabled  = false
+            swordButton.isEnabled = false
+            shieldButton.isEnabled  = false
             checkScore()
             
         }
     }
     
-    func animatePoints() {
+    func animatePointsIn() {
+        pointsAnimator?.stopAnimation(true)
+
         pointsLabelConstraint.constant = 0
-        let pointsAnimatorIn = UIViewPropertyAnimator(duration: 1, curve: .easeInOut) { [weak self] in
+        pointsAnimator = UIViewPropertyAnimator(duration: 0.3, curve: .easeInOut) { [weak self] in
             self?.roundPointsLabel.alpha = 1
             self?.view.layoutIfNeeded()
         }
         
-        pointsAnimatorIn.addCompletion { [weak self] (_) in
-            self?.pointsLabelConstraint.constant = -8
-            
-            let pointsAnimatorOut = UIViewPropertyAnimator(duration: 1, curve: .easeInOut, animations: {
-                self?.roundPointsLabel.alpha = 0
-                self?.view.layoutIfNeeded()
-            })
-            pointsAnimatorOut.addCompletion({ (_) in
-                self?.pointsLabelConstraint.constant = 0
-            })
-            pointsAnimatorOut.startAnimation(afterDelay: 1)
+        pointsAnimator?.addCompletion { [weak self] (_) in
+            self?.animatePointsOut()
         }
+        pointsAnimator?.startAnimation()
         
-        pointsAnimatorIn.startAnimation()
+    }
+    
+    func animatePointsOut() {
+
+        pointsLabelConstraint.constant = -8
         
+        pointsAnimator = UIViewPropertyAnimator(duration: 0.5, curve: .easeInOut, animations: { [weak self] in
+            self?.roundPointsLabel.alpha = 0
+            self?.view.layoutIfNeeded()
+        })
+        pointsAnimator?.addCompletion({ [weak self] (_) in
+            self?.pointsLabelConstraint.constant = 0
+        })
+        pointsAnimator?.startAnimation(afterDelay: 0.5)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

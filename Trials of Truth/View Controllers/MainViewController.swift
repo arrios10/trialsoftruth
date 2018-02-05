@@ -11,10 +11,9 @@ import UIKit
 class MainViewController: UIViewController {
 
     @IBOutlet weak var scoreLabel: UILabel!
-    
     @IBOutlet weak var continueQuestButton: UIButton!
-    
     @IBOutlet weak var swordImage: UIImageView!
+    @IBOutlet weak var logoLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +28,12 @@ class MainViewController: UIViewController {
         
         swordImage.transform = swordImage.transform.translatedBy(x: 0, y: -swordImage.frame.height)
         
+        logoLabel.alpha = 0
+        logoLabel.transform = logoLabel.transform.scaledBy(x: 0.5, y: 0.5)
+        //new stuff
+        logoLabel.transform = logoLabel.transform.translatedBy(x: 0, y: swordImage.frame.height/2)
+
         User.loadUser()
-        
-        
         
         let isGameOver = currentUser.currentGame?.matches[4].matchIsOver == true
         
@@ -48,14 +50,32 @@ class MainViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateSword()
+
     }
     
     func animateSword() {
-        let swordAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) { [weak self] in
+        let swordAnimator = UIViewPropertyAnimator(duration: 0.2, curve: .linear) { [weak self] in
             self?.swordImage.transform = .identity
         }
-        swordAnimator.startAnimation(afterDelay: 1)
+        
+        swordAnimator.addCompletion { [weak self] (_) in
+            self?.animateLogo()
+        }
+        
+        swordAnimator.startAnimation(afterDelay: 0.8)
+
     }
+    
+    func animateLogo() {
+        let logoAnimator = UIViewPropertyAnimator(duration: 0.5, curve: .easeInOut) { [weak self] in
+            self?.logoLabel.alpha = 1
+            self?.logoLabel.transform  = .identity
+
+        }
+        
+        logoAnimator.startAnimation()
+    }
+    
    
     @IBAction func startQuestButton(_ sender: Any) {
         currentUser.currentGame = Game()

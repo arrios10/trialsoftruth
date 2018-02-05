@@ -75,7 +75,7 @@
                                 <color key="backgroundColor" red="0.17715445160865784" green="0.17732077836990356" blue="0.17718020081520081" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tJV-1H-7xk">
-                                <rect key="frame" x="78.666666666666671" y="202.33333333333331" width="217.66666666666663" height="204.33333333333331"/>
+                                <rect key="frame" x="78.666666666666671" y="202" width="217.66666666666663" height="205"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tJV-1H-7xk" secondAttribute="height" multiplier="178:167" id="EfH-9e-9zH"/>
                                 </constraints>
@@ -110,6 +110,7 @@ Truth</string>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="continueQuestButton" destination="g2g-ZD-AHc" id="XII-sU-nX1"/>
+                        <outlet property="logoLabel" destination="tJV-1H-7xk" id="qkA-YP-jqY"/>
                         <outlet property="scoreLabel" destination="pyg-pA-y8N" id="SeF-kJ-L0f"/>
                         <outlet property="swordImage" destination="8F3-ZT-LA4" id="5E2-bP-a4p"/>
                     </connections>
@@ -127,12 +128,12 @@ Truth</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="94N-H9-tEs">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="94N-H9-tEs">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7w-KB-BJV">
-                                    <rect key="frame" x="8" y="0.0" width="359" height="45"/>
+                                    <rect key="frame" x="8" y="0.0" width="359" height="257"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -228,8 +229,8 @@ Truth</string>
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Total Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbQ-G4-jbM">
-                                <rect key="frame" x="20" y="697" width="78.666666666666671" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Total Score: 00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbQ-G4-jbM">
+                                <rect key="frame" x="20" y="697" width="86" height="18"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -242,11 +243,11 @@ Truth</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Attack">
+                                <state key="normal" title="Sword">
                                     <color key="titleColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="attackButtonSelected:" destination="i4U-P2-90G" eventType="touchUpInside" id="3HO-Le-AXC"/>
+                                    <action selector="swordButtonSelected:" destination="i4U-P2-90G" eventType="touchUpInside" id="3HO-Le-AXC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXX-ke-eFN">
@@ -257,11 +258,11 @@ Truth</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Yield">
+                                <state key="normal" title="Shield">
                                     <color key="titleColor" red="0.062745098039215685" green="0.16862745098039217" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="yieldButtonSelected:" destination="i4U-P2-90G" eventType="touchUpInside" id="bIa-Ln-Gip"/>
+                                    <action selector="shieldButtonSelected:" destination="i4U-P2-90G" eventType="touchUpInside" id="bIa-Ln-Gip"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wraith Score: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6L-EF-6go">
@@ -292,7 +293,7 @@ EFdhaXRoIEFjdGlvbg
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gb7-ux-fz5">
-                                <rect key="frame" x="118.66666666666669" y="693.33333333333337" width="23" height="25"/>
+                                <rect key="frame" x="126" y="693.66666666666663" width="23" height="25"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="1" green="0.78431372549019607" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -335,14 +336,14 @@ EFdhaXRoIEFjdGlvbg
                     </view>
                     <navigationItem key="navigationItem" title="Wraith" id="A9F-bv-OBH"/>
                     <connections>
-                        <outlet property="attackButton" destination="6mE-xX-v7j" id="OnO-Cj-Oau"/>
                         <outlet property="foeActionLabel" destination="GCS-Tg-91Q" id="aQr-Jb-3NI"/>
                         <outlet property="pointsLabelConstraint" destination="vAs-pq-0LW" id="GSB-l5-5bt"/>
                         <outlet property="roundPointsLabel" destination="gb7-ux-fz5" id="h2r-u4-m0W"/>
                         <outlet property="scoreLabel" destination="YbQ-G4-jbM" id="V8A-Lc-S9D"/>
+                        <outlet property="shieldButton" destination="ZXX-ke-eFN" id="bVA-3w-pO5"/>
+                        <outlet property="swordButton" destination="6mE-xX-v7j" id="OnO-Cj-Oau"/>
                         <outlet property="wraithImage" destination="3QD-4q-juO" id="EQf-DT-Quq"/>
                         <outlet property="wraithMessage" destination="peM-ES-htv" id="uho-Wh-OH7"/>
-                        <outlet property="yieldButton" destination="ZXX-ke-eFN" id="bVA-3w-pO5"/>
                         <segue destination="JFi-bf-ZRv" kind="presentation" identifier="ShowStory" id="ePR-HK-Ja5"/>
                     </connections>
                 </viewController>

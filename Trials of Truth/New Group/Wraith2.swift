@@ -29,7 +29,7 @@ class Wraith2: Wraith {
     
     override func compMove(attackRate: Float, roundIndex: Int) -> RoundAction {
         if roundIndex == 0 {
-            return RoundAction(message: primaryMessages[roundIndex], move: .Attack)
+            return RoundAction(message: primaryMessages[roundIndex], move: .Sword)
         }
         
         return super.compMove(attackRate: attackRate, roundIndex: roundIndex)

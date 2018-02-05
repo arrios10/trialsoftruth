@@ -9,7 +9,7 @@
 import Foundation
 
 enum Move: Int {
-    case Attack, Yield
+    case Sword, Shield
 }
 
 class Round: NSObject, NSCoding {
@@ -19,40 +19,40 @@ class Round: NSObject, NSCoding {
     
     var roundPoints: Int {
         get {
-            guard let userMove = userMove, let computerMove = computerMove else {
+            guard let userMove = userMove, let wraithMove = wraithMove else {
                 return 0
             }
             
             switch userMove {
-            case Move.Attack:
-                switch computerMove {
-                case Move.Attack:
+            case Move.Sword:
+                switch wraithMove {
+                case Move.Sword:
                     return 1
                     
-                case Move.Yield:
-                    return 3
+                case Move.Shield:
+                    return 0
                 }
                 
-            case Move.Yield:
-                switch computerMove {
-                case Move.Attack:
+            case Move.Shield:
+                switch wraithMove {
+                case Move.Sword:
                     return 0
                     
-                case Move.Yield:
-                    return 2
+                case Move.Shield:
+                    return 1
                 }
                 
             }
         }
     }
     
-    var computerMove: Move?
+    var wraithMove: Move?
     
     var userMove: Move?
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(userMove?.rawValue, forKey: "userMove")
-        aCoder.encode(computerMove?.rawValue, forKey: "computerMove")
+        aCoder.encode(wraithMove?.rawValue, forKey: "wraithMove")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -60,8 +60,8 @@ class Round: NSObject, NSCoding {
             userMove = Move(rawValue: value)
         }
         
-        if let compValue = aDecoder.decodeObject(forKey: "computerMove") as? Int {
-            computerMove = Move(rawValue: compValue)
+        if let compValue = aDecoder.decodeObject(forKey: "wraithMove") as? Int {
+            wraithMove = Move(rawValue: compValue)
         }
     }
     
