@@ -10,6 +10,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var slashImage: UIImageView!
     @IBOutlet weak var wraithMessage: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var foeActionLabel: UILabel!
@@ -25,6 +26,7 @@ class GameViewController: UIViewController {
     
     var currentMatch: Match!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +39,7 @@ class GameViewController: UIViewController {
         
         wraithImage.alpha = 0
         roundPointsLabel.alpha = 0
+        slashImage.alpha = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,6 +62,10 @@ class GameViewController: UIViewController {
         roundPointsLabel.text = "+\(previousRound.roundPoints)"
         
         animatePointsIn()
+        
+        if previousRound.wraithMove == .Sword {
+            animateSlash()
+        }
         
         foeActionLabel.text = previousRound.wraithMove == .Sword ? "The wraith has attacked" : "The wraith has yielded"
         
@@ -83,22 +90,22 @@ class GameViewController: UIViewController {
                 showStoryVC()
             }
         case 1:
-            if currentUser.currentGame.gameTotalPoints < 8{
+            if currentUser.currentGame.gameTotalPoints < 10 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 2:
-            if currentUser.currentGame.gameTotalPoints < 13 {
+            if currentUser.currentGame.gameTotalPoints < 15{
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 3:
-            if currentUser.currentGame.gameTotalPoints < 21 {
+            if currentUser.currentGame.gameTotalPoints < 20 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 4:
-            if currentUser.currentGame.gameTotalPoints < 34 {
+            if currentUser.currentGame.gameTotalPoints < 25 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             } else {
@@ -173,6 +180,19 @@ class GameViewController: UIViewController {
             self?.pointsLabelConstraint.constant = 0
         })
         pointsAnimator?.startAnimation(afterDelay: 0.5)
+    }
+    
+    func animateSlash() {
+        slashImage.transform = .identity
+        slashImage.alpha = 1
+        let randomY = 10 - arc4random_uniform(20)
+        let randomX = 10 - arc4random_uniform(20)
+        let slashAnimator = UIViewPropertyAnimator(duration: 2, curve: .easeInOut) { [weak self] in
+            self?.slashImage.alpha = 0.3
+            
+            self?.slashImage.transform = self!.slashImage.transform.translatedBy(x: CGFloat(randomX), y: CGFloat(randomY))
+        }
+        slashAnimator.startAnimation()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
