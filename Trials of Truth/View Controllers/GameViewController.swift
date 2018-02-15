@@ -59,15 +59,15 @@ class GameViewController: UIViewController {
         currentMatch.nextRound(userMove: userMove)
         
         // update points awarded for previous round which is scored when nextRound() is called
-        roundPointsLabel.text = "+\(previousRound.roundPoints)"
+        roundPointsLabel.text = "\(previousRound.roundPoints)"
         
         animatePointsIn()
         
-        if previousRound.wraithMove == .Sword {
+        if previousRound.roundPoints == -1 {
             animateSlash()
         }
         
-        foeActionLabel.text = previousRound.wraithMove == .Sword ? "The wraith has attacked" : "The wraith has yielded"
+        foeActionLabel.text = previousRound.wraithMove == .Sword ? "wraith sword" : "wraith shield"
         
         updateDisplay()
     }
@@ -85,27 +85,27 @@ class GameViewController: UIViewController {
         switch currentUser.currentGame.matchIndex {
             
         case 0:
-            if currentUser.currentGame.gameTotalPoints < 5 {
+            if currentUser.currentGame.gameTotalPoints < 3 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 1:
-            if currentUser.currentGame.gameTotalPoints < 10 {
+            if currentUser.currentGame.gameTotalPoints < 5 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 2:
-            if currentUser.currentGame.gameTotalPoints < 15{
+            if currentUser.currentGame.gameTotalPoints < 8{
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 3:
-            if currentUser.currentGame.gameTotalPoints < 20 {
+            if currentUser.currentGame.gameTotalPoints < 13 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             }
         case 4:
-            if currentUser.currentGame.gameTotalPoints < 25 {
+            if currentUser.currentGame.gameTotalPoints < 21 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             } else {
@@ -141,12 +141,15 @@ class GameViewController: UIViewController {
         wraithMessage.text = compAction.message
         
         
-        scoreLabel.text = "Total Score: \(currentMatch.matchTotalPoints)"
+        scoreLabel.text = "Total Score: \(currentUser.currentGame.gameTotalPoints)"
         
         if currentMatch.matchIsOver == true {
             wraithMessage.text = "Match Over"
             swordButton.isEnabled = false
+            swordButton.isHidden = true
             shieldButton.isEnabled  = false
+            shieldButton.isHidden = true
+
             checkScore()
             
         }
@@ -183,14 +186,26 @@ class GameViewController: UIViewController {
     }
     
     func animateSlash() {
-        slashImage.transform = .identity
         slashImage.alpha = 1
-        let randomY = 10 - arc4random_uniform(20)
-        let randomX = 10 - arc4random_uniform(20)
+        let imagePercent = slashImage.bounds.height * 0.1
+        let randomY = (imagePercent * 0.5) - CGFloat(arc4random_uniform(UInt32(imagePercent)))
+        let randomX = (imagePercent * 0.5) - CGFloat(arc4random_uniform(UInt32(imagePercent)))
+        var transform = CGAffineTransform.identity
+        transform = transform.translatedBy(x: randomX, y: randomY)
+        
+        let randomScale = 0.5 + (CGFloat(arc4random_uniform(6))/10.0)
+        print(randomScale)
+        transform = transform.scaledBy(x: randomScale, y: randomScale)
+        transform = transform.rotated(by: randomScale)
+
+        
+        
+        
+        slashImage.transform = transform
+
         let slashAnimator = UIViewPropertyAnimator(duration: 2, curve: .easeInOut) { [weak self] in
             self?.slashImage.alpha = 0.3
             
-            self?.slashImage.transform = self!.slashImage.transform.translatedBy(x: CGFloat(randomX), y: CGFloat(randomY))
         }
         slashAnimator.startAnimation()
     }

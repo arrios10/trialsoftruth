@@ -51,7 +51,8 @@ class Wraith {
                               "message 10"]
     
       
-    
+    //    func compMove(userMove: Move, roundIndex: Int) -> RoundAction {
+
     func compMove(attackRate: Float, roundIndex: Int) -> RoundAction {
         
         var action = RoundAction()

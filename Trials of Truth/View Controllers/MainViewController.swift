@@ -15,6 +15,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var swordImage: UIImageView!
     @IBOutlet weak var logoLabel: UILabel!
     
+    var introHasAnimated = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,7 +51,15 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        if introHasAnimated == false {
         animateSword()
+        introHasAnimated = true
+        } else {
+            logoLabel.alpha = 1
+            swordImage.transform = .identity
+            logoLabel.transform  = .identity
+
+        }
 
     }
     

@@ -36,8 +36,8 @@ class Match: NSObject, NSCoding {
     var matchIsOver = false
     
     var storyList: [String] = [
-        "1 - When Mr. Bilbo Baggins of Bag End announced that he would shortly be celebrating his eleventy-first birthday with a party of special magnificence, there was much talk and excitement in Hobbiton.",
-        "2 - When Mr. Bilbo Baggins of Bag End announced that he would shortly be celebrating his eleventy-first birthday with a party of special magnificence, there was much talk and excitement in Hobbiton.",
+        "The knight has entered the wraith cave and stands before the first wraith. Attacking with the sword will give you the most power, but leaves you open to their enery bursts. You can also use your shield to repel their enery burst. Get to a power level of 3 to defeat this wraith.",
+        "Get to a power level of 5 to advance to the next wraith.",
         "3 - When Mr. Bilbo Baggins of Bag End announced that he would shortly be celebrating his eleventy-first birthday with a party of special magnificence, there was much talk and excitement in Hobbiton.",
         "4 - When Mr. Bilbo Baggins of Bag End announced that he would shortly be celebrating his eleventy-first birthday with a party of special magnificence, there was much talk and excitement in Hobbiton.",
         "5 - When Mr. Bilbo Baggins of Bag End announced that he would shortly be celebrating his eleventy-first birthday with a party of special magnificence, there was much talk and excitement in Hobbiton."

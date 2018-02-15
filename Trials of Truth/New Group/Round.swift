@@ -23,23 +23,24 @@ class Round: NSObject, NSCoding {
                 return 0
             }
             
+            
             switch userMove {
             case Move.Sword:
                 switch wraithMove {
                 case Move.Sword:
-                    return 1
+                    return 2
                     
                 case Move.Shield:
-                    return 0
+                    return -1
                 }
                 
             case Move.Shield:
                 switch wraithMove {
                 case Move.Sword:
-                    return 0
+                    return 1
                     
                 case Move.Shield:
-                    return 1
+                    return 0
                 }
                 
             }
