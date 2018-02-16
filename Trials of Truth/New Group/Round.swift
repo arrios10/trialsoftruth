@@ -31,7 +31,7 @@ class Round: NSObject, NSCoding {
                     return 2
                     
                 case Move.Shield:
-                    return -1
+                    return -2
                 }
                 
             case Move.Shield:

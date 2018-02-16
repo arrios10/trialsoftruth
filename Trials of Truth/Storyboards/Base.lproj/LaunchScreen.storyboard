@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="canvas2" translatesAutoresizingMaskIntoConstraints="NO" id="QT8-Yb-2lT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="truthSwordNoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="QT8-Yb-2lT">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" red="0.17715445160865784" green="0.17732077836990356" blue="0.17718020081520081" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
@@ -41,6 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="canvas2" width="1024" height="1024"/>
+        <image name="truthSwordNoBackground" width="1024" height="1024"/>
     </resources>
 </document>

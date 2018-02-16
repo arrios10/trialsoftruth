@@ -23,7 +23,7 @@ class MapTableViewController: UITableViewController {
         
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         
-        let backgroundImage =  #imageLiteral(resourceName: "tree")
+        let backgroundImage =  #imageLiteral(resourceName: "treeImage")
         let imageView = UIImageView(image: backgroundImage)
         self.tableView.backgroundView = imageView
         imageView.contentMode = .scaleAspectFit

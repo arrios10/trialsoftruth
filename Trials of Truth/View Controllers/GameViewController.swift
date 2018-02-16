@@ -10,7 +10,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    @IBOutlet weak var slashImage: UIImageView!
+    @IBOutlet weak var actionImage: UIImageView!
     @IBOutlet weak var wraithMessage: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var foeActionLabel: UILabel!
@@ -39,7 +39,7 @@ class GameViewController: UIViewController {
         
         wraithImage.alpha = 0
         roundPointsLabel.alpha = 0
-        slashImage.alpha = 0
+        actionImage.alpha = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,8 +63,10 @@ class GameViewController: UIViewController {
         
         animatePointsIn()
         
-        if previousRound.roundPoints == -1 {
+        if previousRound.wraithMove == .Sword {
             animateSlash()
+        } else {
+            animateShield()
         }
         
         foeActionLabel.text = previousRound.wraithMove == .Sword ? "wraith sword" : "wraith shield"
@@ -159,7 +161,7 @@ class GameViewController: UIViewController {
         pointsAnimator?.stopAnimation(true)
 
         pointsLabelConstraint.constant = 0
-        pointsAnimator = UIViewPropertyAnimator(duration: 0.3, curve: .easeInOut) { [weak self] in
+        pointsAnimator = UIViewPropertyAnimator(duration: 0.2, curve: .easeInOut) { [weak self] in
             self?.roundPointsLabel.alpha = 1
             self?.view.layoutIfNeeded()
         }
@@ -175,39 +177,52 @@ class GameViewController: UIViewController {
 
         pointsLabelConstraint.constant = -8
         
-        pointsAnimator = UIViewPropertyAnimator(duration: 0.5, curve: .easeInOut, animations: { [weak self] in
+        pointsAnimator = UIViewPropertyAnimator(duration: 0.3, curve: .easeInOut, animations: { [weak self] in
             self?.roundPointsLabel.alpha = 0
             self?.view.layoutIfNeeded()
         })
         pointsAnimator?.addCompletion({ [weak self] (_) in
             self?.pointsLabelConstraint.constant = 0
         })
-        pointsAnimator?.startAnimation(afterDelay: 0.5)
+        pointsAnimator?.startAnimation(afterDelay: 0.2)
     }
     
     func animateSlash() {
-        slashImage.alpha = 1
-        let imagePercent = slashImage.bounds.height * 0.1
+        actionImage.image = #imageLiteral(resourceName: "slashImage")
+        actionImage.alpha = 1
+        let imagePercent = actionImage.bounds.height * 0.1
         let randomY = (imagePercent * 0.5) - CGFloat(arc4random_uniform(UInt32(imagePercent)))
         let randomX = (imagePercent * 0.5) - CGFloat(arc4random_uniform(UInt32(imagePercent)))
         var transform = CGAffineTransform.identity
         transform = transform.translatedBy(x: randomX, y: randomY)
         
-        let randomScale = 0.5 + (CGFloat(arc4random_uniform(6))/10.0)
-        print(randomScale)
+        let randomScale = 0.6 + (CGFloat(arc4random_uniform(5))/10.0)
         transform = transform.scaledBy(x: randomScale, y: randomScale)
         transform = transform.rotated(by: randomScale)
 
-        
-        
-        
-        slashImage.transform = transform
+        actionImage.transform = transform
 
-        let slashAnimator = UIViewPropertyAnimator(duration: 2, curve: .easeInOut) { [weak self] in
-            self?.slashImage.alpha = 0.3
-            
+        let slashAnimator = UIViewPropertyAnimator(duration: 1.0, curve: .easeOut) { [weak self] in
+            self?.actionImage.transform = transform.scaledBy(x: 0.6, y: 0.6)
+            self?.actionImage.alpha = 0
+
         }
         slashAnimator.startAnimation()
+    }
+    
+    func animateShield() {
+        actionImage.image = #imageLiteral(resourceName: "shieldImage")
+        actionImage.alpha = 1
+        
+        actionImage.transform = CGAffineTransform.identity.scaledBy(x: 0.01, y: 0.01)
+        
+        let shieldAnimator = UIViewPropertyAnimator(duration: 1.0, curve: .easeInOut) { [weak self] in
+            self?.actionImage.transform = .identity
+            self?.actionImage.alpha = 0
+
+        }
+        
+        shieldAnimator.startAnimation()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
