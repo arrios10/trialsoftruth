@@ -39,7 +39,7 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
 
     let gameWinnerMessage = "you win!"
     
-    let gameIntroMessage = "the knight of truth is on a dangerous quest"
+    let gameIntroMessage = ["the knight of truth is on a dangerous quest", "page2", "page3"]
     
     var introPresented = false
     

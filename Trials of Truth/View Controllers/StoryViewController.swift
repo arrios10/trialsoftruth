@@ -17,14 +17,28 @@ class StoryViewController: UIViewController {
     var delegate: StoryViewControllerDelegate?
 
     @IBOutlet weak var storyLabel: UILabel!
-        
-    var story: String?
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var skipButton: UIButton!
+    
+    var story: [String]?
+    var pageCounter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        if let storyPages = story?.count {
+            
+            if storyPages > 1 {
+                pageControl.numberOfPages = storyPages
 
-        // Do any additional setup after loading the view.
-        storyLabel.text = story
+            } else {
+                pageControl.isHidden = true
+                skipButton.isHidden = true
+            }
+        }
+        
+        storyLabel.text = story?[pageCounter]
     }
     
 
@@ -34,11 +48,32 @@ class StoryViewController: UIViewController {
     }
     
     @IBAction func tappedStoryView(_ sender: Any) {
+        
+
+        pageCounter += 1
+
+        
+        if pageCounter == story?.count {
+            self.dismiss(animated: true) {
+            
+                self.delegate?.dismissedStoryVC()
+            }
+        } else {
+            pageControl.currentPage = pageCounter
+            storyLabel.text = story?[pageCounter]
+
+        }
+        
+    }
+    
+    @IBAction func skipButtonPressed(_ sender: Any) {
         self.dismiss(animated: true) {
+            
             self.delegate?.dismissedStoryVC()
         }
         
     }
+    
     
     
     /*

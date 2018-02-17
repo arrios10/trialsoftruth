@@ -21,9 +21,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var pointsLabelConstraint: NSLayoutConstraint!
     
     private var pointsAnimator: UIViewPropertyAnimator?
-    
-    var storyPresented = false
-    
+       
     var currentMatch: Match!
     
     
@@ -37,7 +35,9 @@ class GameViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        wraithImage.alpha = 0
+        if currentMatch.roundIndex == 0 {
+            wraithImage.alpha = 0
+        }
         roundPointsLabel.alpha = 0
         actionImage.alpha = 0
     }
@@ -45,9 +45,8 @@ class GameViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if storyPresented == false && currentMatch.roundIndex == 0 {
+        if currentMatch.roundIndex == 0 {
             showStoryVC()
-            storyPresented = true
         }
         
         
@@ -160,10 +159,12 @@ class GameViewController: UIViewController {
     func animatePointsIn() {
         pointsAnimator?.stopAnimation(true)
 
-        pointsLabelConstraint.constant = 0
-        pointsAnimator = UIViewPropertyAnimator(duration: 0.2, curve: .easeInOut) { [weak self] in
+        roundPointsLabel.transform = CGAffineTransform.identity.scaledBy(x: 0.01, y: 0.01)
+
+        pointsAnimator = UIViewPropertyAnimator(duration: 0.3, curve: .easeOut) { [weak self] in
             self?.roundPointsLabel.alpha = 1
-            self?.view.layoutIfNeeded()
+            self?.roundPointsLabel.transform = CGAffineTransform.identity.scaledBy(x: 1.5, y: 1.5)
+            
         }
         
         pointsAnimator?.addCompletion { [weak self] (_) in
@@ -174,15 +175,11 @@ class GameViewController: UIViewController {
     }
     
     func animatePointsOut() {
+       
+        pointsAnimator = UIViewPropertyAnimator(duration: 0.35, curve: .easeInOut, animations: { [weak self] in
+            self?.roundPointsLabel.alpha = 0.3
+            self?.roundPointsLabel.transform = CGAffineTransform.identity.scaledBy(x: 1.0, y: 1.0)
 
-        pointsLabelConstraint.constant = -8
-        
-        pointsAnimator = UIViewPropertyAnimator(duration: 0.3, curve: .easeInOut, animations: { [weak self] in
-            self?.roundPointsLabel.alpha = 0
-            self?.view.layoutIfNeeded()
-        })
-        pointsAnimator?.addCompletion({ [weak self] (_) in
-            self?.pointsLabelConstraint.constant = 0
         })
         pointsAnimator?.startAnimation(afterDelay: 0.2)
     }
@@ -196,7 +193,7 @@ class GameViewController: UIViewController {
         var transform = CGAffineTransform.identity
         transform = transform.translatedBy(x: randomX, y: randomY)
         
-        let randomScale = 0.6 + (CGFloat(arc4random_uniform(5))/10.0)
+        let randomScale = 0.5 + (CGFloat(arc4random_uniform(5))/10.0)
         transform = transform.scaledBy(x: randomScale, y: randomScale)
         transform = transform.rotated(by: randomScale)
 
@@ -216,7 +213,7 @@ class GameViewController: UIViewController {
         
         actionImage.transform = CGAffineTransform.identity.scaledBy(x: 0.01, y: 0.01)
         
-        let shieldAnimator = UIViewPropertyAnimator(duration: 1.0, curve: .easeInOut) { [weak self] in
+        let shieldAnimator = UIViewPropertyAnimator(duration: 1.3, curve: .easeInOut) { [weak self] in
             self?.actionImage.transform = .identity
             self?.actionImage.alpha = 0
 
@@ -231,12 +228,12 @@ class GameViewController: UIViewController {
         nextController?.delegate = self
         
         if currentUser.currentGame.gameState == GameState.Lose {
-            nextController?.story = currentUser.currentGame.gameOverMessage
+            nextController?.story = [currentUser.currentGame.gameOverMessage]
         } else if currentUser.currentGame.gameState == GameState.Win {
-            nextController?.story = currentUser.currentGame.gameWinnerMessage
+            nextController?.story = [currentUser.currentGame.gameWinnerMessage]
             
         } else {
-            nextController?.story = currentUser.currentGame.currentMatch?.storyList[currentUser.currentGame.matchIndex]
+            nextController?.story = [currentUser.currentGame.currentMatch!.storyList[currentUser.currentGame.matchIndex]]
         }
     }
     
