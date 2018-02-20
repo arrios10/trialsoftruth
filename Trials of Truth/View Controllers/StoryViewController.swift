@@ -60,7 +60,10 @@ class StoryViewController: UIViewController {
             }
         } else {
             pageControl.currentPage = pageCounter
-            storyLabel.text = story?[pageCounter]
+            UIView.transition(with: storyLabel, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                 self.storyLabel.text = self.story?[self.pageCounter]
+            }, completion: nil)
+           
 
         }
         

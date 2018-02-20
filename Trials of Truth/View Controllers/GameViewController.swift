@@ -89,27 +89,36 @@ class GameViewController: UIViewController {
             if currentUser.currentGame.gameTotalPoints < 3 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
+            } else {
+                animateWraithDefeat()
             }
         case 1:
             if currentUser.currentGame.gameTotalPoints < 5 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
+            } else {
+                animateWraithDefeat()
             }
         case 2:
             if currentUser.currentGame.gameTotalPoints < 8{
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
+            } else {
+                animateWraithDefeat()
             }
         case 3:
             if currentUser.currentGame.gameTotalPoints < 13 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
+            }   else {
+                animateWraithDefeat()
             }
         case 4:
             if currentUser.currentGame.gameTotalPoints < 21 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             } else {
+                animateWraithDefeat()
                 currentUser.currentGame.gameState = GameState.Win
                 User.saveUser()
                 showStoryVC()
@@ -220,6 +229,20 @@ class GameViewController: UIViewController {
         }
         
         shieldAnimator.startAnimation()
+    }
+    
+    func animateWraithDefeat() {
+        
+        var transform = CGAffineTransform.identity
+        transform = transform.translatedBy(x: 0, y: -wraithImage.frame.height / 10.0)
+        transform = transform.scaledBy(x: 1.1, y: 1.1)
+        
+        let defeatAnimator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut) { [weak self] in
+            self?.wraithImage.alpha = 0
+            self?.wraithImage.transform = transform
+        }
+        
+        defeatAnimator.startAnimation()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

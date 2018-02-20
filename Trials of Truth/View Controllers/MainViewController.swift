@@ -40,9 +40,10 @@ class MainViewController: UIViewController {
         let isGameOver = currentUser.currentGame?.matches[4].matchIsOver == true
         
         if currentUser.currentGame == nil || isGameOver == true {
-            continueQuestButton.isEnabled = false
+            continueQuestButton.isHidden = true
+            
         } else {
-            continueQuestButton.isEnabled = true
+            continueQuestButton.isHidden = false
         }
         
         scoreLabel.text = "Your High Score Is: \(currentUser.highScore)"
