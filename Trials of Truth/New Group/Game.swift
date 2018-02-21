@@ -37,7 +37,7 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
     
     let gameOverMessage = "game over"
 
-    let gameWinnerMessage = "you win!"
+    let gameWinnerMessage = ["the knight of truth is on a dangerous quest", "I sense your thoughts. You seek the magic stone. ", "something else"]
     
     let gameIntroMessage = ["the knight of truth is on a dangerous quest", "I sense your thoughts. You seek the magic stone. ", "something else"]
     

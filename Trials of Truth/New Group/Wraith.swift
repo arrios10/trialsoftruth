@@ -18,7 +18,7 @@ class Wraith {
     
     var wraithName: String {
         get {
-            return "Wraith Name"
+            return "LEVEL I"
         }
     }
     

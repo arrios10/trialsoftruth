@@ -151,7 +151,7 @@ class GameViewController: UIViewController {
         wraithMessage.text = compAction.message
         
         
-        scoreLabel.text = "Total Score: \(currentUser.currentGame.gameTotalPoints)"
+        scoreLabel.text = "Score: \(currentUser.currentGame.gameTotalPoints)"
         
         if currentMatch.matchIsOver == true {
             wraithMessage.text = "Match Over"
@@ -187,7 +187,7 @@ class GameViewController: UIViewController {
        
         pointsAnimator = UIViewPropertyAnimator(duration: 0.35, curve: .easeInOut, animations: { [weak self] in
             self?.roundPointsLabel.alpha = 0.3
-            self?.roundPointsLabel.transform = CGAffineTransform.identity.scaledBy(x: 1.0, y: 1.0)
+            self?.roundPointsLabel.transform = CGAffineTransform.identity.scaledBy(x: 1.3, y: 1.3)
 
         })
         pointsAnimator?.startAnimation(afterDelay: 0.2)
@@ -208,7 +208,7 @@ class GameViewController: UIViewController {
 
         actionImage.transform = transform
 
-        let slashAnimator = UIViewPropertyAnimator(duration: 1.0, curve: .easeOut) { [weak self] in
+        let slashAnimator = UIViewPropertyAnimator(duration: 1, curve: .easeOut) { [weak self] in
             self?.actionImage.transform = transform.scaledBy(x: 0.6, y: 0.6)
             self?.actionImage.alpha = 0
 
@@ -222,7 +222,7 @@ class GameViewController: UIViewController {
         
         actionImage.transform = CGAffineTransform.identity.scaledBy(x: 0.01, y: 0.01)
         
-        let shieldAnimator = UIViewPropertyAnimator(duration: 1.3, curve: .easeInOut) { [weak self] in
+        let shieldAnimator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut) { [weak self] in
             self?.actionImage.transform = .identity
             self?.actionImage.alpha = 0
 
@@ -234,12 +234,18 @@ class GameViewController: UIViewController {
     func animateWraithDefeat() {
         
         var transform = CGAffineTransform.identity
-        transform = transform.translatedBy(x: 0, y: -wraithImage.frame.height / 10.0)
-        transform = transform.scaledBy(x: 1.1, y: 1.1)
+        transform = transform.translatedBy(x: 0, y: 0)
+        transform = transform.scaledBy(x: 0.01, y: 0.01)
+        transform = transform.rotated(by:1)
         
-        let defeatAnimator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut) { [weak self] in
+        let defeatAnimator = UIViewPropertyAnimator(duration: 0.8, curve: .easeInOut) { [weak self] in
+            self?.wraithImage.transform = CGAffineTransform.identity.rotated(by: 4)
             self?.wraithImage.alpha = 0
             self?.wraithImage.transform = transform
+        }
+        
+        defeatAnimator.addCompletion { [weak self](_) in
+            self?.animateShield()
         }
         
         defeatAnimator.startAnimation()
@@ -253,7 +259,7 @@ class GameViewController: UIViewController {
         if currentUser.currentGame.gameState == GameState.Lose {
             nextController?.story = [currentUser.currentGame.gameOverMessage]
         } else if currentUser.currentGame.gameState == GameState.Win {
-            nextController?.story = [currentUser.currentGame.gameWinnerMessage]
+            nextController?.story = currentUser.currentGame.gameWinnerMessage
             
         } else {
             nextController?.story = [currentUser.currentGame.currentMatch!.storyList[currentUser.currentGame.matchIndex]]

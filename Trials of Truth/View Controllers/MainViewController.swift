@@ -30,6 +30,7 @@ class MainViewController: UIViewController {
         
         swordImage.transform = swordImage.transform.translatedBy(x: 0, y: -swordImage.frame.height)
         
+        scoreLabel.isHidden = true
         logoLabel.alpha = 0
         logoLabel.transform = logoLabel.transform.scaledBy(x: 0.5, y: 0.5)
         //new stuff
@@ -37,7 +38,13 @@ class MainViewController: UIViewController {
 
         User.loadUser()
         
+        if currentUser.highScore > 0 {
+            scoreLabel.isHidden = false
+            scoreLabel.text = "Your High Score Is: \(currentUser.highScore)"
+        }
+        
         let isGameOver = currentUser.currentGame?.matches[4].matchIsOver == true
+        
         
         if currentUser.currentGame == nil || isGameOver == true {
             continueQuestButton.isHidden = true
@@ -46,7 +53,7 @@ class MainViewController: UIViewController {
             continueQuestButton.isHidden = false
         }
         
-        scoreLabel.text = "Your High Score Is: \(currentUser.highScore)"
+
         
     }
     

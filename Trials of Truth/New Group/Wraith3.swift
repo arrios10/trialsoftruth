@@ -12,7 +12,7 @@ class Wraith3: Wraith {
     
     override var wraithName: String {
         get {
-            return "Wraith 3"
+            return "LEVEL III"
         }
     }
     

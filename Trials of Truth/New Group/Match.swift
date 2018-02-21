@@ -86,7 +86,7 @@ class Match: NSObject, NSCoding {
         roundIndex += 1
         
         //end the match
-        if roundIndex == ROUND_COUNT - 1 {
+        if roundIndex == ROUND_COUNT - 1{
             matchIsOver = true
         }
     }
