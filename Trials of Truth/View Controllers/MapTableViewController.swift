@@ -21,6 +21,11 @@ class MapTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if currentUser.currentGame.introPresented  == false {
+            showIntroStory()
+            currentUser.currentGame.introPresented = true
+        }
+        
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         
         let backgroundImage =  #imageLiteral(resourceName: "tree3")
@@ -35,10 +40,7 @@ class MapTableViewController: UITableViewController {
         
         imageView.addSubview(blurEffectView)
         
-        if currentUser.currentGame.introPresented  == false {
-            showIntroStory()
-            currentUser.currentGame.introPresented = true
-        }
+      
         
         updateGame()
         

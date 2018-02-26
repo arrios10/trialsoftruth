@@ -175,13 +175,13 @@ Truth</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ydt-iP-Sev">
-                                            <rect key="frame" x="10" y="0.0" width="100" height="110"/>
+                                            <rect key="frame" x="10" y="0.0" width="120" height="110"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="nBq-1s-vX8"/>
+                                                <constraint firstAttribute="width" constant="120" id="nBq-1s-vX8"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL IV" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ztx-nh-JiE">
-                                            <rect key="frame" x="160" y="38" width="200" height="35.5"/>
+                                            <rect key="frame" x="155" y="38" width="205" height="35.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="35"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -192,7 +192,7 @@ Truth</string>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Ztx-nh-JiE" secondAttribute="trailing" constant="15" id="5SK-HA-5m6"/>
                                         <constraint firstItem="ydt-iP-Sev" firstAttribute="centerY" secondItem="hEa-VE-W6q" secondAttribute="centerY" id="7xQ-pr-hqe"/>
-                                        <constraint firstItem="Ztx-nh-JiE" firstAttribute="leading" secondItem="ydt-iP-Sev" secondAttribute="trailing" constant="50" id="DlP-Je-5c6"/>
+                                        <constraint firstItem="Ztx-nh-JiE" firstAttribute="leading" secondItem="ydt-iP-Sev" secondAttribute="trailing" constant="25" id="DlP-Je-5c6"/>
                                         <constraint firstItem="ydt-iP-Sev" firstAttribute="top" secondItem="hEa-VE-W6q" secondAttribute="top" id="F3O-R4-xoy"/>
                                         <constraint firstItem="ydt-iP-Sev" firstAttribute="leading" secondItem="hEa-VE-W6q" secondAttribute="leading" constant="10" id="K9R-0u-LAc"/>
                                         <constraint firstItem="Ztx-nh-JiE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hEa-VE-W6q" secondAttribute="top" id="Q3k-gT-OTw"/>
@@ -236,7 +236,7 @@ Truth</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="treeImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4z-fD-LyB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tree1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4z-fD-LyB">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddf-PT-b0a">
@@ -283,7 +283,7 @@ Truth</string>
                                 <color key="textColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wraithT" translatesAutoresizingMaskIntoConstraints="NO" id="3QD-4q-juO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wraith5" translatesAutoresizingMaskIntoConstraints="NO" id="3QD-4q-juO">
                                 <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -306,17 +306,17 @@ EFdhaXRoIEFjdGlvbg
                                 <color key="textColor" red="1" green="0.78431372549019607" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Score: 00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbQ-G4-jbM">
-                                <rect key="frame" x="10" y="74" width="63" height="21"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                <color key="textColor" red="0.1803921568627451" green="0.25098039215686274" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shieldImage" translatesAutoresizingMaskIntoConstraints="NO" id="BV1-eX-645">
                                 <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Score: 00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbQ-G4-jbM">
+                                <rect key="frame" x="10" y="74" width="66" height="20.5"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                <color key="textColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -484,11 +484,11 @@ EFdhaXRoIEFjdGlvbg
         </scene>
     </scenes>
     <resources>
+        <image name="Wraith5" width="3623" height="3937"/>
         <image name="shieldImage" width="1000" height="1000"/>
+        <image name="tree1" width="4087" height="4983"/>
         <image name="tree2" width="4087" height="4983"/>
-        <image name="treeImage" width="4087" height="4983"/>
         <image name="truthSwordNoBackground" width="1024" height="1024"/>
-        <image name="wraithT" width="4232" height="5018"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="W71-N4-pVe"/>

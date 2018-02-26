@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E50165951F7061D500453A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165941F7061D500453A55 /* AppDelegate.swift */; };
 		E501659A1F7061D600453A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E50165981F7061D600453A55 /* Main.storyboard */; };
-		E501659C1F7061D600453A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E501659B1F7061D600453A55 /* Assets.xcassets */; };
+		E501659C1F7061D600453A55 /* .xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E501659B1F7061D600453A55 /* .xcassets */; };
 		E501659F1F7061D600453A55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E501659D1F7061D600453A55 /* LaunchScreen.storyboard */; };
 		E50165A71F73260C00453A55 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165A61F73260C00453A55 /* MainViewController.swift */; };
 		E50165A91F73261800453A55 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165A81F73261800453A55 /* GameViewController.swift */; };
@@ -31,7 +31,7 @@
 		E50165911F7061D500453A55 /* Trials of Truth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trials of Truth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50165941F7061D500453A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E50165991F7061D600453A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E501659B1F7061D600453A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E501659B1F7061D600453A55 /* .xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "\U0010.xcassets"; sourceTree = "<group>"; };
 		E501659E1F7061D600453A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E50165A01F7061D600453A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E50165A61F73260C00453A55 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		847552031FCE286100EB8B1A /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
-				E501659B1F7061D600453A55 /* Assets.xcassets */,
+				E501659B1F7061D600453A55 /* .xcassets */,
 				E50165A01F7061D600453A55 /* Info.plist */,
 			);
 			path = Supporting;
@@ -198,7 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E501659F1F7061D600453A55 /* LaunchScreen.storyboard in Resources */,
-				E501659C1F7061D600453A55 /* Assets.xcassets in Resources */,
+				E501659C1F7061D600453A55 /* .xcassets in Resources */,
 				E501659A1F7061D600453A55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
