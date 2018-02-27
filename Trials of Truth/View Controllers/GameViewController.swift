@@ -35,6 +35,8 @@ class GameViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        wraithImage.image = currentMatch.currentWraith.wraithImage
+        
         if currentMatch.roundIndex == 0 {
             wraithImage.alpha = 0
         }
@@ -145,12 +147,7 @@ class GameViewController: UIViewController {
     }
     
     func updateDisplay() {
-        let attackRate = currentMatch.calcAttackRate()
-        let compAction = currentMatch.currentWraith.compMove(attackRate: attackRate, roundIndex: currentMatch.roundIndex)
-        
-        wraithMessage.text = compAction.message
-        
-        
+     
         scoreLabel.text = "Score: \(currentUser.currentGame.gameTotalPoints)"
         
         if currentMatch.matchIsOver == true {
@@ -162,6 +159,13 @@ class GameViewController: UIViewController {
 
             checkScore()
             
+        } else {
+            
+            let attackRate = currentMatch.calcAttackRate()
+            let compAction = currentMatch.currentWraith.compMove(attackRate: attackRate, roundIndex: currentMatch.roundIndex)
+            
+            wraithMessage.text = compAction.message
+
         }
     }
     

@@ -175,13 +175,13 @@ Truth</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ydt-iP-Sev">
-                                            <rect key="frame" x="10" y="0.0" width="120" height="110"/>
+                                            <rect key="frame" x="10" y="0.0" width="120" height="102"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="120" id="nBq-1s-vX8"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL IV" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ztx-nh-JiE">
-                                            <rect key="frame" x="155" y="38" width="205" height="35.5"/>
+                                            <rect key="frame" x="155" y="33.5" width="205" height="35.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="35"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -191,12 +191,12 @@ Truth</string>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Ztx-nh-JiE" secondAttribute="trailing" constant="15" id="5SK-HA-5m6"/>
-                                        <constraint firstItem="ydt-iP-Sev" firstAttribute="centerY" secondItem="hEa-VE-W6q" secondAttribute="centerY" id="7xQ-pr-hqe"/>
+                                        <constraint firstItem="Ztx-nh-JiE" firstAttribute="centerY" secondItem="ydt-iP-Sev" secondAttribute="centerY" id="7Vs-jM-93G"/>
                                         <constraint firstItem="Ztx-nh-JiE" firstAttribute="leading" secondItem="ydt-iP-Sev" secondAttribute="trailing" constant="25" id="DlP-Je-5c6"/>
                                         <constraint firstItem="ydt-iP-Sev" firstAttribute="top" secondItem="hEa-VE-W6q" secondAttribute="top" id="F3O-R4-xoy"/>
+                                        <constraint firstAttribute="bottom" secondItem="ydt-iP-Sev" secondAttribute="bottom" constant="8" id="JeA-MU-73j"/>
                                         <constraint firstItem="ydt-iP-Sev" firstAttribute="leading" secondItem="hEa-VE-W6q" secondAttribute="leading" constant="10" id="K9R-0u-LAc"/>
                                         <constraint firstItem="Ztx-nh-JiE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hEa-VE-W6q" secondAttribute="top" id="Q3k-gT-OTw"/>
-                                        <constraint firstItem="Ztx-nh-JiE" firstAttribute="centerY" secondItem="hEa-VE-W6q" secondAttribute="centerY" id="dhk-zc-egH"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

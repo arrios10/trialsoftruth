@@ -37,9 +37,15 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
     
     let gameOverMessage = "game over"
 
-    let gameWinnerMessage = ["the knight of truth is on a dangerous quest", "I sense your thoughts. You seek the magic stone. ", "something else"]
+    let gameWinnerMessage = [
+                            StoryPage(message: "the knight of truth is on a dangerous quest", image: #imageLiteral(resourceName: "knight")),
+                            StoryPage(message: "the knight of ", image: nil),
+                            StoryPage(message: "dangerous quest", image: nil)
+                            ]
     
     let gameIntroMessage = ["the knight of truth is on a dangerous quest", "I sense your thoughts. You seek the magic stone. ", "something else"]
+    
+    
     
     var introPresented = false
     

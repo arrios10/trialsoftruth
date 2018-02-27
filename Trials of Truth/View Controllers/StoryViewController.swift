@@ -12,6 +12,11 @@ protocol StoryViewControllerDelegate {
     func dismissedStoryVC()
 }
 
+struct StoryPage {
+    var message: String
+    var image: UIImage?
+}
+
 class StoryViewController: UIViewController {
     
     var delegate: StoryViewControllerDelegate?
@@ -19,8 +24,9 @@ class StoryViewController: UIViewController {
     @IBOutlet weak var storyLabel: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var skipButton: UIButton!
+    @IBOutlet weak var storyImage: UIImageView!
     
-    var story: [String]?
+    var story: [StoryPage]?
     var pageCounter = 0
     
     override func viewDidLoad() {
@@ -38,7 +44,8 @@ class StoryViewController: UIViewController {
             }
         }
         
-        storyLabel.text = story?[pageCounter]
+        storyLabel.text = story?[pageCounter].message
+        storyImage.image = story?[pageCounter].image
     }
     
 
@@ -61,7 +68,8 @@ class StoryViewController: UIViewController {
         } else {
             pageControl.currentPage = pageCounter
             UIView.transition(with: storyLabel, duration: 0.5, options: .transitionCrossDissolve, animations: {
-                 self.storyLabel.text = self.story?[self.pageCounter]
+                 self.storyLabel.text = self.story?[self.pageCounter].message
+                 self.storyImage.image = self.story?[self.pageCounter].image
             }, completion: nil)
            
 
