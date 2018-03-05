@@ -24,7 +24,7 @@ class Wraith {
     
     var wraithImage: UIImage {
         get {
-            return #imageLiteral(resourceName: "wraithT")
+            return #imageLiteral(resourceName: "Wraith1")
         }
     }
     

@@ -283,7 +283,7 @@ Truth</string>
                                 <color key="textColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wraith5" translatesAutoresizingMaskIntoConstraints="NO" id="3QD-4q-juO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wraith4" translatesAutoresizingMaskIntoConstraints="NO" id="3QD-4q-juO">
                                 <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -484,14 +484,14 @@ EFdhaXRoIEFjdGlvbg
         </scene>
     </scenes>
     <resources>
-        <image name="Wraith5" width="3623" height="3937"/>
+        <image name="Wraith4" width="3073" height="3520"/>
         <image name="shieldImage" width="1000" height="1000"/>
         <image name="tree1" width="4087" height="4983"/>
         <image name="tree2" width="4087" height="4983"/>
         <image name="truthSwordNoBackground" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="W71-N4-pVe"/>
+        <segue reference="ePR-HK-Ja5"/>
         <segue reference="Ysk-yW-Tos"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
