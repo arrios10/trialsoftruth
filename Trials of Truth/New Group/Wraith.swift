@@ -28,27 +28,16 @@ class Wraith {
         }
     }
     
-    var primaryMessages: [String] = ["I sense your thoughts. You seek the magic stone. Unwise, but inevitable.",
-                                 "message b",
-                                 "message c",
-                                 "message d",
-                                 "message e",
-                                 "message f",
-                                 "message g",
-                                 "message h",
-                                 "message i",
-                                 "message j"]
-    
-    var secondaryMessages: [String] = ["message 1",
-                              "message 2",
-                              "message 3",
-                              "message 4",
-                              "message 5",
-                              "message 6",
-                              "message 7",
-                              "message 8",
-                              "message 9",
-                              "message 10"]
+    var primaryMessages: [String] = ["Who dares enter our domain?",
+                                     "Your thoughts betray you. You seek Power Stones. Power you cannot possibly control.",
+                                 "That sword. We know that sword. You are not worthy of that sword.",
+                                 "You must choose your action wisely",
+                                 "Who is your master?",
+                                 "Ah. The King in the West commands you.",
+                                 "If your king had honor his prince would stand before me now. Instead we get his pawn.",
+                                 "This quest will be the end of you. But we welcome your sacrifice.",
+                                 "Press your attack or guard yourself, either way we will defeat you.",
+                                 "You cannot win. If your best us, we will diminish for a time. If we best you, you are gone forever."]
     
       
     //    func compMove(userMove: Move, roundIndex: Int) -> RoundAction {
