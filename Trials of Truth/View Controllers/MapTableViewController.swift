@@ -123,8 +123,9 @@ class MapTableViewController: UITableViewController {
         
         if currentUser.currentGame.matchIndex == row {
             cell.wraithName.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            cell.wraithImage.alpha = 1
         } else {
-            cell.wraithName.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            cell.wraithName.textColor = #colorLiteral(red: 0.06274509804, green: 0.168627451, blue: 0.2470588235, alpha: 1)
         }
         return cell
     

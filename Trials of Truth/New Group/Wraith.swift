@@ -28,17 +28,22 @@ class Wraith {
         }
     }
     
-    var primaryMessages: [String] = ["Who dares enter our domain?",
-                                     "Your thoughts betray you. You seek Power Stones. Power you cannot possibly control.",
-                                 "That sword. We know that sword. You are not worthy of that sword.",
-                                 "You must choose your action wisely",
-                                 "Who is your master?",
-                                 "Ah. The King in the West commands you.",
-                                 "If your king had honor his prince would stand before me now. Instead we get his pawn.",
-                                 "This quest will be the end of you. But we welcome your sacrifice.",
-                                 "Press your attack or guard yourself, either way we will defeat you.",
-                                 "You cannot win. If your best us, we will diminish for a time. If we best you, you are gone forever."]
-    
+    var primaryMessages: [String] {
+        get {
+            return ["Who dares enter our domain?",
+                    "Your thoughts betray you.\nYou seek Power Stones.\nA power you cannot possibly control.",
+                    "Press your attack or hold your guard, either way we will destory you.",
+                    "That sword.\nWe know that sword.\nYou are not worthy of that sword.",
+                    "Who is your master?",
+                    "Ah.\nThe King in the West commands you.",
+                    "If your king had honor his prince would stand before us now.\nInstead we get his pawn.",
+                    "This quest will be the end of you.\nBut we welcome your sacrifice.",
+                    "Choose your next move, but choose wisey.",
+                    "You cannot win. If your best us, we will diminish for a time. If we best you, you are gone forever."]
+            
+        }
+        
+    }
       
     //    func compMove(userMove: Move, roundIndex: Int) -> RoundAction {
 

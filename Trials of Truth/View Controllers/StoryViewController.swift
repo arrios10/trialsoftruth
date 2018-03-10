@@ -45,7 +45,8 @@ class StoryViewController: UIViewController {
         }
         
         storyLabel.text = story?[pageCounter].message
-        storyImage.image = story?[pageCounter].image
+        
+         storyImage.image = story?[pageCounter].image
     }
     
 
@@ -67,7 +68,7 @@ class StoryViewController: UIViewController {
             }
         } else {
             pageControl.currentPage = pageCounter
-            UIView.transition(with: storyLabel, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            UIView.transition(with: storyLabel, duration: 0.55, options: .transitionCrossDissolve, animations: {
                  self.storyLabel.text = self.story?[self.pageCounter].message
                  self.storyImage.image = self.story?[self.pageCounter].image
             }, completion: nil)
