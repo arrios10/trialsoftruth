@@ -36,11 +36,11 @@ class Match: NSObject, NSCoding {
     var matchIsOver = false
     
     var storyList = [
-        StoryPage(message: "dangerous quest 1", image: nil),
-        StoryPage(message: "dangerous quest 2", image: nil),
-        StoryPage(message: "dangerous quest 3", image: nil),
-        StoryPage(message: "dangerous quest 4", image: nil),
-        StoryPage(message: "dangerous quest 5", image: nil),
+        StoryPage(message: "Select Attack or Guard.\n\nThe Wraith can attack with an energy slash or energy bust.\n\nAchieve a Power Level of 5 to defeat this Wraith.", image: nil),
+        StoryPage(message: "Truth is a powerful weapon.\n\nThe sword's attack will beat the Wraith's energy slash, but it leaves the Knight vunerable to the Wraith's energy bust.\n\nAchieve a Power Level of 8 to defeat this the Wraith.", image: nil),
+        StoryPage(message: "Use your guard to defect the Wraith's energy bust.\n\nAchieve a Power Level of 13 to advance to defeat this Wraith.", image: nil),
+        StoryPage(message: "The final two Wraith's are much more powerful than the first three.\n\nAchieve a Power Level of 21 to advance to defeat this Wraith.", image: nil),
+        StoryPage(message: "Select Attack or Guard.\n\nAchieve a Power Level of 34 to advance to defeat the final Wraith and complete your mission.", image: nil),
     ]
     
     

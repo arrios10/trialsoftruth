@@ -36,8 +36,8 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
     }
     
     let gameOverMessage = [
-        StoryPage(message: "Eons ago an asteroid from deep space hit the planet. With it came five Wraiths from another world.\nMany ages later, two rival powers fought a great battle to control the caves where the Wraiths dwell. \n The battle raged for weeks, until nearly every soldier lay slain.",
-                  image: nil),
+        StoryPage(message: "GAME OVER",
+                  image: #imageLiteral(resourceName: "Wraithe_one_edit_2")),
     ]
 
     let gameWinnerMessage = [
@@ -47,12 +47,16 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
                             ]
     
     let gameIntroMessage = [
-        StoryPage(message: "Eons ago an asteroid from deep space hit the planet. With it came five Wraiths from another world.\n\nMany ages later, two rival powers fought a great battle to control the caves where the Wraiths dwell.\n\nThe battle raged for weeks, until nearly every soldier lay slain.",
+        StoryPage(message: "Eons ago an asteroid from deep space struck the earth.\n\nWith it came the five Wraiths.",
                   image: nil),
-        StoryPage(message: "At great cost, the Western Kingdom seized the caves and sent a small force to take the Power Stones from the Wraiths that created them.",
-                  image: nil),
-        StoryPage(message: "To secure the stones, a single warrior will enter the caves and battle the Wraiths.\n\nThe warrior wields Truth, a mysterious and magical sword. The only weapon known to harm the Wraiths. ",
-                  image: #imageLiteral(resourceName: "knight-1"))
+        StoryPage(message: "Ages later, two rival powers fought a fierce battle for control of the wraith-caves.\n\nAt great cost, the Western Kingdom found victory.",
+                  image: nil ),
+        StoryPage(message: "Within these caves lies the Fire Pearl.\n\nA weapon of unthinkable power.",
+                  image: nil ),
+        StoryPage(message: "A force of elite knights entered the caves to destroy the wraiths and seize the Fire Pearl.\n\nBut their swords met only thin air.\n\nAnd they fell to the wraiths.",
+                  image: #imageLiteral(resourceName: "Necro_Wraith") ),
+        StoryPage(message: "With little hope left, the Kingdom's greatest knight set out alone to battle the wraiths and save the kingdom.\n\nThis warrior wields Truth, an ancient and mysterious sword...\n",
+                  image: #imageLiteral(resourceName: "hooded_knight_sword_update_no_sword"))
     ]
     
     

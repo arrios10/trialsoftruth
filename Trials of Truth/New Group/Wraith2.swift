@@ -25,15 +25,15 @@ class Wraith2: Wraith {
     
     override var primaryMessages: [String] {
         get {
-            return ["Who dares enter our domain?", //1
-                    "Your thoughts betray you. You seek Power Stones. Power you cannot possibly control.", //2
-                    "Press your attack or guard yourself, either way we will defeat you.",//3
-                    "That sword. We know that sword. You are not worthy of that sword.",//4
-                    "Who is your master?",//5
-                    "Ah. The King in the West commands you.",//6
-                    "If your king had honor his prince would stand before us now. Instead we get his pawn.",//7
-                    "Your ancestor Vega had honor. Where is your honor?",//8
-                    "You cannot win. If your best us, we will diminish for a time. If we best you, you are gone forever.",//9
+            return ["You cannot overcome us. A raindrop cannot overcome the sea.", //1
+                    "That sword was not forged for your hands.", //2
+                    "You must choose your action, but choose wisely. Your fate hangs in the balance.",//3
+                    "Why do follow a foolish leader. Is it glory your seek?",//5
+                    "Your thirst for greatness diminishes you.",//4
+                    "Your ancestor Vega was known to us. He had honor. Where is your honor?",//6
+                    "Your weapon is strong, but your mind is weak.",//7
+                    "How you hope to overcome us, when you cannot overcome yourself. ",//8
+                    "We come from another world yet we know your kind better than you know yourselves.",//9
                     "Still you fight. So be it./nWe welcome your sacrifice."]//10
             
         }

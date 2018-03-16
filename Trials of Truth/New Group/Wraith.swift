@@ -30,16 +30,17 @@ class Wraith {
     
     var primaryMessages: [String] {
         get {
-            return ["Who dares enter our domain?",
-                    "Your thoughts betray you.\nYou seek Power Stones.\nA power you cannot possibly control.",
-                    "Press your attack or hold your guard, either way we will destory you.",
-                    "That sword.\nWe know that sword.\nYou are not worthy of that sword.",
-                    "Who is your master?",
-                    "Ah.\nThe King in the West commands you.",
-                    "If your king had honor his prince would stand before us now.\nInstead we get his pawn.",
-                    "This quest will be the end of you.\nBut we welcome your sacrifice.",
-                    "Choose your next move, but choose wisey.",
-                    "You cannot win. If your best us, we will diminish for a time. If we best you, you are gone forever."]
+            return ["Who dares enter our domain?", //1
+                    "That sword.\nWe know that sword.\nYou are not worthy of that sword.", //4
+                    "Press your attack or keep your guard, either way we will destory you.", //3
+                    "Your thoughts betray you.\nYou seek the power of the Fire Pearl.\nA power you cannot possibly control.", //2
+                    "Who is your master?", //5
+                    "Ah.\nThe King in the West commands you.", //6
+                    "If your king had honor his prince would stand before us now.\nInstead we get his pawn.", //7
+                    "Your master pressed too far east.\nNow he is doomed by the war he started.", //8
+                    "Now you will fall. The West will fall.", //9
+                    "You cannot win. If your best us, we will diminish for a time. If we best you, you are gone forever." //10
+            ]
             
         }
         

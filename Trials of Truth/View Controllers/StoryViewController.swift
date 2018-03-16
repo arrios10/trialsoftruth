@@ -32,7 +32,6 @@ class StoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         if let storyPages = story?.count {
             
             if storyPages > 1 {
@@ -41,6 +40,8 @@ class StoryViewController: UIViewController {
             } else {
                 pageControl.isHidden = true
                 skipButton.isHidden = true
+                storyLabel.textAlignment = NSTextAlignment.center
+
             }
         }
         
