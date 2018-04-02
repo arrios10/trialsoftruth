@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A2A4896206F7BB600842F6A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2A4895206F7BB600842F6A /* GameKit.framework */; };
 		E50165951F7061D500453A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165941F7061D500453A55 /* AppDelegate.swift */; };
 		E501659A1F7061D600453A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E50165981F7061D600453A55 /* Main.storyboard */; };
 		E501659C1F7061D600453A55 /* .xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E501659B1F7061D600453A55 /* .xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A2A4895206F7BB600842F6A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		E50165911F7061D500453A55 /* Trials of Truth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trials of Truth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50165941F7061D500453A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E50165991F7061D600453A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,12 +57,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A2A4896206F7BB600842F6A /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A300B9F206F5C05004DC653 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A2A4895206F7BB600842F6A /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		847552001FCE27EF00EB8B1A /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +124,7 @@
 			children = (
 				E50165931F7061D500453A55 /* Trials of Truth */,
 				E50165921F7061D500453A55 /* Products */,
+				7A300B9F206F5C05004DC653 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +183,11 @@
 						DevelopmentTeam = P488YLR9S2;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

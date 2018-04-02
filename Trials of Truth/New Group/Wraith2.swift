@@ -25,16 +25,16 @@ class Wraith2: Wraith {
     
     override var primaryMessages: [String] {
         get {
-            return ["You cannot overcome us. A raindrop cannot overcome the sea.", //1
+            return ["You cannot overcome us.\nA raindrop cannot overcome the sea.", //1
                     "That sword was not forged for your hands.", //2
-                    "You must choose your action, but choose wisely. Your fate hangs in the balance.",//3
-                    "Why do follow a foolish leader. Is it glory your seek?",//5
+                    "You must choose your action, but choose wisely.\nYour fate hangs in the balance.",//3
+                    "Why do follow a foolish leader.\nIs it glory your seek?",//5
                     "Your thirst for greatness diminishes you.",//4
-                    "Your ancestor Vega was known to us. He had honor. Where is your honor?",//6
+                    "Your ancestor Vega was known to us. He had honor.\nWhere is your honor?",//6
                     "Your weapon is strong, but your mind is weak.",//7
                     "How you hope to overcome us, when you cannot overcome yourself. ",//8
                     "We come from another world yet we know your kind better than you know yourselves.",//9
-                    "Still you fight. So be it./nWe welcome your sacrifice."]//10
+                    "Still you fight. So be it.\nWe welcome your sacrifice."]//10
             
         }
     }

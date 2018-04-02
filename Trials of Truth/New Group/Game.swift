@@ -51,11 +51,11 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
                   image: nil),
         StoryPage(message: "Ages later, two rival powers fought a fierce battle for control of the wraith-caves.\n\nAt great cost, the Western Kingdom found victory.",
                   image: nil ),
-        StoryPage(message: "Within these caves lies the Fire Pearl.\n\nA weapon of unthinkable power.",
+        StoryPage(message: "Within these caves lies the Fire Pearl.\n\nA weapon of unthinkable power created by the wraiths.",
                   image: nil ),
-        StoryPage(message: "A force of elite knights entered the caves to destroy the wraiths and seize the Fire Pearl.\n\nBut their swords met only thin air.\n\nAnd they fell to the wraiths.",
+        StoryPage(message: "A force of elite knights entered the caves to destroy the wraiths and seize the Fire Pearl.\n\nBut their swords met only thin air.\nAnd they quickly fell to the powerful wraiths.",
                   image: #imageLiteral(resourceName: "Necro_Wraith") ),
-        StoryPage(message: "With little hope left, the Kingdom's greatest knight set out alone to battle the wraiths and save the kingdom.\n\nThis warrior wields Truth, an ancient and mysterious sword...\n",
+        StoryPage(message: "With little hope left, the Kingdom's greatest knight set out alone into the darkness to save the kingdom.\n\nThis warrior wields Truth, an ancient and mysterious sword...\n",
                   image: #imageLiteral(resourceName: "hooded_knight_sword_update_no_sword"))
     ]
     
