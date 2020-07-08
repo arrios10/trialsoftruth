@@ -10,6 +10,8 @@ import Foundation
 
 class User: NSObject, NSCoding {
     
+
+    
     var highScore: Int = 0
     
     var currentGame: Game!
@@ -43,5 +45,9 @@ class User: NSObject, NSCoding {
             currentUser = User()
         }
     }
+    
+    
+    
+    
     
 }

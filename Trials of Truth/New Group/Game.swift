@@ -31,8 +31,9 @@ class Game: NSObject, NSCoding /*, Encodable, Decodable*/  {
         didSet {
             if gameState == .Win && gameTotalPoints > currentUser.highScore {
                 currentUser.highScore = gameTotalPoints
-            }
+                
         }
+    }
     }
     
     let gameOverMessage = [

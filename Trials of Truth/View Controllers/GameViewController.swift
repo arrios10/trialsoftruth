@@ -114,7 +114,7 @@ class GameViewController: UIViewController {
                 animateWraithDefeat()
             }
         case 4:
-            if currentUser.currentGame.gameTotalPoints < 34 {
+            if currentUser.currentGame.gameTotalPoints < 23 {
                 currentUser.currentGame.gameState = GameState.Lose
                 showStoryVC()
             } else {
@@ -278,6 +278,8 @@ class GameViewController: UIViewController {
 extension GameViewController: StoryViewControllerDelegate {
     
     func dismissedStoryVC() {
+        
+        print("hello")
         
         let animator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut) { [weak self] in
             self?.wraithImage.alpha = 1

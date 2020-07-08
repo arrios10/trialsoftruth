@@ -9,7 +9,7 @@
 import UIKit
 import GameKit
 
-class MainViewController: UIViewController, GKGameCenterControllerDelegate {
+class MainViewController: UIViewController {
     
 
     @IBOutlet weak var scoreLabel: UILabel!
@@ -23,8 +23,6 @@ class MainViewController: UIViewController, GKGameCenterControllerDelegate {
     /* Variables */
     var gcEnabled = Bool() // Check if the user has Game Center enabled
     var gcDefaultLeaderBoard = String() // Check the default leaderboardID
-    
-    var score = 0
     
     // IMPORTANT: replace the red string below with your own Leaderboard ID (the one you've set in iTunes Connect)
     let LEADERBOARD_ID = "com.trialsoftruth.score"
@@ -64,6 +62,7 @@ class MainViewController: UIViewController, GKGameCenterControllerDelegate {
         } else {
             continueQuestButton.isHidden = false
         }
+        
         
 
         
@@ -105,8 +104,33 @@ class MainViewController: UIViewController, GKGameCenterControllerDelegate {
         
         logoAnimator.startAnimation()
     }
+   
     
-    // MARK: - AUTHENTICATE LOCAL PLAYER
+  
+    
+   
+    @IBAction func startQuestButtonPressed(_ sender: Any) {
+        currentUser.currentGame = Game()
+    }
+    
+    @IBAction func topScoresButtonPressed(_ sender: Any) {
+        
+        // Submit score to GC leaderboard
+        let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
+        bestScoreInt.value = Int64(currentUser.highScore)
+        GKScore.report([bestScoreInt]) { (error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                print("Best Score submitted to your Leaderboard!")
+            }
+      
+        
+    }
+    }
+    
+    
+    // MARK: GC - AUTHENTICATE LOCAL PLAYER
     func authenticateLocalPlayer() {
         let localPlayer: GKLocalPlayer = GKLocalPlayer.localPlayer()
         
@@ -133,19 +157,6 @@ class MainViewController: UIViewController, GKGameCenterControllerDelegate {
         }
     }
     
-    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
-        gameCenterViewController.dismiss(animated: true, completion: nil)
-
-    }
-    
-   
-    @IBAction func startQuestButtonPressed(_ sender: Any) {
-        currentUser.currentGame = Game()
-    }
-    
-    @IBAction func topScoresButtonPressed(_ sender: Any) {
-        authenticateLocalPlayer()
-    }
-    
+  
     
 }
