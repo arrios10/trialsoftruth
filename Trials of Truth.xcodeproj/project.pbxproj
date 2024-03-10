@@ -7,21 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A2A4896206F7BB600842F6A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2A4895206F7BB600842F6A /* GameKit.framework */; };
 		E50165951F7061D500453A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165941F7061D500453A55 /* AppDelegate.swift */; };
-		E50165971F7061D500453A55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165961F7061D500453A55 /* ViewController.swift */; };
 		E501659A1F7061D600453A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E50165981F7061D600453A55 /* Main.storyboard */; };
-		E501659C1F7061D600453A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E501659B1F7061D600453A55 /* Assets.xcassets */; };
+		E501659C1F7061D600453A55 /* .xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E501659B1F7061D600453A55 /* .xcassets */; };
 		E501659F1F7061D600453A55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E501659D1F7061D600453A55 /* LaunchScreen.storyboard */; };
+		E50165A71F73260C00453A55 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165A61F73260C00453A55 /* MainViewController.swift */; };
+		E50165A91F73261800453A55 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165A81F73261800453A55 /* GameViewController.swift */; };
+		E50165AD1F73311100453A55 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165AC1F73311100453A55 /* Game.swift */; };
+		E50165AF1F73346600453A55 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50165AE1F73346600453A55 /* Round.swift */; };
+		E55EFF7C1FF5AADB00AF8B8E /* MapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55EFF7B1FF5AADB00AF8B8E /* MapTableViewController.swift */; };
+		E55EFF7E1FF5B0B800AF8B8E /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55EFF7D1FF5B0B800AF8B8E /* MapTableViewCell.swift */; };
+		E56A7E881F9183F400A9717D /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A7E871F9183F400A9717D /* Match.swift */; };
+		E58783801FE353180025B907 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587837F1FE353180025B907 /* User.swift */; };
+		E5A9E7AE1FBE5EB100FC79C2 /* Wraith3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A9E7AD1FBE5EB100FC79C2 /* Wraith3.swift */; };
+		E5A9E7B01FBE5F7B00FC79C2 /* Wraith4.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A9E7AF1FBE5F7B00FC79C2 /* Wraith4.swift */; };
+		E5A9E7B21FBE5F8D00FC79C2 /* Wraith5.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A9E7B11FBE5F8D00FC79C2 /* Wraith5.swift */; };
+		E5AA08231FDA166C00D70E01 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AA08221FDA166C00D70E01 /* StoryViewController.swift */; };
+		E5B595D31FA7EC150086E782 /* Wraith.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B595D21FA7EC150086E782 /* Wraith.swift */; };
+		E5E3103A1FFF3D2700FA0C74 /* Wraith2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E310391FFF3D2700FA0C74 /* Wraith2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A2A4895206F7BB600842F6A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		E50165911F7061D500453A55 /* Trials of Truth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trials of Truth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50165941F7061D500453A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E50165961F7061D500453A55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E50165991F7061D600453A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E501659B1F7061D600453A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E501659B1F7061D600453A55 /* .xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "\U0010.xcassets"; sourceTree = "<group>"; };
 		E501659E1F7061D600453A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E50165A01F7061D600453A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E50165A61F73260C00453A55 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E50165A81F73261800453A55 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E50165AC1F73311100453A55 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E50165AE1F73346600453A55 /* Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
+		E55EFF7B1FF5AADB00AF8B8E /* MapTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapTableViewController.swift; path = "Trials of Truth/View Controllers/MapTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		E55EFF7D1FF5B0B800AF8B8E /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
+		E56A7E871F9183F400A9717D /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		E587837F1FE353180025B907 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E5A9E7AD1FBE5EB100FC79C2 /* Wraith3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wraith3.swift; sourceTree = "<group>"; };
+		E5A9E7AF1FBE5F7B00FC79C2 /* Wraith4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wraith4.swift; sourceTree = "<group>"; };
+		E5A9E7B11FBE5F8D00FC79C2 /* Wraith5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wraith5.swift; sourceTree = "<group>"; };
+		E5AA08221FDA166C00D70E01 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
+		E5B595D21FA7EC150086E782 /* Wraith.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wraith.swift; sourceTree = "<group>"; };
+		E5E310391FFF3D2700FA0C74 /* Wraith2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wraith2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +57,74 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A2A4896206F7BB600842F6A /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A300B9F206F5C05004DC653 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A2A4895206F7BB600842F6A /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		847552001FCE27EF00EB8B1A /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				E587837F1FE353180025B907 /* User.swift */,
+				E50165AC1F73311100453A55 /* Game.swift */,
+				E56A7E871F9183F400A9717D /* Match.swift */,
+				E50165AE1F73346600453A55 /* Round.swift */,
+				E5B595D21FA7EC150086E782 /* Wraith.swift */,
+				E5E310391FFF3D2700FA0C74 /* Wraith2.swift */,
+				E5A9E7AD1FBE5EB100FC79C2 /* Wraith3.swift */,
+				E5A9E7AF1FBE5F7B00FC79C2 /* Wraith4.swift */,
+				E5A9E7B11FBE5F8D00FC79C2 /* Wraith5.swift */,
+			);
+			name = "Data Model";
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		847552011FCE281900EB8B1A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E50165981F7061D600453A55 /* Main.storyboard */,
+				E501659D1F7061D600453A55 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		847552021FCE282000EB8B1A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E50165A61F73260C00453A55 /* MainViewController.swift */,
+				E55EFF7B1FF5AADB00AF8B8E /* MapTableViewController.swift */,
+				E55EFF7D1FF5B0B800AF8B8E /* MapTableViewCell.swift */,
+				E50165A81F73261800453A55 /* GameViewController.swift */,
+				E5AA08221FDA166C00D70E01 /* StoryViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		847552031FCE286100EB8B1A /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				E501659B1F7061D600453A55 /* .xcassets */,
+				E50165A01F7061D600453A55 /* Info.plist */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
 		E50165881F7061D500453A55 = {
 			isa = PBXGroup;
 			children = (
 				E50165931F7061D500453A55 /* Trials of Truth */,
 				E50165921F7061D500453A55 /* Products */,
+				7A300B9F206F5C05004DC653 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,11 +140,10 @@
 			isa = PBXGroup;
 			children = (
 				E50165941F7061D500453A55 /* AppDelegate.swift */,
-				E50165961F7061D500453A55 /* ViewController.swift */,
-				E50165981F7061D600453A55 /* Main.storyboard */,
-				E501659B1F7061D600453A55 /* Assets.xcassets */,
-				E501659D1F7061D600453A55 /* LaunchScreen.storyboard */,
-				E50165A01F7061D600453A55 /* Info.plist */,
+				847552011FCE281900EB8B1A /* Storyboards */,
+				847552021FCE282000EB8B1A /* View Controllers */,
+				847552001FCE27EF00EB8B1A /* Data Model */,
+				847552031FCE286100EB8B1A /* Supporting */,
 			);
 			path = "Trials of Truth";
 			sourceTree = "<group>";
@@ -91,12 +175,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = Relativistic;
 				TargetAttributes = {
 					E50165901F7061D500453A55 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = LGFHSY5VS8;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -105,6 +196,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -124,7 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E501659F1F7061D600453A55 /* LaunchScreen.storyboard in Resources */,
-				E501659C1F7061D600453A55 /* Assets.xcassets in Resources */,
+				E501659C1F7061D600453A55 /* .xcassets in Resources */,
 				E501659A1F7061D600453A55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,8 +228,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E50165971F7061D500453A55 /* ViewController.swift in Sources */,
 				E50165951F7061D500453A55 /* AppDelegate.swift in Sources */,
+				E50165A91F73261800453A55 /* GameViewController.swift in Sources */,
+				E55EFF7E1FF5B0B800AF8B8E /* MapTableViewCell.swift in Sources */,
+				E5B595D31FA7EC150086E782 /* Wraith.swift in Sources */,
+				E50165A71F73260C00453A55 /* MainViewController.swift in Sources */,
+				E5A9E7AE1FBE5EB100FC79C2 /* Wraith3.swift in Sources */,
+				E50165AF1F73346600453A55 /* Round.swift in Sources */,
+				E58783801FE353180025B907 /* User.swift in Sources */,
+				E50165AD1F73311100453A55 /* Game.swift in Sources */,
+				E5E3103A1FFF3D2700FA0C74 /* Wraith2.swift in Sources */,
+				E55EFF7C1FF5AADB00AF8B8E /* MapTableViewController.swift in Sources */,
+				E5AA08231FDA166C00D70E01 /* StoryViewController.swift in Sources */,
+				E56A7E881F9183F400A9717D /* Match.swift in Sources */,
+				E5A9E7B21FBE5F8D00FC79C2 /* Wraith5.swift in Sources */,
+				E5A9E7B01FBE5F7B00FC79C2 /* Wraith4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +278,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -181,7 +288,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -223,7 +334,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -231,7 +344,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -260,11 +377,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "Trials of Truth/Info.plist";
+				DEVELOPMENT_TEAM = LGFHSY5VS8;
+				INFOPLIST_FILE = "$(SRCROOT)/Trials of Truth/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "xyz.trialsoftruth.Trials-of-Truth";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.trialsoftruth.TrialsofTruth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -272,11 +391,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "Trials of Truth/Info.plist";
+				DEVELOPMENT_TEAM = LGFHSY5VS8;
+				INFOPLIST_FILE = "$(SRCROOT)/Trials of Truth/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "xyz.trialsoftruth.Trials-of-Truth";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.trialsoftruth.TrialsofTruth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -299,6 +420,7 @@
 				E50165A51F7061D600453A55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
